@@ -24,6 +24,7 @@
 #
 # Flags:
 #   --tool <name>     Install only the specified tool
+#   --link            Use symbolic links instead of copying (for development)
 #   --interactive     Show interactive selector (default when run in a terminal)
 #   --no-interactive  Skip interactive selector, install all detected tools
 #   --parallel        Run install for each selected tool in parallel (output order may vary)
@@ -70,6 +71,16 @@ progress_bar() {
   [[ -t 1 ]] || printf "\n"
 }
 
+install_file() {
+  local src="$1"
+  local dest="$2"
+  if [[ "${USE_LINK:-false}" == "true" ]]; then
+    ln -sf "$src" "$dest"
+  else
+    cp "$src" "$dest"
+  fi
+}
+
 # ---------------------------------------------------------------------------
 # Box drawing -- pure ASCII, fixed 52-char wide
 #   box_top / box_mid / box_bot  -- structural lines
@@ -102,6 +113,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
 ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi)
+USE_LINK=false
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
@@ -312,7 +324,7 @@ install_claude_code() {
     while IFS= read -r -d '' f; do
       first_line="$(head -1 "$f")"
       [[ "$first_line" == "---" ]] || continue
-      cp "$f" "$dest/"
+      install_file "$f" "$dest/"
       (( count++ )) || true
     done < <(find "$REPO_ROOT/$dir" -name "*.md" -type f -print0)
   done
@@ -330,8 +342,8 @@ install_copilot() {
     while IFS= read -r -d '' f; do
       first_line="$(head -1 "$f")"
       [[ "$first_line" == "---" ]] || continue
-      cp "$f" "$dest_github/"
-      cp "$f" "$dest_copilot/"
+      install_file "$f" "$dest_github/"
+      install_file "$f" "$dest_copilot/"
       (( count++ )) || true
     done < <(find "$REPO_ROOT/$dir" -name "*.md" -type f -print0)
   done
@@ -351,7 +363,7 @@ install_antigravity() {
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
     mkdir -p "$dest/$name"
-    cp "$d/SKILL.md" "$dest/$name/SKILL.md"
+    install_file "$d/SKILL.md" "$dest/$name/SKILL.md"
     (( count++ )) || true
   done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
   ok "Antigravity: $count skills -> $dest"
@@ -367,12 +379,12 @@ install_gemini_cli() {
   [[ -f "$manifest" ]] || { err "integrations/gemini-cli/gemini-extension.json missing. Run ./scripts/convert.sh --tool gemini-cli first."; return 1; }
   [[ -d "$skills_dir" ]] || { err "integrations/gemini-cli/skills missing. Run ./scripts/convert.sh --tool gemini-cli first."; return 1; }
   mkdir -p "$dest/skills"
-  cp "$manifest" "$dest/gemini-extension.json"
+  install_file "$manifest" "$dest/gemini-extension.json"
   local d
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
     mkdir -p "$dest/skills/$name"
-    cp "$d/SKILL.md" "$dest/skills/$name/SKILL.md"
+    install_file "$d/SKILL.md" "$dest/skills/$name/SKILL.md"
     (( count++ )) || true
   done < <(find "$skills_dir" -mindepth 1 -maxdepth 1 -type d -print0)
   ok "Gemini CLI: $count skills -> $dest"
@@ -391,7 +403,7 @@ install_opencode() {
   while IFS= read -r -d '' f; do
     local base; base="$(basename "$f")"
     [[ "$base" == "README.md" ]] && continue
-    cp "$f" "$dest/"; (( count++ )) || true
+    install_file "$f" "$dest/"; (( count++ )) || true
   done < <(find "$search_dir" -maxdepth 1 -name "*.md" -print0)
   if (( count == 0 )); then
     warn "OpenCode: no agent files found in $search_dir. Run convert.sh --tool opencode first."
@@ -416,9 +428,10 @@ install_openclaw() {
     local name; name="$(basename "$d")"
     [[ -f "$d/SOUL.md" && -f "$d/AGENTS.md" && -f "$d/IDENTITY.md" ]] || continue
     mkdir -p "$dest/$name"
-    cp "$d/SOUL.md" "$dest/$name/SOUL.md"
-    cp "$d/AGENTS.md" "$dest/$name/AGENTS.md"
-    cp "$d/IDENTITY.md" "$dest/$name/IDENTITY.md"
+    install_file "$d/SOUL.md" "$dest/$name/SOUL.md"
+    install_file "$d/AGENTS.md" "$dest/$name/AGENTS.md"
+    install_file "$d/IDENTITY.md" "$dest/$name/IDENTITY.md"
+    # Register with OpenClaw so agents are usable by agentId immediately
     if command -v openclaw >/dev/null 2>&1; then
       if [[ "$existing_agents" != *$'\n'"$name"$'\n'* ]]; then
         openclaw agents add "$name" --workspace "$dest/$name" --non-interactive || true
@@ -444,7 +457,7 @@ install_cursor() {
   mkdir -p "$dest"
   local f
   while IFS= read -r -d '' f; do
-    cp "$f" "$dest/"; (( count++ )) || true
+    install_file "$f" "$dest/"; (( count++ )) || true
   done < <(find "$src" -maxdepth 1 -name "*.mdc" -print0)
   ok "Cursor: $count rules -> $dest"
   warn "Cursor: project-scoped. Run from your project root to install there."
@@ -458,7 +471,7 @@ install_aider() {
     warn "Aider: CONVENTIONS.md already exists at $dest (remove to reinstall)."
     return 0
   fi
-  cp "$src" "$dest"
+  install_file "$src" "$dest"
   ok "Aider: installed -> $dest"
   warn "Aider: project-scoped. Run from your project root to install there."
 }
@@ -471,7 +484,7 @@ install_windsurf() {
     warn "Windsurf: .windsurfrules already exists at $dest (remove to reinstall)."
     return 0
   fi
-  cp "$src" "$dest"
+  install_file "$src" "$dest"
   ok "Windsurf: installed -> $dest"
   warn "Windsurf: project-scoped. Run from your project root to install there."
 }
@@ -487,7 +500,7 @@ install_qwen() {
 
   local f
   while IFS= read -r -d '' f; do
-    cp "$f" "$dest/"
+    install_file "$f" "$dest/"
     (( count++ )) || true
   done < <(find "$src" -maxdepth 1 -name "*.md" -print0)
 
@@ -509,8 +522,8 @@ install_kimi() {
   while IFS= read -r -d '' d; do
     local name; name="$(basename "$d")"
     mkdir -p "$dest/$name"
-    cp "$d/agent.yaml" "$dest/$name/agent.yaml"
-    cp "$d/system.md" "$dest/$name/system.md"
+    install_file "$d/agent.yaml" "$dest/$name/agent.yaml"
+    install_file "$d/system.md" "$dest/$name/system.md"
     (( count++ )) || true
   done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
 
@@ -543,10 +556,12 @@ main() {
   local use_parallel=false
   local parallel_jobs
   parallel_jobs="$(parallel_jobs_default)"
+  local use_link=false
 
   while [[ $# -gt 0 ]]; do
     case "$1" in
       --tool)            tool="${2:?'--tool requires a value'}"; shift 2; interactive_mode="no" ;;
+      --link)            use_link=true; USE_LINK=true; shift ;;
       --interactive)     interactive_mode="yes"; shift ;;
       --no-interactive)  interactive_mode="no"; shift ;;
       --parallel)        use_parallel=true; shift ;;
@@ -624,6 +639,9 @@ main() {
   printf "  Installing: %s\n" "${SELECTED_TOOLS[*]}"
   if $use_parallel; then
     ok "Installing $n_selected tools in parallel (output buffered per tool)."
+  fi
+  if [[ "${USE_LINK:-false}" == "true" ]]; then
+    printf "  Mode:       ${C_CYAN}symbolic links${C_RESET} (use --link flag)\n"
   fi
   printf "\n"
 
