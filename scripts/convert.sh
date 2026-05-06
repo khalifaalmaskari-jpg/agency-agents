@@ -17,6 +17,7 @@
 #   aider        — Single CONVENTIONS.md for Aider
 #   windsurf     — Single .windsurfrules for Windsurf
 #   openclaw     — OpenClaw workspaces (integrations/openclaw/<agent>/SOUL.md)
+#   codex        — Codex native TOML agents (~/.codex/agents/*.toml)
 #   qwen         — Qwen Code SubAgent files (~/.qwen/agents/*.md)
 #   kimi         — Kimi Code CLI agent files (~/.config/kimi/agents/)
 #   all          — All tools (default)
@@ -408,6 +409,22 @@ ${body}
 HEREDOC
 }
 
+convert_codex() {
+  local codex_dir="$OUT_DIR/codex"
+  local agents_dir="$codex_dir/agents"
+  local metadata_dir="$codex_dir/agency-agents"
+
+  mkdir -p "$codex_dir"
+  python3 "$REPO_ROOT/integrations/codex/scripts/generate_codex_agents.py" \
+    --repo-root "$REPO_ROOT" \
+    --output-agents-dir "$agents_dir" \
+    --metadata-dir "$metadata_dir" >/dev/null
+
+  python3 "$REPO_ROOT/integrations/codex/scripts/validate_codex_agents.py" \
+    --agents-dir "$agents_dir" \
+    --manifest "$metadata_dir/manifest.json" >/dev/null
+}
+
 # Aider and Windsurf are single-file formats — accumulate into temp files
 # then write at the end.
 AIDER_TMP="$(mktemp)"
@@ -484,6 +501,12 @@ run_conversions() {
   local tool="$1"
   local count=0
 
+  if [[ "$tool" == "codex" ]]; then
+    convert_codex
+    find "$OUT_DIR/codex/agents" -maxdepth 1 -name "agency_*.toml" -type f | wc -l | tr -d '[:space:]'
+    return
+  fi
+
   for dir in "${AGENT_DIRS[@]}"; do
     local dirpath="$REPO_ROOT/$dir"
     [[ -d "$dirpath" ]] || continue
@@ -536,7 +559,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "codex" "qwen" "kimi" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -555,7 +578,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "codex" "qwen" "kimi")
   else
     tools_to_run=("$tool")
   fi
@@ -566,7 +589,7 @@ main() {
 
   if $use_parallel && [[ "$tool" == "all" ]]; then
     # Tools that write to separate dirs can run in parallel; buffer output so each tool's output stays together
-    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen)
+    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw codex qwen kimi)
     local parallel_out_dir
     parallel_out_dir="$(mktemp -d)"
     info "Converting: ${#parallel_tools[@]}/${n_tools} tools in parallel (output buffered per tool)..."
@@ -578,7 +601,7 @@ main() {
       [[ -f "$parallel_out_dir/$t" ]] && cat "$parallel_out_dir/$t"
     done
     rm -rf "$parallel_out_dir"
-    local idx=7
+    local idx=$(( ${#parallel_tools[@]} + 1 ))
     for t in aider windsurf; do
       progress_bar "$idx" "$n_tools"
       printf "\n"

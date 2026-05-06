@@ -1,0 +1,5 @@
+name = "agency_example_specialist"
+description = "Example Agency specialist generated for Codex."
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+developer_instructions = "Use this file as a minimal shape reference for generated Agency agents."

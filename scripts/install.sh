@@ -11,6 +11,7 @@
 #
 # Tools:
 #   claude-code  -- Copy agents to ~/.claude/agents/
+#   codex        -- Generate native Codex TOML agents in ~/.codex/agents/
 #   copilot      -- Copy agents to ~/.github/agents/ and ~/.copilot/agents/
 #   antigravity  -- Copy skills to ~/.gemini/antigravity/skills/
 #   gemini-cli   -- Install extension to ~/.gemini/extensions/agency-agents/
@@ -20,6 +21,7 @@
 #   windsurf     -- Copy .windsurfrules to current directory
 #   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
+#   kimi         -- Copy Kimi Code agent specs to ~/.config/kimi/agents/
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -101,7 +103,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi)
+ALL_TOOLS=(claude-code codex copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi)
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
@@ -113,7 +115,7 @@ AGENT_DIRS=(
 # Usage
 # ---------------------------------------------------------------------------
 usage() {
-  sed -n '3,32p' "$0" | sed 's/^# \{0,1\}//'
+  sed -n '3,35p' "$0" | sed 's/^# \{0,1\}//'
   exit 0
 }
 
@@ -139,6 +141,7 @@ check_integrations() {
 # Tool detection
 # ---------------------------------------------------------------------------
 detect_claude_code() { [[ -d "${HOME}/.claude" ]]; }
+detect_codex()        { command -v codex >/dev/null 2>&1 || [[ -d "${HOME}/.codex" ]]; }
 detect_copilot()      { command -v code >/dev/null 2>&1 || [[ -d "${HOME}/.github" || -d "${HOME}/.copilot" ]]; }
 detect_antigravity()  { [[ -d "${HOME}/.gemini/antigravity/skills" ]]; }
 detect_gemini_cli()   { command -v gemini >/dev/null 2>&1 || [[ -d "${HOME}/.gemini" ]]; }
@@ -153,6 +156,7 @@ detect_kimi()         { command -v kimi >/dev/null 2>&1; }
 is_detected() {
   case "$1" in
     claude-code) detect_claude_code ;;
+    codex)       detect_codex       ;;
     copilot)     detect_copilot     ;;
     antigravity) detect_antigravity ;;
     gemini-cli)  detect_gemini_cli  ;;
@@ -171,6 +175,7 @@ is_detected() {
 tool_label() {
   case "$1" in
     claude-code) printf "%-14s  %s" "Claude Code"  "(claude.ai/code)"        ;;
+    codex)       printf "%-14s  %s" "Codex"        "(~/.codex/agents)"      ;;
     copilot)     printf "%-14s  %s" "Copilot"      "(~/.github + ~/.copilot)" ;;
     antigravity) printf "%-14s  %s" "Antigravity"  "(~/.gemini/antigravity)" ;;
     gemini-cli)  printf "%-14s  %s" "Gemini CLI"   "(gemini extension)"      ;;
@@ -317,6 +322,17 @@ install_claude_code() {
     done < <(find "$REPO_ROOT/$dir" -name "*.md" -type f -print0)
   done
   ok "Claude Code: $count agents -> $dest"
+}
+
+install_codex() {
+  local script="$INTEGRATIONS/codex/scripts/install_codex_agents.sh"
+  local dest="${CODEX_HOME:-$HOME/.codex}"
+
+  [[ -f "$script" ]] || { err "integrations/codex missing. Run from a repo that includes the Codex integration."; return 1; }
+
+  CODEX_HOME="$dest" bash "$script"
+  ok "Codex: native agents -> $dest/agents"
+  ok "Codex: metadata -> $dest/agency-agents"
 }
 
 install_copilot() {
@@ -521,6 +537,7 @@ install_kimi() {
 install_tool() {
   case "$1" in
     claude-code) install_claude_code ;;
+    codex)       install_codex       ;;
     copilot)     install_copilot     ;;
     antigravity) install_antigravity ;;
     gemini-cli)  install_gemini_cli  ;;

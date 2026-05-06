@@ -6,6 +6,7 @@ supported agentic coding tools.
 ## Supported Tools
 
 - **[Claude Code](#claude-code)** — `.md` agents, use the repo directly
+- **[Codex](#codex)** — native `.toml` custom agents in `~/.codex/agents/`
 - **[GitHub Copilot](#github-copilot)** — `.md` agents, use the repo directly
 - **[Antigravity](#antigravity)** — `SKILL.md` per agent in `antigravity/`
 - **[Gemini CLI](#gemini-cli)** — extension + `SKILL.md` files in `gemini-cli/`
@@ -25,6 +26,7 @@ supported agentic coding tools.
 
 # Install a specific home-scoped tool
 ./scripts/install.sh --tool antigravity
+./scripts/install.sh --tool codex
 ./scripts/install.sh --tool copilot
 ./scripts/install.sh --tool openclaw
 ./scripts/install.sh --tool claude-code
@@ -71,6 +73,26 @@ cp -r <category>/*.md ~/.claude/agents/
 ```
 
 See [claude-code/README.md](claude-code/README.md) for details.
+
+---
+
+## Codex
+
+Codex agents are generated as native custom agent TOML files in
+`~/.codex/agents/`, with audit metadata in `~/.codex/agency-agents/`.
+
+```bash
+./scripts/install.sh --tool codex
+```
+
+To generate Codex integration files into the repo-local `integrations/codex/`
+output directory without installing them:
+
+```bash
+./scripts/convert.sh --tool codex
+```
+
+See [codex/README.md](codex/README.md) for details.
 
 ---
 

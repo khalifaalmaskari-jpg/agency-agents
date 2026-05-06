@@ -47,7 +47,7 @@ Each agent file contains:
 
 Browse the agents below and copy/adapt the ones you need!
 
-### Option 3: Use with Other Tools (GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code)
+### Option 3: Use with Other Tools (Codex, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code)
 
 ```bash
 # Step 1 -- generate integration files for all supported tools
@@ -58,6 +58,7 @@ Browse the agents below and copy/adapt the ones you need!
 
 # Or target a specific tool directly
 ./scripts/install.sh --tool antigravity
+./scripts/install.sh --tool codex
 ./scripts/install.sh --tool gemini-cli
 ./scripts/install.sh --tool opencode
 ./scripts/install.sh --tool copilot
@@ -545,6 +546,7 @@ The Agency works natively with Claude Code, and ships conversion + install scrip
 ### Supported Tools
 
 - **[Claude Code](https://claude.ai/code)** — native `.md` agents, no conversion needed → `~/.claude/agents/`
+- **[Codex](https://openai.com/codex/)** — native custom agent TOML files → `~/.codex/agents/`
 - **[GitHub Copilot](https://github.com/copilot)** — native `.md` agents, no conversion needed → `~/.github/agents/` + `~/.copilot/agents/`
 - **[Antigravity](https://github.com/google-gemini/antigravity)** — `SKILL.md` per agent → `~/.gemini/antigravity/skills/`
 - **[Gemini CLI](https://github.com/google-gemini/gemini-cli)** — extension + `SKILL.md` files → `~/.gemini/extensions/agency-agents/`
@@ -582,24 +584,26 @@ The installer scans your system for installed tools, shows a checkbox UI, and le
   System scan: [*] = detected on this machine
 
   [x]  1)  [*]  Claude Code     (claude.ai/code)
-  [x]  2)  [*]  Copilot         (~/.github + ~/.copilot)
-  [x]  3)  [*]  Antigravity     (~/.gemini/antigravity)
-  [ ]  4)  [ ]  Gemini CLI      (gemini extension)
-  [ ]  5)  [ ]  OpenCode        (opencode.ai)
-  [ ]  6)  [ ]  OpenClaw        (~/.openclaw/agency-agents)
-  [x]  7)  [*]  Cursor          (.cursor/rules)
-  [ ]  8)  [ ]  Aider           (CONVENTIONS.md)
-  [ ]  9)  [ ]  Windsurf        (.windsurfrules)
-  [ ] 10)  [ ]  Qwen Code       (~/.qwen/agents)
-  [ ] 11)  [ ]  Kimi Code       (~/.config/kimi/agents)
+  [x]  2)  [*]  Codex           (~/.codex/agents)
+  [x]  3)  [*]  Copilot         (~/.github + ~/.copilot)
+  [x]  4)  [*]  Antigravity     (~/.gemini/antigravity)
+  [ ]  5)  [ ]  Gemini CLI      (gemini extension)
+  [ ]  6)  [ ]  OpenCode        (opencode.ai)
+  [ ]  7)  [ ]  OpenClaw        (~/.openclaw/agency-agents)
+  [x]  8)  [*]  Cursor          (.cursor/rules)
+  [ ]  9)  [ ]  Aider           (CONVENTIONS.md)
+  [ ] 10)  [ ]  Windsurf        (.windsurfrules)
+  [ ] 11)  [ ]  Qwen Code       (~/.qwen/agents)
+  [ ] 12)  [ ]  Kimi Code       (~/.config/kimi/agents)
 
-  [1-11] toggle   [a] all   [n] none   [d] detected
+  [1-12] toggle   [a] all   [n] none   [d] detected
   [Enter] install   [q] quit
 ```
 
 **Or install a specific tool directly:**
 ```bash
 ./scripts/install.sh --tool cursor
+./scripts/install.sh --tool codex
 ./scripts/install.sh --tool opencode
 ./scripts/install.sh --tool openclaw
 ./scripts/install.sh --tool antigravity
@@ -639,6 +643,23 @@ Use the Frontend Developer agent to review this component.
 ```
 
 See [integrations/claude-code/README.md](integrations/claude-code/README.md) for details.
+</details>
+
+<details>
+<summary><strong>Codex</strong></summary>
+
+Agents are generated as native Codex custom agent TOML files in `~/.codex/agents/`.
+The installer also writes audit metadata to `~/.codex/agency-agents/`.
+
+```bash
+./scripts/install.sh --tool codex
+```
+
+Each generated agent uses the `agency_` prefix and embeds the original Agency
+instructions with Codex-specific routing, sandbox, MCP, skill, and safety
+guidance.
+
+See [integrations/codex/README.md](integrations/codex/README.md) for details.
 </details>
 
 <details>
@@ -849,7 +870,7 @@ When you add new agents or edit existing ones, regenerate all integration files:
 
 - [ ] Interactive agent selector web tool
 - [x] Multi-agent workflow examples -- see [examples/](examples/)
-- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
+- [x] Multi-tool integration scripts (Claude Code, Codex, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
 - [ ] Video tutorials on agent design
 - [ ] Community agent marketplace
 - [ ] Agent "personality quiz" for project matching
