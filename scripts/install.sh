@@ -104,7 +104,7 @@ INTEGRATIONS="$REPO_ROOT/integrations"
 
 source "$SCRIPT_DIR/common.sh"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi mcp-server)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf trae qwen kimi mcp-server)
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(

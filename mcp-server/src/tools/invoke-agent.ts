@@ -1,5 +1,5 @@
 import type { AgentStore } from "../types.js";
-import { findAgent } from "../loader.js";
+import { findAgent, slugify } from "../loader.js";
 
 export function invokeAgent(
   store: AgentStore,
