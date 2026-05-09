@@ -16,5 +16,9 @@ export function resolveRepoRoot(): string {
       return candidate;
     }
   }
-  return join(__dirname, "..", "..");
+  console.error(
+    "resolveRepoRoot: no candidate contained both 'engineering' and 'strategy' directories. Checked:",
+    candidates,
+  );
+  return process.cwd();
 }

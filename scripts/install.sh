@@ -19,6 +19,7 @@
 #   aider        -- Copy CONVENTIONS.md to current directory
 #   windsurf     -- Copy .windsurfrules to current directory
 #   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
+#   trae         -- Copy project_rules.md to .trae/rules/ in current directory
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
 #   all          -- Install for all detected tools (default)
 #
@@ -103,7 +104,7 @@ INTEGRATIONS="$REPO_ROOT/integrations"
 
 source "$SCRIPT_DIR/common.sh"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor trae aider windsurf qwen kimi mcp-server)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi mcp-server)
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
@@ -159,6 +160,7 @@ detect_mcp_server() {
   local major="${ver%%.*}"
   [[ "$major" -ge 18 ]]
 }
+detect_trae()       { [[ -d "${HOME}/.trae" ]] || [[ -d "${PWD}/.trae" ]]; }
 
 is_detected() {
   case "$1" in
@@ -174,6 +176,7 @@ is_detected() {
     qwen)        detect_qwen        ;;
     kimi)        detect_kimi        ;;
     mcp-server)  detect_mcp_server  ;;
+    trae)        detect_trae        ;;
     *)           return 1 ;;
   esac
 }
@@ -193,6 +196,7 @@ tool_label() {
     qwen)        printf "%-14s  %s" "Qwen Code"    "(~/.qwen/agents)"        ;;
     kimi)        printf "%-14s  %s" "Kimi Code"    "(~/.config/kimi/agents)" ;;
     mcp-server)  printf "%-14s  %s" "MCP Server"  "(Node.js MCP Server)"      ;;
+    trae)        printf "%-14s  %s" "Trae"         "(.trae/rules/project_rules.md)" ;;
   esac
 }
 
@@ -640,6 +644,20 @@ HEREDOC
   fi
 }
 
+install_trae() {
+  local src="$INTEGRATIONS/trae/project_rules.md"
+  local dest="${PWD}/.trae/rules/project_rules.md"
+  [[ -f "$src" ]] || { err "integrations/trae/project_rules.md missing. Run convert.sh first."; return 1; }
+  mkdir -p "$(dirname "$dest")"
+  if [[ -f "$dest" ]]; then
+    warn "Trae: .trae/rules/project_rules.md already exists at $dest (remove to reinstall)."
+    return 0
+  fi
+  cp "$src" "$dest"
+  ok "Trae: installed -> $dest"
+  warn "Trae: project-scoped. Run from your project root to install there."
+}
+
 install_tool() {
   case "$1" in
     claude-code) install_claude_code ;;
@@ -654,6 +672,7 @@ install_tool() {
     qwen)        install_qwen        ;;
     kimi)        install_kimi        ;;
     mcp-server)    install_mcp_server  ;;
+    trae)          install_trae        ;;
   esac
 }
 
@@ -679,7 +698,7 @@ main() {
     esac
   done
 
-  check_integrations
+  [[ "$tool" != "mcp-server" ]] && check_integrations
 
   # Validate explicit tool
   if [[ "$tool" != "all" ]]; then

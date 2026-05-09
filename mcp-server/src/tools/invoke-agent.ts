@@ -13,11 +13,13 @@ export function invokeAgent(
   const profile = findAgent(store, name);
 
   if (!profile) {
+    const q = name.toLowerCase();
+    const slugQ = slugify(name);
     const suggestions = store.profiles
       .filter(
         (p) =>
-          p.name.toLowerCase().includes(name.toLowerCase()) ||
-          p.slug.includes(name.toLowerCase())
+          p.name.toLowerCase().includes(q) ||
+          p.slug.includes(slugQ)
       )
       .slice(0, 10)
       .map((p) => `- **${p.name}** (\`${p.slug}\`) — ${p.description}`);
@@ -32,12 +34,11 @@ export function invokeAgent(
 
     if (suggestions.length > 0) {
       lines.push(...suggestions);
+      lines.push(
+        "",
+        `Tip: Use \`list_agents\` to see all ${store.profiles.length} available agents.`
+      );
     }
-
-    lines.push(
-      "",
-      `Tip: Use \`list_agents\` to see all ${store.profiles.length} available agents.`
-    );
 
     return lines.join("\n");
   }

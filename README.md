@@ -556,6 +556,7 @@ The Agency works natively with Claude Code, and ships conversion + install scrip
 - **[OpenClaw](https://github.com/openclaw/openclaw)** — `SOUL.md` + `AGENTS.md` + `IDENTITY.md` per agent
 - **[Qwen Code](https://github.com/QwenLM/qwen-code)** — `.md` SubAgent files → `~/.qwen/agents/`
 - **[Kimi Code](https://github.com/MoonshotAI/kimi-cli)** — YAML agent specs → `~/.config/kimi/agents/`
+- **[MCP Server](integrations/mcp-server/README.md)** — Model Context Protocol server → Trae / Cursor / Claude Desktop
 
 ---
 

@@ -66,7 +66,7 @@ npm test
 
 ## 使用示例
 
-```
+```text
 # 浏览所有 Agent
 list_agents
 

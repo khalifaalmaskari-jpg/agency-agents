@@ -55,12 +55,7 @@ function createServer(store: AgentStore) {
               properties: {
                 category: {
                   type: "string",
-                  enum: [
-                    "academic", "design", "engineering", "finance",
-                    "game-development", "marketing", "paid-media",
-                    "product", "project-management", "sales",
-                    "spatial-computing", "specialized", "support", "testing",
-                  ],
+                  enum: AGENT_DIRS,
                   description: "Filter by agent category",
                 },
                 query: {
@@ -195,6 +190,7 @@ function createServer(store: AgentStore) {
                 text: `Unknown tool: ${name}. Available tools: list_agents, invoke_agent, orchestrate.`,
               },
             ],
+            isError: true,
           };
       }
     } catch (error) {
@@ -375,8 +371,21 @@ function createServer(store: AgentStore) {
     try {
       switch (name) {
         case "nexus-pipeline": {
-          const task = (args?.task as string) || "Execute a project";
+          const task = (args?.task as string) || "";
           const mode = (args?.mode as "micro" | "sprint" | "full") || "sprint";
+          if (!task) {
+            return {
+              messages: [
+                {
+                  role: "user",
+                  content: {
+                    type: "text",
+                    text: "task is required for nexus-pipeline.",
+                  },
+                },
+              ],
+            };
+          }
           const prompt = nexusPipelinePrompt({ task, mode });
           return {
             messages: [

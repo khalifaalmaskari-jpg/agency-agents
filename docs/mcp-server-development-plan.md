@@ -32,7 +32,7 @@ Agency Agents 项目包含仓库内的专业 AI Agent 定义（Markdown + YAML F
 
 ### 2.1 系统架构
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                  宿主 AI (Trae / Claude / Cursor)            │
 │                                                             │
@@ -98,7 +98,7 @@ Agency Agents 项目包含仓库内的专业 AI Agent 定义（Markdown + YAML F
 
 #### `invoke_agent` — Agent 人格加载
 
-```
+```text
 描述: 加载指定 Agent 的完整人格定义，注入到当前对话上下文
 
 参数:
@@ -145,7 +145,7 @@ Agency Agents 项目包含仓库内的专业 AI Agent 定义（Markdown + YAML F
 
 ### 2.4 Resource 规格
 
-```
+```text
 agents://{name}/profile
   → 返回指定 Agent 的完整 Markdown 定义（原始源文件内容）
 
@@ -328,7 +328,7 @@ NEXUS 策略已经明确定义了 Phase-Agent 映射关系，不需要 AI 推理
 
 ## 8. 与 Rules 方式的定位对比
 
-```
+```text
 场景决策树:
 
 用户需求

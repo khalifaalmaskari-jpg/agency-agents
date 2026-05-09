@@ -15,7 +15,7 @@ function slugify(name: string): string {
     .replace(/^-|-$/g, "");
 }
 
-const MAX_DEPTH = 10;
+const MAX_DEPTH = process.env.MAX_SCAN_DEPTH ? parseInt(process.env.MAX_SCAN_DEPTH, 10) : 10;
 
 async function scanDirectory(
   dirPath: string,
@@ -128,16 +128,26 @@ export async function loadAgents(): Promise<AgentStore> {
 
   const bySlug = new Map<string, AgentProfile>();
   const byCategory = new Map<AgentCategory, AgentProfile[]>();
+  const collisionIssues: string[] = [];
 
   for (const profile of allProfiles) {
-    bySlug.set(profile.slug, profile);
+    const existing = bySlug.get(profile.slug);
+    if (existing) {
+      collisionIssues.push(
+        `Duplicate slug "${profile.slug}": "${existing.name}" (${existing.category}) and "${profile.name}" (${profile.category})`
+      );
+    } else {
+      bySlug.set(profile.slug, profile);
+    }
 
-    const existing = byCategory.get(profile.category) || [];
-    existing.push(profile);
-    byCategory.set(profile.category, existing);
+    const catList = byCategory.get(profile.category) || [];
+    catList.push(profile);
+    byCategory.set(profile.category, catList);
   }
 
-  for (const [cat, profiles] of byCategory) {
+  throwIfLoadIssues(collisionIssues);
+
+  for (const profiles of byCategory.values()) {
     profiles.sort((a, b) => a.name.localeCompare(b.name));
   }
 

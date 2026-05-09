@@ -282,7 +282,7 @@ function getRelevantAgentSlugs(task: string, constraints: string): Set<string> {
 
   for (const haystack of haystacks) {
     for (const [keyword, slugs] of Object.entries(activeConfig.taskKeywordAgents)) {
-      if (!haystack.includes(keyword)) continue;
+      if (!new RegExp(`\\b${keyword}\\b`, "i").test(haystack)) continue;
       for (const slug of slugs) {
         relevantSlugs.add(slug);
       }
@@ -436,9 +436,16 @@ export function generateOrchestrationPlan(
     const agents = buildPhaseAgents(store, def.phase_id, mode, relevantByPhase);
     const gateKeepers = [...def.gateKeepers];
     const gateKeeperEvidence =
-      gateKeepers.length > 1
-        ? `${gateKeepers.join(" + ")} sign-off`
-        : `${gateKeepers[0]} sign-off`;
+      gateKeepers.length === 0
+        ? "no gate-keeper assigned"
+        : gateKeepers.length > 1
+          ? `${gateKeepers.join(" + ")} sign-off`
+          : `${gateKeepers[0]} sign-off`;
+
+    const isLastPhase =
+      def.phase_id ===
+      activeConfig.phaseDefinitions[activeConfig.phaseDefinitions.length - 1]
+        .phase_id;
 
     phases.push({
       phase_id: def.phase_id,
@@ -461,9 +468,11 @@ export function generateOrchestrationPlan(
           },
         ],
       },
-      handoff: `Handoff from ${def.phase_name} to Phase ${
-        def.phase_id + 1
-      }. Carry forward all deliverables, key decisions, constraints, and open issues.`,
+      handoff: isLastPhase
+        ? `Completion of ${def.phase_name}. All phases complete. Consolidate final deliverables, document lessons learned, and close out the NEXUS plan.`
+        : `Handoff from ${def.phase_name} to Phase ${
+            def.phase_id + 1
+          }. Carry forward all deliverables, key decisions, constraints, and open issues.`,
     });
   }
 

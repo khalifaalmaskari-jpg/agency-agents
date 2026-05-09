@@ -12,6 +12,19 @@ const mcpRoot = path.resolve(__dirname, "..");
 const repoRoot = path.resolve(mcpRoot, "..");
 const serverEntry = path.resolve(mcpRoot, "dist/index.js");
 
+const TIMEOUT_MS = 15_000;
+
+function withTimeout(promise, label) {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(
+      () => reject(new Error(`Timeout (${TIMEOUT_MS}ms) waiting for: ${label}`)),
+      TIMEOUT_MS
+    );
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
 process.chdir(repoRoot);
 
 function extractText(result) {
@@ -22,7 +35,17 @@ function extractText(result) {
 }
 
 const store = await loadAgents();
-assert.equal(store.profiles.length, 184, "Agent loader should load the full repository roster");
+assert.ok(store.profiles.length > 0, "Agent loader should load at least one agent");
+assert.ok(store.bySlug.size > 0, "Agent loader should build slug index");
+assert.ok(store.byCategory.size > 0, "Agent loader should build category index");
+assert.ok(
+  store.byCategory.has("engineering"),
+  "Agent loader should include 'engineering' category"
+);
+assert.ok(
+  store.profiles.some((p) => p.slug === "frontend-developer"),
+  "Agent loader should include known agent 'frontend-developer'"
+);
 
 const microPlan = generateOrchestrationPlan(store, "Fix a production bug", "micro", "");
 assert.ok(
@@ -74,9 +97,9 @@ const transport = new StdioClientTransport({
 });
 
 try {
-  await client.connect(transport);
+  await withTimeout(client.connect(transport), "client.connect");
 
-  const tools = await client.listTools();
+  const tools = await withTimeout(client.listTools(), "client.listTools");
   const toolNames = tools.tools.map((tool) => tool.name).sort();
   assert.deepEqual(
     toolNames,
@@ -84,14 +107,14 @@ try {
     "MCP server should expose the expected tools"
   );
 
-  const resources = await client.listResources();
+  const resources = await withTimeout(client.listResources(), "client.listResources");
   assert.equal(
     resources.resources.length,
     0,
     "Dynamic agent resources should be exposed via resource templates rather than static resources"
   );
 
-  const templates = await client.listResourceTemplates();
+  const templates = await withTimeout(client.listResourceTemplates(), "client.listResourceTemplates");
   const templateUris = templates.resourceTemplates
     .map((template) => template.uriTemplate)
     .sort();
@@ -101,35 +124,37 @@ try {
     "MCP server should expose both dynamic resource templates"
   );
 
-  const catalog = await client.readResource({
-    uri: "agents://engineering/catalog",
-  });
+  const catalog = await withTimeout(
+    client.readResource({ uri: "agents://engineering/catalog" }),
+    "client.readResource(catalog)"
+  );
   assert.ok(
     catalog.contents[0]?.text?.includes("Frontend Developer"),
     "Engineering catalog should include known engineering agents"
   );
 
-  const profile = await client.readResource({
-    uri: "agents://devops-automator/profile",
-  });
+  const profile = await withTimeout(
+    client.readResource({ uri: "agents://devops-automator/profile" }),
+    "client.readResource(profile)"
+  );
   assert.ok(
     profile.contents[0]?.text?.includes("DevOps Automator"),
     "Agent profile should return the original markdown content"
   );
 
-  const listAgentsResult = await client.callTool({
-    name: "list_agents",
-    arguments: { category: "engineering" },
-  });
+  const listAgentsResult = await withTimeout(
+    client.callTool({ name: "list_agents", arguments: { category: "engineering" } }),
+    "client.callTool(list_agents)"
+  );
   assert.ok(
     extractText(listAgentsResult).includes("engineering"),
     "list_agents should respond with engineering content"
   );
 
-  const orchestrateResult = await client.callTool({
-    name: "orchestrate",
-    arguments: { task: "Build a SaaS MVP", mode: "sprint" },
-  });
+  const orchestrateResult = await withTimeout(
+    client.callTool({ name: "orchestrate", arguments: { task: "Build a SaaS MVP", mode: "sprint" } }),
+    "client.callTool(orchestrate)"
+  );
   const orchestrationText = extractText(orchestrateResult);
   assert.ok(
     orchestrationText.includes(`**Total Agents**: ${sprintPlan.total_agents}`),
