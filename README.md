@@ -47,7 +47,7 @@ Each agent file contains:
 
 Browse the agents below and copy/adapt the ones you need!
 
-### Option 3: Use with Other Tools (GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code)
+### Option 3: Use with Other Tools (GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Codex, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
 
 ```bash
 # Step 1 -- generate integration files for all supported tools
@@ -62,6 +62,7 @@ Browse the agents below and copy/adapt the ones you need!
 ./scripts/install.sh --tool opencode
 ./scripts/install.sh --tool copilot
 ./scripts/install.sh --tool openclaw
+./scripts/install.sh --tool codex
 ./scripts/install.sh --tool cursor
 ./scripts/install.sh --tool aider
 ./scripts/install.sh --tool windsurf
@@ -549,6 +550,7 @@ The Agency works natively with Claude Code, and ships conversion + install scrip
 - **[Antigravity](https://github.com/google-gemini/antigravity)** — `SKILL.md` per agent → `~/.gemini/antigravity/skills/`
 - **[Gemini CLI](https://github.com/google-gemini/gemini-cli)** — extension + `SKILL.md` files → `~/.gemini/extensions/agency-agents/`
 - **[OpenCode](https://opencode.ai)** — `.md` agent files → `.opencode/agents/`
+- **[Codex](https://openai.com/codex)** — `.toml` custom agents → `~/.codex/agents/`
 - **[Cursor](https://cursor.sh)** — `.mdc` rule files → `.cursor/rules/`
 - **[Aider](https://aider.chat)** — single `CONVENTIONS.md` → `./CONVENTIONS.md`
 - **[Windsurf](https://codeium.com/windsurf)** — single `.windsurfrules` → `./.windsurfrules`
@@ -587,13 +589,14 @@ The installer scans your system for installed tools, shows a checkbox UI, and le
   [ ]  4)  [ ]  Gemini CLI      (gemini extension)
   [ ]  5)  [ ]  OpenCode        (opencode.ai)
   [ ]  6)  [ ]  OpenClaw        (~/.openclaw/agency-agents)
-  [x]  7)  [*]  Cursor          (.cursor/rules)
-  [ ]  8)  [ ]  Aider           (CONVENTIONS.md)
-  [ ]  9)  [ ]  Windsurf        (.windsurfrules)
-  [ ] 10)  [ ]  Qwen Code       (~/.qwen/agents)
-  [ ] 11)  [ ]  Kimi Code       (~/.config/kimi/agents)
+  [x]  7)  [*]  Codex           (~/.codex/agents)
+  [x]  8)  [*]  Cursor          (.cursor/rules)
+  [ ]  9)  [ ]  Aider           (CONVENTIONS.md)
+  [ ] 10)  [ ]  Windsurf        (.windsurfrules)
+  [ ] 11)  [ ]  Qwen Code       (~/.qwen/agents)
+  [ ] 12)  [ ]  Kimi Code       (~/.config/kimi/agents)
 
-  [1-11] toggle   [a] all   [n] none   [d] detected
+  [1-12] toggle   [a] all   [n] none   [d] detected
   [Enter] install   [q] quit
 ```
 
@@ -602,6 +605,7 @@ The installer scans your system for installed tools, shows a checkbox UI, and le
 ./scripts/install.sh --tool cursor
 ./scripts/install.sh --tool opencode
 ./scripts/install.sh --tool openclaw
+./scripts/install.sh --tool codex
 ./scripts/install.sh --tool antigravity
 ```
 
@@ -785,6 +789,22 @@ See [integrations/openclaw/README.md](integrations/openclaw/README.md) for detai
 </details>
 
 <details>
+<summary><strong>Codex</strong></summary>
+
+Agents are converted to Codex custom agent TOML files and installed to `~/.codex/agents/`.
+
+```bash
+./scripts/convert.sh --tool codex
+./scripts/install.sh --tool codex
+```
+
+Restart Codex or open a new session after installation so the agent list is refreshed.
+
+See [integrations/codex/README.md](integrations/codex/README.md) for details.
+
+</details>
+
+<details>
 <summary><strong>Qwen Code</strong></summary>
 
 SubAgents are installed to `.qwen/agents/` in your project root (project-scoped).
@@ -849,7 +869,7 @@ When you add new agents or edit existing ones, regenerate all integration files:
 
 - [ ] Interactive agent selector web tool
 - [x] Multi-agent workflow examples -- see [examples/](examples/)
-- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
+- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Codex, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
 - [ ] Video tutorials on agent design
 - [ ] Community agent marketplace
 - [ ] Agent "personality quiz" for project matching

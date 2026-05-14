@@ -11,6 +11,7 @@ supported agentic coding tools.
 - **[Gemini CLI](#gemini-cli)** — extension + `SKILL.md` files in `gemini-cli/`
 - **[OpenCode](#opencode)** — `.md` agent files in `opencode/`
 - **[OpenClaw](#openclaw)** — `SOUL.md` + `AGENTS.md` + `IDENTITY.md` workspaces
+- **[Codex](#codex)** — `.toml` custom agents in `codex/`
 - **[Cursor](#cursor)** — `.mdc` rule files in `cursor/`
 - **[Aider](#aider)** — `CONVENTIONS.md` in `aider/`
 - **[Windsurf](#windsurf)** — `.windsurfrules` in `windsurf/`
@@ -36,6 +37,10 @@ supported agentic coding tools.
 # Qwen Code also needs generated SubAgent files on a fresh clone
 ./scripts/convert.sh --tool qwen
 ./scripts/install.sh --tool qwen
+
+# Codex also needs generated custom agent files on a fresh clone
+./scripts/convert.sh --tool codex
+./scripts/install.sh --tool codex
 ```
 
 If you install OpenClaw and the gateway is already running, restart it after installation:
@@ -159,6 +164,25 @@ cd /your/project && /path/to/agency-agents/scripts/install.sh --tool cursor
 ```
 
 See [cursor/README.md](cursor/README.md) for details.
+
+---
+
+## Codex
+
+Each agent becomes a Codex custom agent TOML file in `~/.codex/agents/`.
+From a fresh clone, generate the Codex files first:
+
+```bash
+./scripts/convert.sh --tool codex
+```
+
+Then install them:
+
+```bash
+./scripts/install.sh --tool codex
+```
+
+See [codex/README.md](codex/README.md) for details.
 
 ---
 
