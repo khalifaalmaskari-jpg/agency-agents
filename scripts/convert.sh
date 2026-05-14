@@ -121,6 +121,16 @@ strip_wrapping_quotes() {
   printf '%s' "$value"
 }
 
+codex_role_name() {
+  local name="$1"
+  name="$(strip_wrapping_quotes "$name")"
+  name="$(printf '%s' "$name" | sed 's/[^A-Za-z0-9 _-]/ /g' | sed 's/[[:space:]][[:space:]]*/ /g' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+  if [[ -z "$name" ]]; then
+    name="Agency Agent"
+  fi
+  printf '%s' "$name"
+}
+
 toml_basic_string() {
   local value="$1"
   value="${value//\\/\\\\}"
@@ -434,9 +444,10 @@ HEREDOC
 
 convert_codex() {
   local file="$1"
-  local name description outfile body
+  local name codex_name description outfile body
 
   name="$(strip_wrapping_quotes "$(get_field "name" "$file")")"
+  codex_name="$(codex_role_name "$name")"
   description="$(strip_wrapping_quotes "$(get_field "description" "$file")")"
   body="$(get_body "$file" | clean_text)"
 
@@ -446,9 +457,11 @@ convert_codex() {
   # Codex custom agent format. The developer instructions use a TOML literal
   # multi-line string so code samples with double quotes stay untouched.
   cat > "$outfile" <<HEREDOC
-name = $(toml_basic_string "$name")
+name = $(toml_basic_string "$codex_name")
 description = $(toml_basic_string "$description")
 developer_instructions = '''
+# ${name}
+
 ${body}
 '''
 HEREDOC
