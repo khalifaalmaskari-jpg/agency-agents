@@ -482,6 +482,22 @@ hermes_insert_external_dir() {
     in_skills && /^  external_dirs:/ {
       has_ext = 1
       in_ext = 1
+      # Hermes often ships external_dirs: [] — replace empty inline list with block list
+      if ($0 ~ /external_dirs:[[:space:]]*\[[[:space:]]*\]/) {
+        print "  external_dirs:"
+        print "    - " entry
+        inserted = 1
+        next
+      }
+      if ($0 ~ /external_dirs:[[:space:]]*$/) {
+        print "  external_dirs:"
+        next
+      }
+      print
+      next
+    }
+    in_ext && /^    -/ {
+      if ($0 ~ /agency-agents/) { inserted = 1 }
       print
       next
     }
@@ -530,8 +546,10 @@ ensure_hermes_external_dir() {
 
   if [[ -f "$config" ]] && grep -qF 'agency-agents' "$config" 2>/dev/null; then
     err "Hermes: $config mentions agency-agents but not under skills.external_dirs."
-    err "Hermes: remove any stray \"    - ~/.hermes/agency-agents\" line at the END of the file,"
-    err "Hermes: then add it under skills -> external_dirs (see integrations/hermes/README.md)."
+    err "Hermes: invalid example — do not use:"
+    err "Hermes:   external_dirs: []"
+    err "Hermes:     - ~/.hermes/agency-agents"
+    err "Hermes: use block form only (see integrations/hermes/README.md)."
     return 1
   fi
 

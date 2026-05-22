@@ -85,11 +85,27 @@ If `hermes` reports a YAML parse error and you see a stray line at the **end** o
 after comments or `platform_toolsets`, **delete that line**. It was appended outside
 `skills.external_dirs` by an older installer and breaks the whole config.
 
-Then add the entry in the correct place:
+**Invalid** (do not leave like this):
 
-1. Find `skills:` → `external_dirs:` in the file.
-2. Add `    - ~/.hermes/agency-agents` as a list item under `external_dirs:`.
-3. Run `hermes doctor` or `hermes skills list` to confirm the config parses.
+```yaml
+skills:
+  external_dirs: []
+    - ~/.hermes/agency-agents
+```
+
+**Valid** block form:
+
+```yaml
+skills:
+  external_dirs:
+    - ~/.hermes/agency-agents
+```
+
+If you have `external_dirs: []`, **remove the `[]`** and use the block list above
+(or delete the broken `- ~/.hermes/agency-agents` line and re-run
+`./scripts/install.sh --tool hermes` with the latest installer).
+
+Then run `hermes doctor` or `hermes skills list` to confirm the config parses.
 
 ## Regenerate
 
