@@ -421,7 +421,8 @@ install_openclaw() {
     cp "$d/IDENTITY.md" "$dest/$name/IDENTITY.md"
     if command -v openclaw >/dev/null 2>&1; then
       if [[ "$existing_agents" != *$'\n'"$name"$'\n'* ]]; then
-        openclaw agents add "$name" --workspace "$dest/$name" --non-interactive || true
+        mkdir -p "$dest/$name/agent"
+        openclaw agents add "$name" --workspace "$dest/$name" --agent-dir "$dest/$name/agent" --non-interactive || true
       fi
     fi
     (( count++ )) || true
