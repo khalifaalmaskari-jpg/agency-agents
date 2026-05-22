@@ -314,15 +314,20 @@ write_agent_workspace() {
 
   mkdir -p "$outdir"
 
+  # Split body sections into SOUL.md (persona) vs AGENTS.md (operations)
+  # by matching ## header keywords. Unmatched sections go to AGENTS.md.
+  #
   # SOUL keywords: identity, learning & memory, communication, style,
   #   critical rules, rules you must follow
   # AGENTS keywords: everything else (mission, deliverables, workflow, etc.)
 
-  local current_target="agents"
+  local current_target="agents"  # default bucket
   local current_section=""
 
   while IFS= read -r line; do
+    # Detect ## headers (with or without emoji prefixes)
     if [[ "$line" =~ ^##[[:space:]] ]]; then
+      # Flush previous section
       if [[ -n "$current_section" ]]; then
         if [[ "$current_target" == "soul" ]]; then
           soul_content+="$current_section"
@@ -332,6 +337,7 @@ write_agent_workspace() {
       fi
       current_section=""
 
+      # Classify this header by keyword (case-insensitive)
       local header_lower
       header_lower="$(echo "$line" | tr '[:upper:]' '[:lower:]')"
 
@@ -350,6 +356,7 @@ write_agent_workspace() {
     current_section+="$line"$'\n'
   done <<< "$body"
 
+  # Flush final section
   if [[ -n "$current_section" ]]; then
     if [[ "$current_target" == "soul" ]]; then
       soul_content+="$current_section"
@@ -358,14 +365,17 @@ write_agent_workspace() {
     fi
   fi
 
+  # Write SOUL.md — persona, tone, boundaries
   cat > "$outdir/SOUL.md" <<HEREDOC
 ${soul_content}
 HEREDOC
 
+  # Write AGENTS.md — mission, deliverables, workflow
   cat > "$outdir/AGENTS.md" <<HEREDOC
 ${agents_content}
 HEREDOC
 
+  # Write IDENTITY.md — emoji + name + vibe from frontmatter, fallback to description
   local emoji vibe
   emoji="$(get_field "emoji" "$file")"
   vibe="$(get_field "vibe" "$file")"
@@ -383,6 +393,7 @@ HEREDOC
   fi
 }
 
+# First path segment under REPO_ROOT (e.g. engineering, game-development).
 agent_category_from_file() {
   local file="$1"
   local rel="${file#"$REPO_ROOT"/}"
@@ -411,6 +422,8 @@ convert_hermes() {
 
   write_agent_workspace "$file" "$outdir"
 
+  # Hermes skill format: SKILL.md entry point + bundled SOUL/AGENTS/IDENTITY.
+  # ${HERMES_SKILL_DIR} is substituted by Hermes when the skill loads.
   cat > "$outdir/SKILL.md" <<HEREDOC
 ---
 name: ${slug}
