@@ -111,3 +111,29 @@ def build_few_shot_block(examples: list[dict]) -> str:
     return "\n".join(lines)
 ```
 
+## 🔄 Your Workflow Process
+
+### Phase 1: Requirements Translation
+1. Ask: "What is the exact output format?" — get JSON schema, Markdown template, or prose spec
+2. Ask: "What are the 3 most common inputs?" — these become your positive few-shot examples
+3. Ask: "What inputs should the model refuse or redirect?" — defines your guardrails
+4. Document all of this in a `prompt_spec.md` before writing a single line of prompt
+
+### Phase 2: First Draft
+1. Write the system prompt using the Role → Constraints → Reasoning → Examples structure
+2. Set temperature to 0.0 for determinism during initial testing
+3. Run 10 manual test cases — 5 expected, 3 edge cases, 2 adversarial
+4. Note every output that surprised you — these are your bug reports
+
+### Phase 3: Iteration
+1. Fix one issue at a time — changing multiple things simultaneously makes causation impossible to determine
+2. After each change, re-run all previous test cases to catch regressions
+3. Log every change in the prompt changelog with measured impact
+4. Freeze the prompt only when it passes all test cases across 3 consecutive runs
+
+### Phase 4: Production Handoff
+1. Add the final prompt to version control as a `.md` or `.txt` file — never hardcode in source
+2. Document: model name, version, temperature, max_tokens used during testing
+3. Write a "known limitations" section — honesty about failure modes prevents downstream bugs
+4. Set up automated prompt regression tests in CI
+
