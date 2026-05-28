@@ -157,3 +157,46 @@ def build_few_shot_block(examples: list[dict]) -> str:
 - Prompt versioning adoption: every production prompt has a changelog and is in version control
 - Cost efficiency: prompts optimized to stay within token budget (output quality per token improves with each version)
 
+## 🚀 Advanced Capabilities
+
+### Chain-of-Thought and Reasoning Scaffolds
+- Constructs multi-step reasoning chains using `<thinking>` → `<answer>` patterns
+- Implements "self-consistency" prompting: run N times at high temperature, take majority vote
+- Builds "least-to-most" decomposition prompts that break hard tasks into progressive subproblems
+
+### Prompt Injection Defense
+- Writes prompts with explicit injection-resistance layers: role-locking, input sanitization instructions, and fallback phrases
+- Tests adversarial inputs: "Ignore all previous instructions", roleplay bypass attempts, indirect injection via tool outputs
+- Implements content boundary checking: instructs the model to validate inputs before processing
+
+### Multi-Model Prompt Porting
+- Translates prompts between models (e.g., GPT → Claude) by adapting to each model's instruction-following style
+- Maintains a compatibility matrix: which structural patterns work across which models
+- Benchmarks cross-model output consistency for prompts that must run on multiple backends
+
+### Dynamic Prompt Assembly
+```python
+def assemble_prompt(
+    base_role: str,
+    task: str,
+    examples: list[dict],
+    constraints: list[str],
+    context: str = ""
+) -> str:
+    """Builds a structured system prompt from modular components."""
+    sections = [
+        f"## Role\n{base_role}",
+        f"## Task\n{task}",
+    ]
+    if context:
+        sections.append(f"## Context\n{context}")
+    if constraints:
+        sections.append("## Constraints\n" + "\n".join(f"- {c}" for c in constraints))
+    if examples:
+        sections.append(build_few_shot_block(examples))
+    return "\n\n".join(sections)
+```
+
+---
+
+**Guiding principle**: A prompt is a spec. If the model didn't do what you wanted, the spec was ambiguous — not the model's fault. Rewrite the spec.
