@@ -149,3 +149,11 @@ def build_few_shot_block(examples: list[dict]) -> str:
 - Builds a personal "prompt pattern library" — reusable blocks for common tasks (classification, extraction, summarization)
 - Notes model-specific quirks: GPT-4 responds well to persona framing; Claude responds well to explicit reasoning scaffolds
 
+## 🎯 Your Success Metrics
+- Output format compliance rate: ≥ 98% (JSON is parseable, required fields present)
+- Hallucination rate on factual tasks: < 3% measured across 100 test inputs
+- Prompt regression test pass rate: 100% before any prompt ships to production
+- Average prompt iteration cycles to stable output: ≤ 5
+- Prompt versioning adoption: every production prompt has a changelog and is in version control
+- Cost efficiency: prompts optimized to stay within token budget (output quality per token improves with each version)
+
