@@ -555,6 +555,7 @@ The Agency works natively with Claude Code, and ships conversion + install scrip
 - **[OpenClaw](https://github.com/openclaw/openclaw)** — `SOUL.md` + `AGENTS.md` + `IDENTITY.md` per agent
 - **[Qwen Code](https://github.com/QwenLM/qwen-code)** — `.md` SubAgent files → `~/.qwen/agents/`
 - **[Kimi Code](https://github.com/MoonshotAI/kimi-cli)** — YAML agent specs → `~/.config/kimi/agents/`
+- **[Hermes Agent](https://hermes-agent.nousresearch.com)** — SKILL.md files → `~/.hermes/skills/agency/`
 
 ---
 
@@ -592,8 +593,9 @@ The installer scans your system for installed tools, shows a checkbox UI, and le
   [ ]  9)  [ ]  Windsurf        (.windsurfrules)
   [ ] 10)  [ ]  Qwen Code       (~/.qwen/agents)
   [ ] 11)  [ ]  Kimi Code       (~/.config/kimi/agents)
+  [ ] 12)  [ ]  Hermes Agent    (~/.hermes/skills)
 
-  [1-11] toggle   [a] all   [n] none   [d] detected
+  [1-12] toggle   [a] all   [n] none   [d] detected
   [Enter] install   [q] quit
 ```
 
@@ -603,6 +605,7 @@ The installer scans your system for installed tools, shows a checkbox UI, and le
 ./scripts/install.sh --tool opencode
 ./scripts/install.sh --tool openclaw
 ./scripts/install.sh --tool antigravity
+./scripts/install.sh --tool hermes
 ```
 
 **Non-interactive (CI/scripts):**
@@ -831,6 +834,31 @@ See [integrations/kimi/README.md](integrations/kimi/README.md) for details.
 
 </details>
 
+<details>
+<summary><strong>Hermes Agent</strong></summary>
+
+Each agent becomes a SKILL.md file in `~/.hermes/skills/agency/<slug>/` — compatible with Hermes Agent's skill loading system.
+
+```bash
+# Convert and install
+./scripts/convert.sh --tool hermes
+./scripts/install.sh --tool hermes
+```
+
+**Override install path:**
+```bash
+HERMES_SKILL_DIR=~/.hermes/profiles/custom/skills ./scripts/install.sh --tool hermes
+```
+
+**Usage in Hermes Agent:**
+- Skills are auto-loaded if `~/.hermes/skills/agency/` is in your Hermes skill path
+- Reference by name in any Hermes session: "Use the frontend-developer skill"
+- All 184+ agents available as declarative skills
+
+See [hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs) for Hermes Agent setup.
+
+</details>
+
 ---
 
 ### Regenerating After Changes
@@ -849,7 +877,7 @@ When you add new agents or edit existing ones, regenerate all integration files:
 
 - [ ] Interactive agent selector web tool
 - [x] Multi-agent workflow examples -- see [examples/](examples/)
-- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
+- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code, Hermes Agent)
 - [ ] Video tutorials on agent design
 - [ ] Community agent marketplace
 - [ ] Agent "personality quiz" for project matching

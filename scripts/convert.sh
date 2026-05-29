@@ -19,6 +19,7 @@
 #   openclaw     — OpenClaw workspaces (integrations/openclaw/<agent>/SOUL.md)
 #   qwen         — Qwen Code SubAgent files (~/.qwen/agents/*.md)
 #   kimi         — Kimi Code CLI agent files (~/.config/kimi/agents/)
+#   hermes       — Hermes Agent SKILL.md files (integrations/hermes/skills/<slug>/SKILL.md)
 #   all          — All tools (default)
 #
 # Output is written to integrations/<tool>/ relative to the repo root.
@@ -408,6 +409,42 @@ ${body}
 HEREDOC
 }
 
+convert_hermes() {
+  local file="$1"
+  local name description category emoji slug outdir outfile body
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  emoji="$(get_field "emoji" "$file")"
+  category="$(basename "$(dirname "$file")")"
+  slug="$(slugify "$name")"
+  body="$(get_body "$file")"
+
+  outdir="$OUT_DIR/hermes/skills/${slug}"
+  outfile="$outdir/SKILL.md"
+  mkdir -p "$outdir"
+
+  # Hermes Agent SKILL.md format: YAML frontmatter + markdown body.
+  # Name is a lowercase-kebab slug; tags are derived from category + name.
+  # Version and platforms are standard Hermes fields.
+  local tag_str
+  tag_str="$(echo "$name" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 -]//g' | sed 's/  */ /g' | tr ' ' '\n' | sed '/^$/d' | head -6 | tr '\n' ',' | sed 's/,$//')"
+
+  cat > "$outfile" <<HEREDOC
+---
+name: ${slug}
+description: ${description}
+version: 1.0.0
+platforms: [linux, macos, windows]
+metadata:
+  hermes:
+    tags: [${category}${emoji:+, }$(echo "$tag_str" | sed 's/,/, /g')]
+    related_skills: []
+---
+${body}
+HEREDOC
+}
+
 # Aider and Windsurf are single-file formats — accumulate into temp files
 # then write at the end.
 AIDER_TMP="$(mktemp)"
@@ -506,6 +543,7 @@ run_conversions() {
         openclaw)    convert_openclaw    "$file" ;;
         qwen)        convert_qwen        "$file" ;;
         kimi)        convert_kimi        "$file" ;;
+        hermes)      convert_hermes      "$file" ;;
         aider)       accumulate_aider    "$file" ;;
         windsurf)    accumulate_windsurf "$file" ;;
       esac
@@ -536,7 +574,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "hermes" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -555,7 +593,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "hermes")
   else
     tools_to_run=("$tool")
   fi
@@ -566,7 +604,7 @@ main() {
 
   if $use_parallel && [[ "$tool" == "all" ]]; then
     # Tools that write to separate dirs can run in parallel; buffer output so each tool's output stays together
-    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen)
+    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen hermes)
     local parallel_out_dir
     parallel_out_dir="$(mktemp -d)"
     info "Converting: ${#parallel_tools[@]}/${n_tools} tools in parallel (output buffered per tool)..."
@@ -578,7 +616,7 @@ main() {
       [[ -f "$parallel_out_dir/$t" ]] && cat "$parallel_out_dir/$t"
     done
     rm -rf "$parallel_out_dir"
-    local idx=7
+    local idx=8
     for t in aider windsurf; do
       progress_bar "$idx" "$n_tools"
       printf "\n"
