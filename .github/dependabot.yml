@@ -1,42 +1,6 @@
 version: 2
 updates:
-  # npm / JavaScript
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "UTC"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "security"
-    reviewers:
-      - "engineering-team"
-    assignees:
-      - "security-engineer"
-    commit-message:
-      prefix: "fix"
-      prefix-development: "chore"
-      include: "scope"
-
-  # pip / Python
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "UTC"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-      - "security"
-    reviewers:
-      - "engineering-team"
-
-  # Docker
+  # Docker (./Dockerfile at root)
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
