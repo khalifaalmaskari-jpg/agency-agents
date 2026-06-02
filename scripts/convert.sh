@@ -10,16 +10,18 @@
 #   ./scripts/convert.sh [--tool <name>] [--out <dir>] [--parallel] [--jobs N] [--help]
 #
 # Tools:
-#   antigravity  — Antigravity skill files (~/.gemini/antigravity/skills/)
-#   gemini-cli   — Gemini CLI extension (skills/ + gemini-extension.json)
-#   opencode     — OpenCode agent files (.opencode/agents/*.md)
-#   cursor       — Cursor rule files (.cursor/rules/*.mdc)
-#   aider        — Single CONVENTIONS.md for Aider
-#   windsurf     — Single .windsurfrules for Windsurf
-#   openclaw     — OpenClaw workspaces (integrations/openclaw/<agent>/SOUL.md)
-#   qwen         — Qwen Code SubAgent files (~/.qwen/agents/*.md)
-#   kimi         — Kimi Code CLI agent files (~/.config/kimi/agents/)
-#   all          — All tools (default)
+#   antigravity  -- Antigravity skill files (~/.gemini/antigravity/skills/)
+#   gemini-cli   -- Gemini CLI extension (skills/ + gemini-extension.json)
+#   opencode     -- OpenCode agent files (.opencode/agents/*.md)
+#   cursor       -- Cursor rule files (.cursor/rules/*.mdc)
+#   aider        -- Single CONVENTIONS.md for Aider
+#   windsurf     -- Single .windsurfrules for Windsurf
+#   openclaw     -- OpenClaw workspaces (integrations/openclaw/<agent>/SOUL.md)
+#   qwen         -- Qwen Code SubAgent files (~/.qwen/agents/*.md)
+#   kimi         -- Kimi Code CLI agent files (~/.config/kimi/agents/)
+#   trae         -- Trae agent files (~/.trae/agents/*.md)
+#   trae-solo    -- Trae Solo agent files (~/.trae-solo/agents/*.md)
+#   all          -- All tools (default)
 #
 # Output is written to integrations/<tool>/ relative to the repo root.
 # This script never touches user config dirs — see install.sh for that.
@@ -408,6 +410,55 @@ ${body}
 HEREDOC
 }
 
+convert_trae() {
+  local file="$1"
+  local name description color slug outfile body
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  color="$(resolve_opencode_color "$(get_field "color" "$file")")"
+  slug="$(slugify "$name")"
+  body="$(get_body "$file")"
+
+  outfile="$OUT_DIR/trae/agents/${slug}.md"
+  mkdir -p "$OUT_DIR/trae/agents"
+
+  # Trae agent format: .md with YAML frontmatter in ~/.trae/agents/
+  # Similar to Claude Code and OpenCode formats
+  cat > "$outfile" <<HEREDOC
+---
+name: ${name}
+description: ${description}
+color: '${color}'
+---
+${body}
+HEREDOC
+}
+
+convert_trae_solo() {
+  local file="$1"
+  local name description color slug outfile body
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  color="$(resolve_opencode_color "$(get_field "color" "$file")")"
+  slug="$(slugify "$name")"
+  body="$(get_body "$file")"
+
+  outfile="$OUT_DIR/trae-solo/agents/${slug}.md"
+  mkdir -p "$OUT_DIR/trae-solo/agents"
+
+  # Trae Solo agent format: same as Trae but installed in a different location
+  cat > "$outfile" <<HEREDOC
+---
+name: ${name}
+description: ${description}
+color: '${color}'
+---
+${body}
+HEREDOC
+}
+
 # Aider and Windsurf are single-file formats — accumulate into temp files
 # then write at the end.
 AIDER_TMP="$(mktemp)"
@@ -506,6 +557,8 @@ run_conversions() {
         openclaw)    convert_openclaw    "$file" ;;
         qwen)        convert_qwen        "$file" ;;
         kimi)        convert_kimi        "$file" ;;
+        trae)        convert_trae        "$file" ;;
+        trae-solo)   convert_trae_solo   "$file" ;;
         aider)       accumulate_aider    "$file" ;;
         windsurf)    accumulate_windsurf "$file" ;;
       esac
@@ -536,7 +589,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "trae" "trae-solo" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -555,7 +608,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "trae" "trae-solo")
   else
     tools_to_run=("$tool")
   fi
@@ -566,7 +619,7 @@ main() {
 
   if $use_parallel && [[ "$tool" == "all" ]]; then
     # Tools that write to separate dirs can run in parallel; buffer output so each tool's output stays together
-    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen)
+    local parallel_tools=(antigravity gemini-cli opencode cursor openclaw qwen kimi trae trae-solo)
     local parallel_out_dir
     parallel_out_dir="$(mktemp -d)"
     info "Converting: ${#parallel_tools[@]}/${n_tools} tools in parallel (output buffered per tool)..."

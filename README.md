@@ -47,7 +47,7 @@ Each agent file contains:
 
 Browse the agents below and copy/adapt the ones you need!
 
-### Option 3: Use with Other Tools (GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code)
+### Option 3: Use with Other Tools (GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, Trae, Trae Solo)
 
 ```bash
 # Step 1 -- generate integration files for all supported tools
@@ -66,6 +66,8 @@ Browse the agents below and copy/adapt the ones you need!
 ./scripts/install.sh --tool aider
 ./scripts/install.sh --tool windsurf
 ./scripts/install.sh --tool kimi
+./scripts/install.sh --tool trae
+./scripts/install.sh --tool trae-solo
 ```
 
 See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for full details.
@@ -555,6 +557,8 @@ The Agency works natively with Claude Code, and ships conversion + install scrip
 - **[OpenClaw](https://github.com/openclaw/openclaw)** — `SOUL.md` + `AGENTS.md` + `IDENTITY.md` per agent
 - **[Qwen Code](https://github.com/QwenLM/qwen-code)** — `.md` SubAgent files → `~/.qwen/agents/`
 - **[Kimi Code](https://github.com/MoonshotAI/kimi-cli)** — YAML agent specs → `~/.config/kimi/agents/`
+- **Trae** — `.md` agent files → `~/.trae/agents/`
+- **Trae Solo** — `.md` agent files → `~/.trae-solo/agents/`
 
 ---
 
@@ -592,8 +596,10 @@ The installer scans your system for installed tools, shows a checkbox UI, and le
   [ ]  9)  [ ]  Windsurf        (.windsurfrules)
   [ ] 10)  [ ]  Qwen Code       (~/.qwen/agents)
   [ ] 11)  [ ]  Kimi Code       (~/.config/kimi/agents)
+  [ ] 12)  [ ]  Trae            (~/.trae/agents)
+  [ ] 13)  [ ]  Trae Solo       (~/.trae-solo/agents)
 
-  [1-11] toggle   [a] all   [n] none   [d] detected
+  [1-13] toggle   [a] all   [n] none   [d] detected
   [Enter] install   [q] quit
 ```
 
@@ -831,6 +837,38 @@ See [integrations/kimi/README.md](integrations/kimi/README.md) for details.
 
 </details>
 
+<details>
+<summary><strong>Trae</strong></summary>
+
+Agents are copied to `~/.trae/agents/` in your home directory.
+
+```bash
+./scripts/convert.sh --tool trae
+./scripts/install.sh --tool trae
+```
+
+After installation, restart your Trae session to refresh the agent list.
+
+See [integrations/trae/README.md](integrations/trae/README.md) for details.
+
+</details>
+
+<details>
+<summary><strong>Trae Solo</strong></summary>
+
+Agents are copied to `~/.trae-solo/agents/` in your home directory.
+
+```bash
+./scripts/convert.sh --tool trae-solo
+./scripts/install.sh --tool trae-solo
+```
+
+After installation, restart your Trae Solo session to refresh the agent list.
+
+See [integrations/trae-solo/README.md](integrations/trae-solo/README.md) for details.
+
+</details>
+
 ---
 
 ### Regenerating After Changes
@@ -849,7 +887,7 @@ When you add new agents or edit existing ones, regenerate all integration files:
 
 - [ ] Interactive agent selector web tool
 - [x] Multi-agent workflow examples -- see [examples/](examples/)
-- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code)
+- [x] Multi-tool integration scripts (Claude Code, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Qwen Code, Kimi Code, Trae, Trae Solo)
 - [ ] Video tutorials on agent design
 - [ ] Community agent marketplace
 - [ ] Agent "personality quiz" for project matching

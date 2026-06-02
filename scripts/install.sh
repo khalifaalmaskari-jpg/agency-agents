@@ -19,7 +19,10 @@
 #   aider        -- Copy CONVENTIONS.md to current directory
 #   windsurf     -- Copy .windsurfrules to current directory
 #   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
-#   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
+#   qwen         -- Copy SubAgents to ~/.qwen/agents (user-wide) or .qwen/agents (project)
+#   kimi         -- Copy Kimi agents to ~/.config/kimi/agents/
+#   trae         -- Copy Trae agents to ~/.trae/agents/
+#   trae-solo    -- Copy Trae Solo agents to ~/.trae-solo/agents/
 #   all          -- Install for all detected tools (default)
 #
 # Flags:
@@ -101,7 +104,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 INTEGRATIONS="$REPO_ROOT/integrations"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi trae trae-solo)
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
@@ -148,7 +151,9 @@ detect_aider()        { command -v aider >/dev/null 2>&1; }
 detect_openclaw()     { command -v openclaw >/dev/null 2>&1 || [[ -d "${HOME}/.openclaw" ]]; }
 detect_windsurf()     { command -v windsurf >/dev/null 2>&1 || [[ -d "${HOME}/.codeium" ]]; }
 detect_qwen()         { command -v qwen >/dev/null 2>&1 || [[ -d "${HOME}/.qwen" ]]; }
-detect_kimi()         { command -v kimi >/dev/null 2>&1; }
+detect_kimi() { command -v kimi >/dev/null 2>&1; }
+detect_trae() { command -v trae >/dev/null 2>&1 || [[ -d "${HOME}/.trae" ]]; }
+detect_trae_solo() { command -v trae-solo >/dev/null 2>&1 || [[ -d "${HOME}/.trae-solo" ]]; }
 
 is_detected() {
   case "$1" in
@@ -163,6 +168,8 @@ is_detected() {
     windsurf)    detect_windsurf    ;;
     qwen)        detect_qwen        ;;
     kimi)        detect_kimi        ;;
+    trae)        detect_trae        ;;
+    trae-solo)   detect_trae_solo   ;;
     *)           return 1 ;;
   esac
 }
@@ -181,6 +188,8 @@ tool_label() {
     windsurf)    printf "%-14s  %s" "Windsurf"     "(.windsurfrules)"        ;;
     qwen)        printf "%-14s  %s" "Qwen Code"    "(~/.qwen/agents)"        ;;
     kimi)        printf "%-14s  %s" "Kimi Code"    "(~/.config/kimi/agents)" ;;
+    trae)        printf "%-14s  %s" "Trae"         "(~/.trae/agents)"        ;;
+    trae-solo)   printf "%-14s  %s" "Trae Solo"    "(~/.trae-solo/agents)"   ;;
   esac
 }
 
@@ -518,6 +527,42 @@ install_kimi() {
   ok "Usage: kimi --agent-file ~/.config/kimi/agents/<agent-name>/agent.yaml"
 }
 
+install_trae() {
+  local src="$INTEGRATIONS/trae/agents"
+  local dest="${HOME}/.trae/agents"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/trae missing. Run convert.sh first."; return 1; }
+
+  mkdir -p "$dest"
+
+  local f
+  while IFS= read -r -d '' f; do
+    cp "$f" "$dest/"
+    (( count++ )) || true
+  done < <(find "$src" -maxdepth 1 -name "*.md" -print0)
+
+  ok "Trae: installed $count agents to $dest"
+}
+
+install_trae_solo() {
+  local src="$INTEGRATIONS/trae-solo/agents"
+  local dest="${HOME}/.trae-solo/agents"
+  local count=0
+
+  [[ -d "$src" ]] || { err "integrations/trae-solo missing. Run convert.sh first."; return 1; }
+
+  mkdir -p "$dest"
+
+  local f
+  while IFS= read -r -d '' f; do
+    cp "$f" "$dest/"
+    (( count++ )) || true
+  done < <(find "$src" -maxdepth 1 -name "*.md" -print0)
+
+  ok "Trae Solo: installed $count agents to $dest"
+}
+
 install_tool() {
   case "$1" in
     claude-code) install_claude_code ;;
@@ -531,6 +576,8 @@ install_tool() {
     windsurf)    install_windsurf    ;;
     qwen)        install_qwen        ;;
     kimi)        install_kimi        ;;
+    trae)        install_trae        ;;
+    trae-solo)   install_trae_solo   ;;
   esac
 }
 
