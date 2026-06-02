@@ -52,4 +52,7 @@ jobs:
           CHANGED_FILES: ${{ steps.changed.outputs.files }}
         run: |
           chmod +x scripts/lint-agents.sh
-          ./scripts/lint-agents.sh $CHANGED_FILES
+          while IFS= read -r file; do
+            [ -n "$file" ] && files+=("$file")
+          done <<< "$CHANGED_FILES"
+          ./scripts/lint-agents.sh "${files[@]}"
