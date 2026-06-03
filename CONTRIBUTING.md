@@ -264,6 +264,7 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 #### Things we'll always close
 - **Committed build output**: Generated files (`_site/`, compiled assets, converted agent files) should never be checked in. Users run `convert.sh` locally; all output is gitignored.
 - **PRs that bulk-modify existing agents** without a prior discussion — even well-intentioned reformatting can create merge conflicts for other contributors.
+- **Near-duplicate "re-skins"**: New agents that are find-replace copies of an existing one (e.g. swapping a country or platform name) rather than genuinely new specialists. Run `scripts/check-agent-originality.sh` before submitting — CI runs it automatically.
 
 ### Before Submitting
 
@@ -272,6 +273,7 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 3. **Add Examples**: Include at least 2-3 code/template examples
 4. **Define Metrics**: Include specific, measurable success criteria
 5. **Proofread**: Check for typos, formatting issues, clarity
+6. **Check it's original**: Run `./scripts/check-agent-originality.sh path/to/your-agent.md`. It compares your agent against the whole roster and flags near-duplicates (a swapped country/platform name won't fool it). A new agent should be genuinely new — if you're localizing for a market, make the platforms, tactics, and examples actually different, not a find-replace.
 
 ### Submitting Your PR
 
@@ -308,6 +310,7 @@ We love ambitious ideas — a [Discussion](https://github.com/msitarzewski/agenc
 [How have you tested this agent? Real-world use cases?]
 
 ## Checklist
+- [ ] Original — not a near-duplicate (ran `scripts/check-agent-originality.sh`)
 - [ ] Follows agent template structure
 - [ ] Includes personality and voice
 - [ ] Has concrete code/template examples

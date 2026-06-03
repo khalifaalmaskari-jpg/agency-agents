@@ -53,3 +53,11 @@ jobs:
         run: |
           chmod +x scripts/lint-agents.sh
           ./scripts/lint-agents.sh $CHANGED_FILES
+
+      - name: Check agent originality
+        if: steps.changed.outputs.files != ''
+        env:
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          chmod +x scripts/check-agent-originality.sh
+          ./scripts/check-agent-originality.sh $CHANGED_FILES
