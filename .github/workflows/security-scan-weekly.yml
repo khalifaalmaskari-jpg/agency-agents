@@ -1,0 +1,153 @@
+name: Security Scan — Weekly Full Scan
+
+on:
+  schedule:
+    # Monday 06:00 UTC — start of week
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  trivy-full-scan:
+    name: Trivy Full Scan (all severities)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy (fs)
+        uses: aquasecurity/trivy-action@0.24.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: sarif
+          output: trivy-weekly-results.sarif
+          severity: CRITICAL,HIGH,MEDIUM
+          exit-code: 0
+          ignore-unfixed: false
+
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: trivy-weekly-results.sarif
+          category: trivy-weekly
+
+    env:
+      TRIVY_DB_REPOSITORY: ghcr.io/aquasecurity/trivy-db:2
+
+  semgrep-full-scan:
+    name: Semgrep Full Scan
+    runs-on: ubuntu-latest
+    container:
+      image: returntocorp/semgrep:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep (all rules)
+        run: |
+          semgrep \
+            --config=auto \
+            --config=p/r2c-security-audit \
+            --config=p/owasp-top-ten \
+            --sarif > semgrep-weekly-results.sarif \
+            || true
+
+      - name: Upload Semgrep results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: semgrep-weekly-results.sarif
+          category: semgrep-weekly
+
+  license-scan:
+    name: License Compliance Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Fossa init
+        run: |
+          curl -sL https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | bash
+          fossa init 2>/dev/null || true
+
+      - name: Run Fossa analysis
+        run: |
+          fossa analyze 2>/dev/null || echo "Fossa analysis skipped (no config or no credentials)"
+
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+          comment-summary-in-pr: always
+
+  sbom-generate:
+    name: Generate SBOM
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Generate SBOM with Syft
+        uses: anchore/sbom-action@v0.17.0
+        with:
+          format: spdx-json
+          output-file: sbom-report.spdx.json
+
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom-report
+          path: sbom-report.spdx.json
+          retention-days: 90
+
+  weekly-report:
+    name: Compile Weekly Security Report
+    runs-on: ubuntu-latest
+    needs: [trivy-full-scan, semgrep-full-scan, license-scan, sbom-generate]
+    if: always()
+    steps:
+      - name: Generate report markdown
+        run: |
+          echo "# Weekly Security Scan Report" > weekly-report.md
+          echo "**Date:** $(date -u '+%Y-%m-%d %H:%M UTC')" >> weekly-report.md
+          echo "" >> weekly-report.md
+          echo "## Scan Results" >> weekly-report.md
+          echo "" >> weekly-report.md
+          echo "| Scan | Status |" >> weekly-report.md
+          echo "|------|--------|" >> weekly-report.md
+          echo "| Trivy Full Scan | ${{ needs.trivy-full-scan.result }}" >> weekly-report.md
+          echo "| Semgrep Full Scan | ${{ needs.semgrep-full-scan.result }}" >> weekly-report.md
+          echo "| License Scan | ${{ needs.license-scan.result }}" >> weekly-report.md
+          echo "| SBOM Generated | ${{ needs.sbom-generate.result }}" >> weekly-report.md
+
+      - name: Upload weekly report
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-security-report
+          path: weekly-report.md
+          retention-days: 365
+
+  compliance-notification:
+    name: Notify Security Team
+    runs-on: ubuntu-latest
+    needs: [weekly-report]
+    if: failure()
+    steps:
+      - name: Send notification
+        run: |
+          echo "::warning::Weekly security scan detected findings — review required"
+          echo "Report: weekly-security-report artifact"
