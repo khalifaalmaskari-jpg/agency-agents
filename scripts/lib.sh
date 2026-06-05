@@ -124,20 +124,28 @@ tui_end() {
 
 # read_key — read one keypress, echo a normalized token:
 #   UP DOWN LEFT RIGHT ENTER SPACE ESC BACKSPACE TAB  or the literal character.
+#
+# Reads escape sequences byte-by-byte with INTEGER timeouts (bash 3.2 has no
+# fractional -t). A real arrow sends ESC [ A (or ESC O A in application-cursor
+# mode) as one buffered burst, so the follow-up reads return instantly; only a
+# lone Esc waits out the 1s timeout. Handles both CSI ('[') and SS3 ('O').
 read_key() {
-  local k rest
-  IFS= read -rsn1 k || { printf 'EOF'; return; }
+  local k k2 k3
+  IFS= read -rsn1 k 2>/dev/null || { printf 'EOF'; return; }
   case "$k" in
     $'\033')
-      # escape sequence: read up to 2 more bytes (non-blocking)
-      IFS= read -rsn2 -t 0.01 rest 2>/dev/null
-      case "$rest" in
-        '[A') printf 'UP' ;;   '[B') printf 'DOWN' ;;
-        '[C') printf 'RIGHT' ;; '[D') printf 'LEFT' ;;
-        '') printf 'ESC' ;;     *) printf 'ESC' ;;
-      esac ;;
-    '') printf 'ENTER' ;;            # Enter often reads as empty with -n1
-    $'\n'|$'\r') printf 'ENTER' ;;
+      if ! IFS= read -rsn1 -t 1 k2 2>/dev/null; then printf 'ESC'; return; fi
+      if [[ "$k2" == '[' || "$k2" == 'O' ]]; then
+        IFS= read -rsn1 -t 1 k3 2>/dev/null
+        case "$k3" in
+          A) printf 'UP' ;;    B) printf 'DOWN' ;;
+          C) printf 'RIGHT' ;; D) printf 'LEFT' ;;
+          *) printf 'ESC' ;;
+        esac
+      else
+        printf 'ESC'
+      fi ;;
+    $'\n'|$'\r'|'') printf 'ENTER' ;;   # Enter is CR in raw mode (sometimes empty)
     ' ') printf 'SPACE' ;;
     $'\t') printf 'TAB' ;;
     $'\177'|$'\010') printf 'BACKSPACE' ;;
