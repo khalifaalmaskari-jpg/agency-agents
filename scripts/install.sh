@@ -426,7 +426,7 @@ division_emoji() {
 }
 
 # Generic multi-select. Inputs (globals): OPT_LABEL[], OPT_SEL[];
-# SEL_TITLE, SEL_HINT, SEL_FOOTER_FN (name of fn echoing a footer line).
+# SEL_TITLE, SEL_HINT, SEL_SUMMARY_FN, SEL_NAV, SEL_WARN_FN.
 # Mutates OPT_SEL[]; sets SEL_RESULT = next|back|quit.
 selector() {
   local n=${#OPT_LABEL[@]} cur=0 top=0 query="" searching=false key i idx vn rows W
@@ -456,7 +456,10 @@ selector() {
       buf+="   $cg [$mark] $label"$'\n'
     done
     local shown=$(( vn<rows ? vn : rows )); for (( i=shown; i<rows; i++ )); do buf+=$'\n'; done
-    buf+=$'\n'"  ${C_DIM}$("$SEL_FOOTER_FN")${C_RESET}"$'\n'
+    # Consistent footer: summary -> nav -> warnings (-> search line)
+    buf+=$'\n'"  ${C_BOLD}$("$SEL_SUMMARY_FN")${C_RESET}"$'\n'
+    buf+="  ${C_DIM}${SEL_NAV}${C_RESET}"$'\n'
+    local _w; _w="$("$SEL_WARN_FN")"; [[ -n "$_w" ]] && buf+="  ${C_YELLOW}${_w}${C_RESET}"$'\n'
     if $searching; then buf+="  ${C_CYAN}search:${C_RESET} ${query}_"$'\n'
     elif [[ -n "$query" ]]; then buf+="  ${C_CYAN}/${query}${C_RESET}  ${C_DIM}(esc clears)${C_RESET}"$'\n'; fi
     draw_frame "$buf"
@@ -488,9 +491,10 @@ selector() {
 }
 
 # --- Screen: Tools ---
-_tools_footer() {
+_no_warn() { :; }
+_tools_summary() {
   local i c=0; for (( i=0; i<${#OPT_SEL[@]}; i++ )); do [[ "${OPT_SEL[$i]}" == 1 ]] && c=$(( c+1 )); done
-  printf '%s tools selected   ·   space toggle · a all · d detected · / search · enter next · q quit' "$c"
+  printf '%s of %s tools selected' "$c" "${#OPT_SEL[@]}"
 }
 screen_tools() {
   OPT_LABEL=(); OPT_SEL=()
@@ -502,11 +506,11 @@ screen_tools() {
     label="$(printf '%s %-13s %s' "$det" "$(tool_simple_name "$t")" "${C_DIM}${path:-not found}${C_RESET}")"
     OPT_LABEL+=("$label"); OPT_SEL+=("${TOOL_SEL[$i]:-0}")
   done
-  SEL_TITLE="The Agency · Installer  —  1/3 Tools"
-  SEL_HINT="Pick where to install."
-  SEL_FOOTER_FN=_tools_footer
-  # extra key: 'd' selects detected — handle by pre/post; selector lacks it, so
-  # we add it via a tiny wrapper below.
+  SEL_TITLE="The Agency · Installer  —  1/3 · Tools"
+  SEL_HINT="Pick where to install.  ${GLYPH_DET} = detected on this machine."
+  SEL_SUMMARY_FN=_tools_summary
+  SEL_NAV="space toggle · a all · n none · / search · enter next · q quit"
+  SEL_WARN_FN=_no_warn
   selector
   for (( i=0; i<${#OPT_SEL[@]}; i++ )); do TOOL_SEL[$i]="${OPT_SEL[$i]}"; done
 }
@@ -528,15 +532,16 @@ _teams_agents() {
   done
   echo "$c"
 }
-_teams_footer() {
+_teams_summary() {
   local sel=0 i a; a="$(_teams_agents)"
   for (( i=0; i<${#OPT_SEL[@]}; i++ )); do [[ "${OPT_SEL[$i]}" == 1 ]] && sel=$(( sel+1 )); done
-  local note=""
-  local cap; cap="$(tool_cap opencode)"
+  printf '%s agents · %s of %s teams' "$a" "$sel" "${#OPT_SEL[@]}"
+}
+_teams_warn() {
+  local a cap; a="$(_teams_agents)"; cap="$(tool_cap opencode)"
   if _opencode_selected && [[ "$a" -gt "$cap" ]]; then
-    note="   ${C_YELLOW}⚠ OpenCode caps ~${cap}${C_RESET}"
+    printf "⚠ OpenCode registers ~%s; ~%s of %s won't load (#27988)" "$cap" "$(( a - cap ))" "$a"
   fi
-  printf '%s agents · %s/%s teams%s   ·   space · a all · n none · / search · enter next · ← back' "$a" "$sel" "${#ALL_DIVISIONS[@]}" "$note"
 }
 _opencode_selected() {
   local i; for (( i=0; i<${#TOOL_SEL[@]}; i++ )); do
@@ -551,9 +556,11 @@ screen_teams() {
     OPT_LABEL+=("$(printf '%s %-20s %s' "$(division_emoji "$d")" "$d" "${C_DIM}${TEAM_COUNTS[$i]} agents${C_RESET}")")
     OPT_SEL+=("${TEAM_SEL[$i]:-1}")
   done
-  SEL_TITLE="The Agency · Installer  —  2/3 Teams"
-  SEL_HINT="Pick which teams to install. Fewer teams keeps OpenCode under its limit."
-  SEL_FOOTER_FN=_teams_footer
+  SEL_TITLE="The Agency · Installer  —  2/3 · Teams"
+  SEL_HINT="Pick which teams to install.  Fewer teams keeps OpenCode under its limit."
+  SEL_SUMMARY_FN=_teams_summary
+  SEL_NAV="space toggle · a all · n none · / search · enter next · ← back · q quit"
+  SEL_WARN_FN=_teams_warn
   selector
   for (( i=0; i<${#OPT_SEL[@]}; i++ )); do TEAM_SEL[$i]="${OPT_SEL[$i]}"; done
 }
@@ -585,22 +592,29 @@ screen_review() {
   agents=0; for (( i=0; i<${#TEAM_SEL[@]}; i++ )); do [[ "${TEAM_SEL[$i]}" == 1 ]] && agents=$(( agents + ${TEAM_COUNTS[$i]} )); done
   local cur=0   # 0=Install 1=mode toggle
   while true; do
-    local buf="" W=66
-    buf+="  ${C_BOLD}${C_CYAN}${BX_TL}${BX_H}${BX_H} Review  —  3/3 $(repeat "$BX_H" 46)${BX_TR}${C_RESET}"$'\n\n'
-    buf+="   ${C_BOLD}Installing ${agents} agents${C_RESET} from ${#teams[@]} teams to ${#tools[@]} tools"$'\n\n'
+    local buf="" m
+    # pager
+    buf+="  ${C_BOLD}${C_CYAN}${BX_TL}${BX_H}${BX_H} The Agency · Installer  —  3/3 · Review $(repeat "$BX_H" 28)${BX_TR}${C_RESET}"$'\n'
+    # description
+    buf+="  ${C_DIM}Confirm your selection, then install.${C_RESET}"$'\n\n'
+    # content: the selections + the mode toggle
     buf+="   ${C_BOLD}Tools${C_RESET} ${C_DIM}(${#tools[@]})${C_RESET}"$'\n'
     buf+="$(grid_2col 16 ${tools[@]+"${tools[@]}"})"$'\n'
     buf+="   ${C_BOLD}Teams${C_RESET} ${C_DIM}(${#teams[@]})${C_RESET}"$'\n'
     buf+="$(grid_2col 20 ${teams[@]+"${teams[@]}"})"$'\n\n'
-    local m; $USE_LINK && m="symlink" || m="copy"
+    $USE_LINK && m="symlink" || m="copy"
     if (( cur==1 )); then buf+="   ${C_CYAN}${GLYPH_CUR}${C_RESET} Mode: ${C_BOLD}${m}${C_RESET}  ${C_DIM}(space toggles copy/symlink)${C_RESET}"$'\n'
     else buf+="     Mode: ${m}  ${C_DIM}(space toggles copy/symlink)${C_RESET}"$'\n'; fi
     buf+=$'\n'
-    if (( cur==0 )); then buf+="   ${C_CYAN}${GLYPH_CUR}${C_RESET} ${C_BOLD}${C_GREEN}Install${C_RESET}      ← back   q quit"$'\n'
-    else buf+="     ${C_GREEN}Install${C_RESET}      ← back   q quit"$'\n'; fi
+    # summary
+    buf+="  ${C_BOLD}Installing ${agents} agents · ${#teams[@]} teams · ${#tools[@]} tools${C_RESET}"$'\n'
+    # navigation (Install is the action cursor target)
+    if (( cur==0 )); then buf+="  ${C_CYAN}${GLYPH_CUR}${C_RESET} ${C_BOLD}${C_GREEN}Install${C_RESET}   ${C_DIM}↑/↓ move · enter install · ← back · q quit${C_RESET}"$'\n'
+    else buf+="    ${C_GREEN}Install${C_RESET}   ${C_DIM}↑/↓ move · space toggle mode · ← back · q quit${C_RESET}"$'\n'; fi
+    # warnings
     local cap; cap="$(tool_cap opencode)"
     if printf '%s\n' "${tools[@]}" | grep -qx "OpenCode" && [[ "$agents" -gt "$cap" ]]; then
-      buf+=$'\n'"   ${C_YELLOW}⚠ OpenCode registers ~${cap}; ~$(( agents - cap )) of ${agents} won't load (#27988)${C_RESET}"$'\n'
+      buf+="  ${C_YELLOW}⚠ OpenCode registers ~${cap}; ~$(( agents - cap )) of ${agents} won't load (#27988)${C_RESET}"$'\n'
     fi
     draw_frame "$buf"
     local key; key="$(read_key)"
