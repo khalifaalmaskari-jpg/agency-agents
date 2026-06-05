@@ -62,6 +62,10 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OUT_DIR="$REPO_ROOT/integrations"
 TODAY="$(date +%Y-%m-%d)"
 
+# Shared helpers (get_field, get_body, slugify, ...)
+# shellcheck source=lib.sh
+. "$SCRIPT_DIR/lib.sh"
+
 AGENT_DIRS=(
   academic design engineering finance game-development marketing paid-media product project-management
   sales security spatial-computing specialized strategy support testing
@@ -81,29 +85,7 @@ parallel_jobs_default() {
   echo 4
 }
 
-# --- Frontmatter helpers ---
-
-# Extract a single field value from YAML frontmatter block.
-# Usage: get_field <field> <file>
-get_field() {
-  local field="$1" file="$2"
-  awk -v f="$field" '
-    /^---$/ { fm++; next }
-    fm == 1 && $0 ~ "^" f ": " { sub("^" f ": ", ""); print; exit }
-  ' "$file"
-}
-
-# Strip the leading frontmatter block and return only the body.
-# Usage: get_body <file>
-get_body() {
-  awk 'BEGIN{fm=0} /^---$/{fm++; next} fm>=2{print}' "$1"
-}
-
-# Convert a human-readable agent name to a lowercase kebab-case slug.
-# "Frontend Developer" → "frontend-developer"
-slugify() {
-  echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//;s/-$//'
-}
+# --- Frontmatter helpers: get_field / get_body / slugify now live in lib.sh ---
 
 # Escape a value for a TOML basic string, including control characters that
 # cannot appear raw in TOML source.

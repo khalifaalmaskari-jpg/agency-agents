@@ -69,6 +69,18 @@ Browse the agents below and copy/adapt the ones you need!
 ./scripts/install.sh --tool codex
 ```
 
+**Install only the teams you need** (not everyone wants all 15 divisions):
+
+```bash
+./scripts/install.sh                                    # interactive wizard: pick tools + teams
+./scripts/install.sh --tool claude-code --division engineering,security
+./scripts/install.sh --tool cursor --agent frontend-developer,ui-designer
+./scripts/install.sh --list teams                       # see every team + agent count
+./scripts/install.sh --tool opencode --division engineering --dry-run
+```
+
+> **OpenCode note:** OpenCode's runtime currently registers only ~119 agents and silently drops the rest ([upstream bug](https://github.com/anomalyco/opencode/issues/27988)). Installing a subset with `--division` keeps you under that limit. The installer warns you when a selection would exceed it.
+
 See the [Multi-Tool Integrations](#-multi-tool-integrations) section below for full details.
 
 ---
