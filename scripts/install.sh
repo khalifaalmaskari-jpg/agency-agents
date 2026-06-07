@@ -129,7 +129,7 @@ ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor a
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
-  academic design engineering finance game-development marketing paid-media product project-management
+  academic design engineering finance game-development gis marketing paid-media product project-management
   sales security spatial-computing specialized strategy support testing
 )
 
@@ -138,7 +138,7 @@ AGENT_DIRS=(
 # ---------------------------------------------------------------------------
 # Selectable divisions = AGENT_DIRS minus strategy/ (NEXUS docs, not agents).
 ALL_DIVISIONS=(
-  academic design engineering finance game-development marketing paid-media
+  academic design engineering finance game-development gis marketing paid-media
   product project-management sales security spatial-computing specialized support testing
 )
 
@@ -418,7 +418,7 @@ division_emoji() {
   if ! supports_unicode; then printf '*'; return; fi
   case "$1" in
     academic) printf '📚';; design) printf '🎨';; engineering) printf '💻';;
-    finance) printf '💵';; game-development) printf '🎮';; marketing) printf '📢';;
+    finance) printf '💵';; game-development) printf '🎮';; gis) printf '🌍';; marketing) printf '📢';;
     paid-media) printf '💰';; product) printf '📊';; project-management) printf '🎬';;
     sales) printf '💼';; security) printf '🔒';; spatial-computing) printf '🥽';;
     specialized) printf '🎯';; support) printf '🛟';; testing) printf '🧪';; *) printf '•';;
