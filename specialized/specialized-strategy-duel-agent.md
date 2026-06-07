@@ -1,7 +1,3 @@
-<!--
-NOTE: This is the English version. Remove this note after review.
--->
-
 ---
 name: Strategy Duel Agent
 emoji: ⚔️
