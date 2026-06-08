@@ -17,11 +17,13 @@ AGENT_DIRS=(
   engineering
   finance
   game-development
+  gis
   marketing
   paid-media
   product
   project-management
   sales
+  security
   spatial-computing
   specialized
   support
