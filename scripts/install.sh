@@ -23,6 +23,7 @@
 #   openclaw     -- Copy workspaces to ~/.openclaw/agency-agents/
 #   qwen         -- Copy SubAgents to ~/.qwen/agents/ (user-wide) or .qwen/agents/ (project)
 #   codex        -- Copy custom agent TOML files to ~/.codex/agents/
+#   hermes       -- Copy SKILL files to ~/.hermes/skills/
 #   all          -- Install for all detected tools (default)
 #
 # Selection (compose freely; empty = everything):
@@ -125,7 +126,7 @@ INTEGRATIONS="$REPO_ROOT/integrations"
 # shellcheck source=lib.sh
 . "$SCRIPT_DIR/lib.sh"
 
-ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex)
+ALL_TOOLS=(claude-code copilot antigravity gemini-cli opencode openclaw cursor aider windsurf qwen kimi codex hermes)
 
 # Standard agent category directories (keep sorted, sync with convert.sh / lint-agents.sh)
 AGENT_DIRS=(
@@ -248,6 +249,7 @@ resolve_dest() {
   [[ -n "$OVERRIDE_PATH" ]] && { printf '%s' "$OVERRIDE_PATH"; return; }
   case "$tool" in
     claude-code) var="CLAUDE_CONFIG_DIR" ;;
+    hermes)      install_hermes      ;;
     copilot)     var="COPILOT_AGENT_DIR" ;;
     cursor)      var="CURSOR_RULES_DIR" ;;
     gemini-cli)  var="GEMINI_AGENTS_DIR" ;;
@@ -255,6 +257,7 @@ resolve_dest() {
     openclaw)    var="OPENCLAW_DIR" ;;
     qwen)        var="QWEN_AGENTS_DIR" ;;
     codex)       var="CODEX_AGENTS_DIR" ;;
+    hermes)      install_hermes      ;;
   esac
   if [[ -n "$var" && -n "${!var:-}" ]]; then printf '%s' "${!var}"; else printf '%s' "$def"; fi
 }
@@ -266,7 +269,8 @@ resolve_tool_path() {
     claude-code) bin="claude" ;; copilot) bin="code" ;; gemini-cli) bin="gemini" ;;
     opencode) bin="opencode" ;; openclaw) bin="openclaw" ;; cursor) bin="cursor" ;;
     aider) bin="aider" ;; windsurf) bin="windsurf" ;; qwen) bin="qwen" ;;
-    kimi) bin="kimi" ;; codex) bin="codex" ;; antigravity) bin="" ;;
+    kimi) bin="kimi" ;; codex) bin="codex" ;;
+    hermes)      install_hermes      ;; antigravity) bin="" ;;
   esac
   [[ -n "$bin" ]] && command -v "$bin" 2>/dev/null
 }
@@ -378,6 +382,7 @@ is_detected() {
     qwen)        detect_qwen        ;;
     kimi)        detect_kimi        ;;
     codex)       detect_codex       ;;
+    hermes)      install_hermes      ;;
     *)           return 1 ;;
   esac
 }
@@ -397,6 +402,7 @@ tool_label() {
     qwen)        printf "%-14s  %s" "Qwen Code"    "(~/.qwen/agents)"        ;;
     kimi)        printf "%-14s  %s" "Kimi Code"    "(~/.config/kimi/agents)" ;;
     codex)       printf "%-14s  %s" "Codex"        "(~/.codex/agents)"       ;;
+    hermes)      install_hermes      ;;
   esac
 }
 
@@ -520,7 +526,8 @@ tool_simple_name() {
     claude-code) echo "Claude Code";; copilot) echo "Copilot";; antigravity) echo "Antigravity";;
     gemini-cli) echo "Gemini CLI";; opencode) echo "OpenCode";; openclaw) echo "OpenClaw";;
     cursor) echo "Cursor";; aider) echo "Aider";; windsurf) echo "Windsurf";;
-    qwen) echo "Qwen Code";; kimi) echo "Kimi Code";; codex) echo "Codex";; *) echo "$1";;
+    qwen) echo "Qwen Code";; kimi) echo "Kimi Code";; codex) echo "Codex";;
+    hermes)      install_hermes      ;; *) echo "$1";;
   esac
 }
 
@@ -882,6 +889,30 @@ install_kimi() {
   ok "Usage: kimi --agent-file ~/.config/kimi/agents/<agent-name>/agent.yaml"
 }
 
+
+install_hermes() {
+  local src="$INTEGRATIONS/hermes"
+  local dest; dest="$(resolve_dest hermes "${HOME}/.hermes/skills/agency-agents")"
+  local count=0
+  [[ -d "$src" ]] || { err "integrations/hermes missing. Run convert.sh first."; return 1; }
+  
+  # Hermes requires each skill to be in its own directory with a SKILL.md file
+  # In our src dir, they are arranged as integrations/hermes/<slug>/SKILL.md
+  
+  local d
+  while IFS= read -r -d '' d; do
+    local slug="$(basename "$d")"
+    slug_allowed "$slug" || continue
+    
+    local skill_dest="$dest/$slug"
+    mkdir -p "$skill_dest"
+    install_file "$d/SKILL.md" "$skill_dest/SKILL.md"
+    incr count
+  done < <(find "$src" -mindepth 1 -maxdepth 1 -type d -print0)
+  
+  ok "Hermes: $count skills -> $dest"
+}
+
 install_codex() {
   local src="$INTEGRATIONS/codex/agents"
   local dest; dest="$(resolve_dest codex "${HOME}/.codex/agents")"
@@ -912,6 +943,7 @@ install_tool() {
     qwen)        install_qwen        ;;
     kimi)        install_kimi        ;;
     codex)       install_codex       ;;
+    hermes)      install_hermes      ;;
   esac
 }
 
@@ -1039,6 +1071,8 @@ main() {
   # so each worker only runs install_tool(s) and skips header/done box (avoids duplicate output).
   if [[ -n "${AGENCY_INSTALL_WORKER:-}" ]]; then
     local t
+    local installed=0
+    local i=0
     for t in "${SELECTED_TOOLS[@]}"; do
       install_tool "$t"
     done
@@ -1060,7 +1094,8 @@ main() {
   fi
   printf "\n"
 
-  local installed=0 t i=0
+  local installed=0
+    local i=0 t i=0
   if $use_parallel; then
     local install_out_dir
     install_out_dir="$(mktemp -d)"
@@ -1068,12 +1103,16 @@ main() {
     export AGENCY_INSTALL_SCRIPT="$SCRIPT_DIR/install.sh"
     export AGENCY_INSTALL_EXTRA="$(worker_flags)"
     printf '%s\n' "${SELECTED_TOOLS[@]}" | xargs -P "$parallel_jobs" -I {} sh -c 'AGENCY_INSTALL_WORKER=1 "$AGENCY_INSTALL_SCRIPT" --tool "{}" --no-interactive $AGENCY_INSTALL_EXTRA > "$AGENCY_INSTALL_OUT_DIR/{}" 2>&1'
+    local installed=0
+    local i=0
     for t in "${SELECTED_TOOLS[@]}"; do
       [[ -f "$install_out_dir/$t" ]] && cat "$install_out_dir/$t"
     done
     rm -rf "$install_out_dir"
     installed=$n_selected
   else
+    local installed=0
+    local i=0
     for t in "${SELECTED_TOOLS[@]}"; do
       (( i++ )) || true
       progress_bar "$i" "$n_selected"

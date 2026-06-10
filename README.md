@@ -47,7 +47,7 @@ Each agent file contains:
 
 Browse the agents below and copy/adapt the ones you need!
 
-### Option 3: Use with Other Tools (GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, Codex)
+### Option 3: Use with Other Tools (Hermes, GitHub Copilot, Antigravity, Gemini CLI, OpenCode, OpenClaw, Cursor, Aider, Windsurf, Kimi Code, Codex)
 
 ```bash
 # Step 1 -- generate integration files for all supported tools
@@ -63,6 +63,7 @@ Browse the agents below and copy/adapt the ones you need!
 ./scripts/install.sh --tool copilot
 ./scripts/install.sh --tool openclaw
 ./scripts/install.sh --tool cursor
+./scripts/install.sh --tool hermes
 ./scripts/install.sh --tool aider
 ./scripts/install.sh --tool windsurf
 ./scripts/install.sh --tool kimi
@@ -640,6 +641,7 @@ The Agency works natively with Claude Code, and ships conversion + install scrip
 
 ### Supported Tools
 
+- **[Hermes Agent](https://hermes-agent.nousresearch.com/)** — `SKILL.md` skill files → `~/.hermes/skills/agency-*/`
 - **[Claude Code](https://claude.ai/code)** — native `.md` agents, no conversion needed → `~/.claude/agents/`
 - **[GitHub Copilot](https://github.com/copilot)** — native `.md` agents, no conversion needed → `~/.github/agents/` + `~/.copilot/agents/`
 - **[Antigravity](https://github.com/google-gemini/antigravity)** — `SKILL.md` per agent → `~/.gemini/antigravity/skills/`
