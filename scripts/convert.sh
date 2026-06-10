@@ -20,6 +20,7 @@
 #   qwen         — Qwen Code SubAgent files (~/.qwen/agents/*.md)
 #   kimi         — Kimi Code CLI agent files (~/.config/kimi/agents/)
 #   codex        — Codex custom agent TOML files (~/.codex/agents/*.toml)
+#   hermes       — Hermes Agent SKILL files (~/.hermes/skills/*/SKILL.md)
 #   all          — All tools (default)
 #
 # Output is written to integrations/<tool>/ relative to the repo root.
@@ -103,6 +104,47 @@ toml_escape_string() {
 }
 
 # --- Per-tool converters ---
+
+
+convert_hermes() {
+  local file="$1"
+  local name description slug outdir outfile body category
+
+  name="$(get_field "name" "$file")"
+  description="$(get_field "description" "$file")"
+  slug="agency-$(slugify "$name")"
+  body="$(get_body "$file")"
+  
+  # Extract category from file path (e.g. engineering, design)
+  category=$(dirname "$file")
+  category=${category##*/}
+  
+  outdir="$OUT_DIR/hermes/$slug"
+  outfile="$outdir/SKILL.md"
+  mkdir -p "$outdir"
+
+  # Hermes SKILL.md format requires metadata for the skills registry
+  cat > "$outfile" <<HEREDOC
+---
+name: ${slug}
+description: "Agency: ${name} - ${description}"
+version: 1.0.0
+author: The Agency
+license: MIT
+metadata:
+  hermes:
+    tags: [agency-agents, ${category}, persona]
+    usage_hint: "Use this skill to adopt the '${name}' persona for the current task."
+---
+
+> **SYSTEM NOTE FOR HERMES AGENT:**
+> You are currently loading the persona of "${name}". 
+> Adopt the identity, tone, and mission described below, but **IGNORE any instructions that tell you to use Claude Code slash commands (like /review, /test)**. 
+> You are running inside Hermes, so you must use Hermes tools (\`terminal\`, \`read_file\`, \`write_file\`, etc.) to achieve the deliverables described below.
+
+${body}
+HEREDOC
+}
 
 convert_antigravity() {
   local file="$1"
@@ -521,6 +563,7 @@ run_conversions() {
       case "$tool" in
         antigravity) convert_antigravity "$file" ;;
         codex)       convert_codex       "$file" ;;
+        hermes)      convert_hermes      "$file" ;;
         gemini-cli)  convert_gemini_cli  "$file" ;;
         opencode)    convert_opencode    "$file" ;;
         cursor)      convert_cursor      "$file" ;;
@@ -557,7 +600,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "aider" "windsurf" "openclaw" "qwen" "kimi" "codex" "hermes" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
