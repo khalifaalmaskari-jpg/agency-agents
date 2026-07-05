@@ -251,6 +251,17 @@ For Gulf–China trade and China expansion. All included in `agents.txt` — del
 | [WeChat Mini Program Developer](../../engineering/engineering-wechat-mini-program-developer.md) | Mini-program builds |
 | [Feishu Integration Developer](../../engineering/engineering-feishu-integration-developer.md) | Feishu/Lark workplace integrations |
 
+## 🗺️ Technical Divisions — complete (44)
+
+No division skipped: the four specialist divisions are included whole. All in `agents.txt` — delete any section you don't need.
+
+| Division | Agents | What they cover |
+|---|---|---|
+| 🎮 [Game Development](../../README.md#-game-development-division) (20) | Game/Level/Narrative Designers, Unity, Unreal, Godot, Roblox, Blender, audio, tech art | Building games and interactive experiences |
+| 🌍 [GIS](../../README.md#-gis-division) (13) | GIS Analyst, spatial data engineering/science, GeoAI, cartography, Web GIS, BIM, drone mapping | Geospatial analysis and mapping systems |
+| 🥽 [Spatial Computing](../../README.md#-spatial-computing-division) (6) | visionOS, macOS/Metal, XR interface/immersive/cockpit, terminal integration | AR/VR/XR development |
+| 📚 [Academic](../../README.md#-academic-division) (5) | Historian, Psychologist, Anthropologist, Geographer, Narratologist | Deep research perspectives |
+
 ## 👔 Executive Chiefs & IT (9)
 
 Dedicated chief seats for the org structure — each runs a department of specialists, reviews their output before the gate, and owns the function's numbers. The CFO seat is held by the [Chief Financial Officer](../../specialized/chief-financial-officer.md), already listed under Finance.

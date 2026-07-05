@@ -220,3 +220,55 @@ Azure Cloud Architect
 AWS Cloud Architect
 Microsoft 365 & Copilot Specialist
 Full-Stack Developer
+
+# ── Game Development Division (20)
+Game Designer
+Level Designer
+Narrative Designer
+Game Audio Engineer
+Technical Artist
+Unity Architect
+Unity Editor Tool Developer
+Unity Multiplayer Engineer
+Unity Shader Graph Artist
+Unreal Multiplayer Architect
+Unreal Systems Engineer
+Unreal Technical Artist
+Unreal World Builder
+Godot Gameplay Scripter
+Godot Multiplayer Engineer
+Godot Shader Developer
+Roblox Avatar Creator
+Roblox Experience Designer
+Roblox Systems Scripter
+Blender Add-on Engineer
+
+# ── GIS Division (13)
+GIS Analyst
+Spatial Data Engineer
+Spatial Data Scientist
+GeoAI/ML Engineer
+Geoprocessing Specialist
+Cartography Designer
+Web GIS Developer
+3D & Scene Developer
+BIM/GIS Specialist
+Drone/Reality Mapping Specialist
+GIS QA Engineer
+Solution Engineer
+Technical Consultant
+
+# ── Spatial Computing Division (6)
+visionOS Spatial Engineer
+macOS Spatial/Metal Engineer
+XR Interface Architect
+XR Immersive Developer
+XR Cockpit Interaction Specialist
+Terminal Integration Specialist
+
+# ── Academic Division (5)
+Historian
+Psychologist
+Anthropologist
+Geographer
+Narratologist
