@@ -21,7 +21,11 @@ Read `group-context.md` (entities, policies) and `business-context-<company>.md`
 
 ## Steps
 
-1. **Adopt Chief Human Resources Officer.** Answer first: does this hire follow the workforce plan, or is it reactive? Define the role sharply (outcomes for the first 90 days, not a duties laundry list). Check the compensation band: if the user has one, validate the ask against it; if none exists, **adopt HR People Operations Lead** to draft a band — market-typical range for role/level/location, every figure marked `[ASSUMED — verify]` since no salary survey was provided. Flag if this hire creates internal-equity problems the user described.
+1. **Adopt Chief Human Resources Officer.** Before any recruiting artifact exists:
+   - **Plan check** — does this hire follow the workforce plan, or is it reactive? Say which, plainly.
+   - **Role definition** — outcomes for the first 90 days, not a duties laundry list; what "great" looks like at month 3.
+   - **Band check** — if the user has a band, validate the ask against it; if none exists, **adopt HR People Operations Lead** to draft one — market-typical range for role/level/location, every figure marked `[ASSUMED — verify]` since no salary survey was provided.
+   - **Equity flag** — call out if this hire creates internal-equity problems against the team the user described.
 2. **Adopt Recruitment Specialist.** Produce three artifacts:
    - **Job post** — honest, specific, in the company's voice; no inflated title, no fictional perks, no requirements the band cannot pay for.
    - **Sourcing plan** — channels ranked for this role and market, referral angle, direct-search targets described by profile, never by invented names.

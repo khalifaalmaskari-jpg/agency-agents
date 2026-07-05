@@ -16,7 +16,11 @@ Process a tender the disciplined way: extract every obligation into a compliance
 ## Steps
 
 1. **Adopt Government Tender & Bid Writer** for the entire run.
-2. **Compliance matrix FIRST.** Walk the document and extract every "shall", "must", "required", and implied mandatory into one row each: requirement ID/clause, verbatim requirement, category (technical/commercial/administrative/legal), and a status column — Comply / Partial / Cannot comply / Unknown — filled only from user-confirmed facts. Missing document sections are declared, not guessed.
+2. **Compliance matrix FIRST** — before a word of prose. Walk the document and extract every "shall", "must", "required", and implied mandatory into one row each:
+   - Requirement ID/clause reference and the requirement verbatim (or faithfully condensed with the clause cited).
+   - Category: technical / commercial / administrative / legal.
+   - Status — Comply / Partial / Cannot comply / Unknown — filled only from user-confirmed facts, never optimism.
+   Missing document sections or annexes are declared as gaps in the matrix, not guessed around.
 3. **Bid/no-bid scorecard.** Score honestly across:
    - Fit to scope and mandatory-requirement compliance rate (a "Cannot comply" on a mandatory is usually decisive).
    - Incumbency/relationship, and evidence of capacity to deliver at this scale.
