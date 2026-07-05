@@ -146,8 +146,7 @@ Written into the agents' instructions and enforced at the gate — not a slogan:
 
 ### Day 1 — Install (≈ 15 minutes)
 ```bash
-git clone -b claude/app-review-clone-rzydrt \
-  https://github.com/khalifaalmaskari-jpg/agency-agents.git
+git clone https://github.com/khalifaalmaskari-jpg/agency-agents.git
 cd agency-agents
 ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
 cp packs/70-business-specialists/CLAUDE.md.template /your/workspace/CLAUDE.md
