@@ -15,6 +15,14 @@
   minimum questions needed for the task at hand.
 - If this folder contains several context files (`business-context-*.md`),
   ask which business this session is about before starting.
+- **Group / holding structures:** if a `group-context.md` exists, read it BEFORE
+  any company file — it defines the holding structure, which entity owns what,
+  intercompany rules, and group-wide brand/policy rules that override individual
+  company preferences. Work concerning one subsidiary uses that company's
+  `business-context-*.md` on top of the group file; work concerning the group
+  (consolidation, governance, treasury, risk) uses `group-context.md` alone
+  plus whichever entity files are relevant. Never mix one subsidiary's voice
+  or facts into another's output.
 - Never invent facts about the business. If something you need is not in the
   context file, ask. Anything assumed must be labeled `[ASSUMED — verify]`.
 
