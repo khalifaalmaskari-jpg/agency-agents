@@ -95,11 +95,13 @@ Analytics Reporter
 Executive Summary Generator
 Data Consolidation Agent
 
-# ── Local Business Add-ons (10)
+# ── Local Business Add-ons (11)
 # Extras beyond the core 70, built for running a real business day to day.
 # Delete lines you don't need. Run the Business Onboarding Interviewer first —
 # it interviews you and writes the business-context.md all other agents read.
+# The Front Desk Router tells you which specialist handles any problem.
 Business Onboarding Interviewer
+Front Desk Router
 WhatsApp Business Specialist
 Reviews & Reputation Manager
 Local SEO Specialist

@@ -26,7 +26,11 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 **Any other tool:** each specialist is a plain Markdown system prompt. Copy, paste, done. (`./scripts/install.sh --list tools` shows all supported formats.)
 
-**Make it sound like you (do this first):** run the **[Business Onboarding Interviewer](../../specialized/business-onboarding-interviewer.md)**. It asks you short rounds of questions about your business — nothing is assumed, so it works for any business, and you can run it once per business you operate — then writes a `business-context.md` brief. Add that file to your Project instructions or CLAUDE.md and every specialist starts pre-briefed, sounding like your company instead of generic AI.
+**Make it sound like you (do this first):** run the **[Business Onboarding Interviewer](../../specialized/business-onboarding-interviewer.md)**. It asks you short rounds of questions about your business — nothing is assumed, so it works for any business, and you can run it once per business you operate — then writes a `business-context.md` brief.
+
+**Make it automatic:** copy [`CLAUDE.md.template`](CLAUDE.md.template) into your working folder as `CLAUDE.md` (or paste it into your claude.ai Project instructions). Claude reads it at the start of every session, so every specialist automatically reads your `business-context.md`, matches your voice, and uses your region's conventions — no pasting required.
+
+**Don't know who to ask?** Talk to the **[Front Desk Router](../../specialized/front-desk-router.md)** 🛎️ — describe any problem in plain words and it names the right specialist(s), the order to use them in, and gives you a paste-ready prompt for each.
 
 ---
 

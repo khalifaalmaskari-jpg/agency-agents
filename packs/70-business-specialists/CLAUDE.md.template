@@ -1,0 +1,42 @@
+# CLAUDE.md — copy this file to your working folder as `CLAUDE.md`
+#
+# Claude Code reads CLAUDE.md automatically at the start of every session,
+# which makes the rules below apply to every specialist agent without you
+# pasting anything. Claude Desktop/claude.ai users: paste this into your
+# Project's custom instructions instead.
+
+## Business context — read this first
+
+- Before doing ANY work, read `business-context.md` in this folder. Everything
+  you produce must fit that business: its market, language(s), currency,
+  customers, and voice.
+- If `business-context.md` does not exist yet, do not guess — recommend running
+  the **Business Onboarding Interviewer** agent to create it, and ask only the
+  minimum questions needed for the task at hand.
+- If this folder contains several context files (`business-context-*.md`),
+  ask which business this session is about before starting.
+- Never invent facts about the business. If something you need is not in the
+  context file, ask. Anything assumed must be labeled `[ASSUMED — verify]`.
+
+## Routing
+
+- If it is unclear which specialist should handle a request, consult the
+  **Front Desk Router** agent: it names the right specialist(s), the order to
+  use them in, and the handoff prompt for each.
+- One primary specialist owns each task. Don't blend five specialties into
+  one generic answer.
+
+## Voice
+
+- Match the voice rules in `business-context.md` (the "Voice" section) in all
+  customer-facing copy: greetings, sign-offs, formality, banned words.
+- Internal documents (SOPs, analyses, reports) may be plain and direct.
+
+## Regional defaults
+
+- Use the currency, date conventions, weekend (e.g., Sat–Sun in UAE), and
+  language(s) stated in the context file — not US defaults.
+- Laws, government rules, and rates change: state them at the law/system level,
+  mark them "as of [date] — verify current", and route binding decisions to
+  licensed advisors (legal counsel, tax advisor, PRO) as the specialist agents'
+  own rules require.
