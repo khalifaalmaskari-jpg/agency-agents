@@ -152,6 +152,41 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 ---
 
+## 🧩 Local Business Add-ons (12)
+
+Beyond the core 70 — built for running a real business day to day. All included in `agents.txt`.
+
+| Specialist | What they do for you |
+|---|---|
+| [Business Onboarding Interviewer](../../specialized/business-onboarding-interviewer.md) 🎤 | **Run first** — interviews you, writes the `business-context.md` every agent reads |
+| [Front Desk Router](../../specialized/front-desk-router.md) 🛎️ | Describe any problem — get routed to the right specialist(s) with paste-ready prompts |
+| [WhatsApp Business Specialist](../../marketing/marketing-whatsapp-business-specialist.md) | WhatsApp-first sales/support flows, broadcasts, Business API |
+| [Reviews & Reputation Manager](../../marketing/marketing-reviews-reputation-manager.md) | Review responses, ratings recovery, review generation done legally |
+| [Local SEO Specialist](../../marketing/marketing-local-seo-specialist.md) | Google Business Profile, local pack, "near me" visibility |
+| [Influencer & UGC Manager](../../marketing/marketing-influencer-ugc-manager.md) | Creator partnerships, vetting, usage rights, disclosure |
+| [E-commerce Store Operator](../../marketing/marketing-ecommerce-store-operator.md) | Shopify/WooCommerce/Amazon (incl. .ae/.sa, Noon), PDP conversion, cart recovery |
+| [Webinar & Events Marketer](../../marketing/marketing-webinar-events-marketer.md) | Webinars, trade shows (GITEX/LEAP-aware), follow-up funnels |
+| [Accounts Receivable & Collections](../../finance/finance-accounts-receivable-collections.md) | Getting paid: invoicing discipline, aging, dunning sequences |
+| [Procurement & Vendor Negotiator](../../specialized/procurement-vendor-negotiator.md) | Buyer-side: quote comparison, SaaS renewals, contract red flags |
+| [Partnerships & Affiliate Manager](../../sales/sales-partnerships-affiliate-manager.md) | Referral/affiliate programs, commission design, partner recruitment |
+| [Pitch Deck & Fundraising Strategist](../../specialized/pitch-deck-fundraising-strategist.md) | Deck narrative, investor targeting, data rooms |
+
+## 🕌 UAE, GCC & MENA Add-ons (7)
+
+Region-focused specialists for businesses operating in the Gulf. All included in `agents.txt`.
+
+| Specialist | What they do for you |
+|---|---|
+| [GCC & MENA Market Navigator](../../specialized/gcc-mena-market-navigator.md) 🦅 | Market entry & localization — per-country dialects, Ramadan/Eid calendars, payment landscape |
+| [UAE & GCC Payroll Specialist](../../finance/finance-uae-gcc-payroll-specialist.md) 🧾 | WPS runs, EOSB/gratuity math, GPSSA/GOSI, DIFC/ADGM differences |
+| [UAE Business Law Navigator](../../specialized/uae-business-law-navigator.md) 🐪 | Mainland vs. free zone, labour law prep, compliance calendars — routes to counsel |
+| [Government Tender & Bid Writer](../../specialized/government-tender-bid-writer.md) 🏆 | Public tenders: compliance matrices, bid/no-bid, ICV/local content |
+| [AI Governance Officer (UAE & GCC)](../../specialized/uae-ai-governance-officer.md) 🧿 | Responsible AI adoption: policies, risk registers, PDPL/DIFC Reg 10 awareness |
+| [UAE Cybersecurity Compliance Specialist](../../security/security-uae-cybersecurity-compliance.md) 🇦🇪 | The regulator map: Cybersecurity Council, DESC ISR, ADHICS, CBUAE, PDPL gap assessments |
+| [OT Security Engineer](../../security/security-ot-security-engineer.md) 🛢️ | Defending ICS/SCADA & plants: IEC 62443, segmentation, vendor remote access |
+
+---
+
 ## 🎁 The "bonus sprints" — free equivalents
 
 Paid bundles throw in training upsells. The open ecosystem already has them:

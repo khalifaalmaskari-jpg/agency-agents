@@ -194,6 +194,7 @@ Growing your audience, one authentic interaction at a time.
 | 📍 [Local SEO Specialist](marketing/marketing-local-seo-specialist.md) | Google Business Profile, local pack, citations | "Near me" visibility, maps ranking, multi-location businesses |
 | 🤳 [Influencer & UGC Manager](marketing/marketing-influencer-ugc-manager.md) | Creator partnerships, UGC sourcing, usage rights | Nano/micro influencer campaigns, creator vetting, disclosure compliance |
 | 🏬 [E-commerce Store Operator](marketing/marketing-ecommerce-store-operator.md) | Shopify/WooCommerce/Amazon operations, PDP conversion | Listing optimization, abandoned-cart recovery, promo planning |
+| 🎟️ [Webinar & Events Marketer](marketing/marketing-webinar-events-marketer.md) | Webinars, trade shows, event funnels | Event-driven lead gen, GITEX/LEAP planning, post-event follow-up |
 | 🐦 [Twitter Engager](marketing/marketing-twitter-engager.md) | Real-time engagement, thought leadership | Twitter strategy, LinkedIn campaigns, professional social |
 | 🛰️ [X/Twitter Intelligence Analyst](marketing/marketing-x-twitter-intelligence-analyst.md) | Social listening, trend detection, account monitoring | Brand risk, competitor, and audience intelligence on X/Twitter |
 | 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
@@ -286,6 +287,8 @@ Defending the stack — from secure-by-design architecture to breach response.
 | 🛡️ [Senior SecOps Engineer](security/security-senior-secops.md) | Secrets scanning, secure-by-default submissions | Defensive code-level security on every change |
 | 📋 [Compliance Auditor](security/security-compliance-auditor.md) | SOC 2, ISO 27001, HIPAA, PCI-DSS | Guiding organizations through compliance certification |
 | 🛡️ [Blockchain Security Auditor](security/security-blockchain-security-auditor.md) | Smart contract audits, exploit analysis | Finding vulnerabilities in contracts before deployment |
+| 🇦🇪 [UAE Cybersecurity Compliance Specialist](security/security-uae-cybersecurity-compliance.md) | PDPL, Cybersecurity Council, DESC ISR, ADHICS, CBUAE | Mapping which UAE regimes apply and closing the gaps |
+| 🛢️ [OT Security Engineer](security/security-ot-security-engineer.md) | ICS/SCADA defense, IEC 62443, Purdue segmentation | Protecting plants, utilities, and building systems without breaking them |
 
 ### 🛟 Support Division
 
@@ -374,6 +377,11 @@ The unique specialists who don't fit in a box.
 | 🎤 [Business Onboarding Interviewer](specialized/business-onboarding-interviewer.md) | Adaptive business intake interviews | Generating the business-context.md brief all other specialists read — run this first |
 | 🛒 [Procurement & Vendor Negotiator](specialized/procurement-vendor-negotiator.md) | Buyer-side negotiation, quote comparison, renewals | Vendor selection, SaaS renewal negotiations, contract red flags |
 | 🦄 [Pitch Deck & Fundraising Strategist](specialized/pitch-deck-fundraising-strategist.md) | Deck narrative, investor targeting, data rooms | Raising angel/VC money, investor updates, diligence prep |
+| 🛎️ [Front Desk Router](specialized/front-desk-router.md) | Department routing across the whole roster | When you don't know which specialist to ask — describe the problem, get routed |
+| 🦅 [GCC & MENA Market Navigator](specialized/gcc-mena-market-navigator.md) | Gulf market entry, Arabic localization, commercial calendars | Expanding into UAE/KSA/GCC, Ramadan campaigns, regional channel strategy |
+| 🐪 [UAE Business Law Navigator](specialized/uae-business-law-navigator.md) | Mainland vs. free zone, labour law, compliance calendars | UAE legal prep that makes counsel time cheaper — never a lawyer substitute |
+| 🏆 [Government Tender & Bid Writer](specialized/government-tender-bid-writer.md) | Public tenders, compliance matrices, ICV/local content | Bidding on government work in the GCC and beyond |
+| 🧿 [AI Governance Officer (UAE & GCC)](specialized/uae-ai-governance-officer.md) | Responsible AI adoption, PDPL/DIFC awareness, AI risk registers | AI policies and governance for Gulf organizations |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -390,6 +398,7 @@ Accounting, financial analysis, tax strategy, and investment research specialist
 | 🔍 [Investment Researcher](finance/finance-investment-researcher.md) | Due diligence, portfolio analysis, asset valuation, equity research | Investment thesis development, risk assessment, market research |
 | 🏛️ [Tax Strategist](finance/finance-tax-strategist.md) | Tax optimization, multi-jurisdictional compliance, transfer pricing | Entity structuring, ETR analysis, audit defense, strategic tax planning |
 | 🧲 [Accounts Receivable & Collections Specialist](finance/finance-accounts-receivable-collections.md) | Invoicing discipline, aging analysis, dunning sequences | Getting paid on time, chasing overdue invoices without burning relationships |
+| 🧾 [UAE & GCC Payroll Specialist](finance/finance-uae-gcc-payroll-specialist.md) | WPS, EOSB/gratuity, GPSSA/GOSI, DIFC/ADGM regimes | Payroll runs and end-of-service math for UAE and GCC employers |
 
 ### 🎮 Game Development Division
 
@@ -645,7 +654,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **246 Specialized Agents** across 16 divisions
+- 🎭 **255 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1027,7 +1036,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **246 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **255 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

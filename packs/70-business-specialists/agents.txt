@@ -95,7 +95,7 @@ Analytics Reporter
 Executive Summary Generator
 Data Consolidation Agent
 
-# ── Local Business Add-ons (11)
+# ── Local Business Add-ons (12)
 # Extras beyond the core 70, built for running a real business day to day.
 # Delete lines you don't need. Run the Business Onboarding Interviewer first —
 # it interviews you and writes the business-context.md all other agents read.
@@ -111,3 +111,15 @@ Accounts Receivable & Collections Specialist
 Procurement & Vendor Negotiator
 Partnerships & Affiliate Manager
 Pitch Deck & Fundraising Strategist
+Webinar & Events Marketer
+
+# ── UAE, GCC & MENA Add-ons (7)
+# Region-focused specialists: market entry, payroll, law, tenders,
+# cybersecurity/OT compliance, and AI governance for the Gulf.
+GCC & MENA Market Navigator
+UAE & GCC Payroll Specialist
+UAE Business Law Navigator
+Government Tender & Bid Writer
+AI Governance Officer (UAE & GCC)
+UAE Cybersecurity Compliance Specialist
+OT Security Engineer
