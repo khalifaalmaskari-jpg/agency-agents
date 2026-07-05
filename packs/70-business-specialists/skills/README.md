@@ -20,7 +20,7 @@ cp -r packs/70-business-specialists/skills/*/ /your/workspace/.claude/skills/
 
 Then in any Claude Code session, type `/` to see them, or just describe the job — Claude invokes the matching skill by its trigger conditions.
 
-## The 14 skills
+## The 17 skills
 
 ### Core system — the machine itself
 | Skill | What it runs |
@@ -47,6 +47,13 @@ Then in any Claude Code session, type `/` to see them, or just describe the job 
 | **`/tender`** | Tender doc → compliance matrix → bid/no-bid scorecard → response skeleton → deadline back-plan |
 | **`/bia`** | Guided business impact analysis → MTPD/RTO/RPO for sign-off → gaps and single points of failure |
 | **`/market-entry`** | Market brief + competitor snapshot → recommendation with kill criteria → first-90-days checklist |
+
+### Governance & resilience
+| Skill | What it delivers |
+|---|---|
+| **`/crisis`** | Live crisis activation or drill: first-hour card, situation log, comms sequencing, specialist tracks |
+| **`/legal-prep`** | Prepare-for-your-lawyer pack: jurisdiction triage, facts chronology, documents, questions, counsel brief |
+| **`/risk-review`** | Quarterly ERM cycle: register update, cross-entity concentration sweep, board risk report |
 
 ## The rules every skill obeys
 
