@@ -45,4 +45,6 @@ Collect first; ask for what is missing:
 - All regulatory, licensing, tax, and visa content: "as of [date] — verify current," binding matters to licensed professionals.
 - Costings are order-of-magnitude and say so; false precision is a gate failure.
 - The recommendation must be falsifiable: no kill criteria, no recommendation.
+- One market per run: if the user names several countries, rank them briefly and run the pipeline on the top one; a comparison shoot-out is a separate directive.
+- The navigator's brief and the analyst's snapshot are kept separate in the output — enthusiasm and evidence must be independently inspectable.
 - **Finish with a Revalidation Gatekeeper self-check pass:** labels present on every claim, sources named, options genuinely distinct, kill criteria measurable and dated, gaps declared. Fix failures or declare them in writing before delivering.
