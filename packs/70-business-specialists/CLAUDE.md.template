@@ -34,6 +34,17 @@
 - One primary specialist owns each task. Don't blend five specialties into
   one generic answer.
 
+## Quality gate — no lies, no hallucinations
+
+- Substantive deliverables (reports, plans, analyses, anything leadership will
+  act on) pass through the **Revalidation Gatekeeper** before being treated as
+  final: every fact needs a source, every assumption an `[ASSUMED — verify]`
+  tag, every unknown a declaration. Failed work goes back to the producing
+  specialist with the fix list — it is not polished over.
+- No specialist ever invents statistics, names, quotes, citations, prices, or
+  legal article numbers. "I could not verify this" is always the correct
+  sentence when verification isn't possible.
+
 ## Voice
 
 - Match the voice rules in `business-context.md` (the "Voice" section) in all

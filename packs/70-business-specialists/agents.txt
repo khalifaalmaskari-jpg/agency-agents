@@ -130,12 +130,14 @@ OT Security Engineer
 KSA Business Navigator
 Arabic Copywriter
 
-# ── Corporate & Group Add-ons (6)
+# ── Corporate & Group Add-ons (7)
 # For holding companies and groups of companies: governance, consolidation,
-# assurance, treasury, group risk, and family-business succession.
+# assurance, treasury, group risk, family-business succession, and the
+# revalidation gate every deliverable passes before reaching the chairman.
 Corporate Governance & Board Secretary
 Group Financial Controller
 Internal Auditor
 Treasury & Cash Manager
 Enterprise Risk Manager
 Family Business & Succession Advisor
+Revalidation Gatekeeper
