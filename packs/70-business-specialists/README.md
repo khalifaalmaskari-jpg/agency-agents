@@ -152,7 +152,7 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 ---
 
-## 🧩 Local Business Add-ons (16)
+## 🧩 Local Business Add-ons (19)
 
 Beyond the core 70 — built for running a real business day to day. All included in `agents.txt`.
 
@@ -174,8 +174,11 @@ Beyond the core 70 — built for running a real business day to day. All include
 | [Logistics & Last-Mile Strategist](../../specialized/logistics-last-mile-strategist.md) 🛵 | Courier scorecards, COD reconciliation, delivery-promise design |
 | [Insurance & Risk Manager](../../specialized/insurance-risk-manager.md) ☂️ | Risk registers, coverage gaps, claims readiness — incl. UAE mandatory covers |
 | [Franchise Operations Advisor](../../specialized/franchise-operations-advisor.md) 🎡 | Buying a franchise or franchising your business — both sides, GCC-aware |
+| [HSE & Quality Manager](../../specialized/hse-qhse-manager.md) 🦺 | Health, safety, environment & quality: risk assessments, incident investigation, permit-to-work |
+| [Facilities & Property Manager](../../specialized/facilities-property-manager.md) 🏢 | Leases with notice-window escalations, maintenance, service-charge audits |
+| [BI & Data Analyst](../../support/support-bi-data-analyst.md) 📏 | Metric dictionary, dashboard specs tied to decisions, honest ad-hoc analysis |
 
-## 🕌 UAE, GCC & MENA Add-ons (9)
+## 🕌 UAE, GCC & MENA Add-ons (10)
 
 Region-focused specialists for businesses operating in the Gulf. All included in `agents.txt`.
 
@@ -190,8 +193,9 @@ Region-focused specialists for businesses operating in the Gulf. All included in
 | [OT Security Engineer](../../security/security-ot-security-engineer.md) 🛢️ | Defending ICS/SCADA & plants: IEC 62443, segmentation, vendor remote access |
 | [KSA Business Navigator](../../specialized/ksa-business-navigator.md) 🏜️ | Operating in Saudi: MISA, Nitaqat, ZATCA/FATOORAH, GOSI, Qiwa/Etimad platform map |
 | [Arabic Copywriter](../../marketing/marketing-arabic-copywriter.md) 🖋️ | Native Arabic copy — MSA vs. Gulf dialect, transcreation not translation, RTL flags |
+| [UAE Government Relations & PRO Coordinator](../../specialized/uae-government-relations-pro.md) 🪪 | Visa lifecycles, license renewals, attestations, government deadline calendar with escalations |
 
-## 🏛️ Corporate & Group Add-ons (8)
+## 🏛️ Corporate & Group Add-ons (12)
 
 For holding companies and groups of companies. All included in `agents.txt`. Run the Interviewer's **group mode** first — it writes the `group-context.md` these specialists read.
 
@@ -205,6 +209,10 @@ For holding companies and groups of companies. All included in `agents.txt`. Run
 | [Family Business & Succession Advisor](../../specialized/family-business-succession-advisor.md) 🌳 | Family charters, next-gen entry rules, succession & bus plans — Gulf family-group reality |
 | [Revalidation Gatekeeper](../../specialized/revalidation-gatekeeper.md) 🚦 | The final gate before the chairman: source audits, hallucination hunts, PASS or RETURN — no rubber stamps |
 | [Business Continuity Manager](../../specialized/business-continuity-manager.md) 🧯 | BCM: business impact analysis, RTO/RPO, crisis action cards, exercises — untested plans reported as unproven |
+| [ESG & Sustainability Officer](../../specialized/esg-sustainability-officer.md) 🌱 | ESG programs, sustainability strategy, disclosure readiness |
+| [Investor Relations Manager](../../specialized/investor-relations-manager.md) 🪙 | No-surprises shareholder updates, information-rights register, one source of truth for numbers |
+| [Internal Communications Manager](../../specialized/internal-communications-manager.md) 📻 | Affected-first announcements, manager cascade kits, multilingual workforce channels |
+| [Group Portfolio Manager](../../project-management/project-management-portfolio-manager.md) 🗂️ | The portfolio register, evidence-based RAG, intake scorecards, zombie-project kills |
 
 ## 👔 Executive Chiefs & IT (9)
 

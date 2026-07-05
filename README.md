@@ -398,6 +398,8 @@ The unique specialists who don't fit in a box.
 | ⚠️ [Enterprise Risk Manager](specialized/enterprise-risk-manager.md) | Group risk registers, risk appetite, cross-entity aggregation | Group-wide risk governance above insurance decisions |
 | 🌳 [Family Business & Succession Advisor](specialized/family-business-succession-advisor.md) | Family charters, next-gen entry, succession planning | Gulf family groups: three tables, three different conversations |
 | 🚦 [Revalidation Gatekeeper](specialized/revalidation-gatekeeper.md) | Source audits, hallucination hunts, PASS/RETURN verdicts | The final quality gate before work reaches leadership |
+| 📏 [BI & Data Analyst](support/support-bi-data-analyst.md) | Metric dictionaries, dashboard specs, honest ad-hoc analysis | Answering business questions with data — caveats included |
+| 🗂️ [Group Portfolio Manager](project-management/project-management-portfolio-manager.md) | Portfolio registers, evidence-based RAG, intake scorecards | Seeing all projects across the group and killing the zombies |
 | 📢 [Chief Marketing Officer](specialized/chief-marketing-officer.md) | Marketing & branding leadership, budget allocation, brand architecture | Running marketing as a portfolio, not a collection of campaigns |
 | 💹 [Chief Revenue Officer](specialized/chief-revenue-officer.md) | Revenue engine leadership, pipeline discipline, forecast accuracy | New business, expansion, and retention as one accountable number |
 | 🧰 [Chief Operating Officer](specialized/chief-operating-officer.md) | Operations leadership, capacity planning, operating cadence | Keeping the promises revenue makes |
@@ -410,6 +412,11 @@ The unique specialists who don't fit in a box.
 | 🪤 [Fraud Examiner](specialized/fraud-examiner.md) | Fraud prevention, detection analytics, investigation support | Catching patterns before they become losses — evidence first, always |
 | 🗝️ [IT Auditor](specialized/it-auditor.md) | ITGC audits: access, change, tested restores, in-system SoD | Independently verifying what the CIO and CISO built |
 | 🧯 [Business Continuity Manager](specialized/business-continuity-manager.md) | BIA, RTO/RPO, crisis action cards, exercise programs | Keeping the group operating through disruption — untested plans are unproven |
+| 🦺 [HSE & Quality Manager](specialized/hse-qhse-manager.md) | Safety risk assessments, incident investigation, quality systems | Physical operations: warehouses, retail floors, fleets — people first |
+| 🪪 [UAE Government Relations & PRO Coordinator](specialized/uae-government-relations-pro.md) | Visa lifecycles, license renewals, attestations, deadline calendars | The UAE PRO function: government transactions without fines or surprises |
+| 🏢 [Facilities & Property Manager](specialized/facilities-property-manager.md) | Lease registers, maintenance, service-charge audits | The group's physical estate across entities |
+| 🪙 [Investor Relations Manager](specialized/investor-relations-manager.md) | Shareholder updates, information rights, no-surprises discipline | Keeping family, PE, or listed capital informed and never surprised |
+| 📻 [Internal Communications Manager](specialized/internal-communications-manager.md) | Announcement sequencing, cascade kits, multilingual channels | Making 500 employees across 5 entities hear the same true story |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -684,7 +691,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **285 Specialized Agents** across 16 divisions
+- 🎭 **292 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1066,7 +1073,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **285 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **292 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

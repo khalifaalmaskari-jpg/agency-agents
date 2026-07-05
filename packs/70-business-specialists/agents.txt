@@ -95,7 +95,7 @@ Analytics Reporter
 Executive Summary Generator
 Data Consolidation Agent
 
-# ── Local Business Add-ons (16)
+# ── Local Business Add-ons (19)
 # Extras beyond the core 70, built for running a real business day to day.
 # Delete lines you don't need. Run the Business Onboarding Interviewer first —
 # it interviews you and writes the business-context.md all other agents read.
@@ -116,8 +116,11 @@ Retail Store Operations Manager
 Logistics & Last-Mile Strategist
 Insurance & Risk Manager
 Franchise Operations Advisor
+HSE & Quality Manager
+Facilities & Property Manager
+BI & Data Analyst
 
-# ── UAE, GCC & MENA Add-ons (9)
+# ── UAE, GCC & MENA Add-ons (10)
 # Region-focused specialists: market entry, payroll, law, tenders,
 # cybersecurity/OT compliance, and AI governance for the Gulf.
 GCC & MENA Market Navigator
@@ -129,8 +132,9 @@ UAE Cybersecurity Compliance Specialist
 OT Security Engineer
 KSA Business Navigator
 Arabic Copywriter
+UAE Government Relations & PRO Coordinator
 
-# ── Corporate & Group Add-ons (8)
+# ── Corporate & Group Add-ons (12)
 # For holding companies and groups of companies: governance, consolidation,
 # assurance, treasury, group risk, family-business succession, and the
 # revalidation gate every deliverable passes before reaching the chairman.
@@ -142,6 +146,10 @@ Enterprise Risk Manager
 Family Business & Succession Advisor
 Revalidation Gatekeeper
 Business Continuity Manager
+ESG & Sustainability Officer
+Investor Relations Manager
+Internal Communications Manager
+Group Portfolio Manager
 
 # ── Executive Chiefs & IT (9)
 # Dedicated chief seats — each translates directives into department plans,
