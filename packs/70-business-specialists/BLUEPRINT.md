@@ -4,7 +4,7 @@
 >
 > This document is the complete design of the system: its structure, its processes, its honesty rules, and the plan to put it into operation. If you read nothing else, read this.
 
-**Version:** 1.0 · **Pack:** 128 agents (`agents.txt`) · **Repo:** 285 agents total
+**Version:** 1.1 · **Pack:** 136 agents (`agents.txt`) · **Repo:** 292 agents total
 **Install:** `./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt`
 
 ---
@@ -35,26 +35,29 @@ TIER 1 · CHAIRMAN (you)
 │
 TIER 2 · CEO OFFICE
 │  CEO seat (Chief of Staff) · 🛎️ Front Desk Router · 📥 Executive Assistant
-│  🎤 Onboarding Interviewer · 📈 Reporting unit (Analytics, Exec Summary,
-│  Data Consolidation)
+│  🎤 Onboarding Interviewer · 🗂️ Group Portfolio Manager · 📈 Reporting
+│  unit (Analytics, Exec Summary, Data Consolidation, BI & Data Analyst 📏)
 │
 TIER 3 · NINE CHIEF SEATS
-   CFO        Finance & Treasury (12): bookkeeping, FP&A, tax, pricing, AP,
+   CFO        Finance & Treasury (13): bookkeeping, FP&A, tax, pricing, AP,
               AR & Collections, Treasury, Group Controller, UAE Payroll,
-              Insurance, Fundraising
-   CMO 📢     Marketing & Branding (29): content, copy (EN + Arabic 🖋️),
-              email, SEO + local, all social, PR, WhatsApp, reviews,
-              influencer, e-commerce, events, all paid ads, brand & design
+              Insurance, Fundraising, Investor Relations 🪙
+   CMO 📢     Marketing & Branding (30): content, copy (EN + Arabic 🖋️),
+              email, SEO + local, all social, PR, internal comms 📻,
+              WhatsApp, reviews, influencer, e-commerce, events, all paid
+              ads, brand & design
    CRO 💹     Revenue & Customers (14): sales, partnerships, customer
               service, success, support, translation
-   COO 🧰     Operations (10): workflows, projects, docs, retail 🏪,
-              logistics 🛵, procurement, franchise 🎡, BCM 🧯
+   COO 🧰     Operations (12): workflows, projects, docs, retail 🏪,
+              logistics 🛵, procurement, franchise 🎡, BCM 🧯, HSE 🦺,
+              facilities 🏢
    CHRO 👥    People (6): recruitment, onboarding, training, org
               psychology, change management
-   CSO 🛤️    Strategy & Markets (9): competitive intel 🔬, trends, product,
-              M&A, GCC 🦅 & KSA 🏜️ navigation
-   GC 🔏      Legal & Compliance (7): UAE law 🐪, contracts, privacy,
-              tenders 🏆 — binding matters → licensed counsel
+   CSO 🛤️    Strategy & Markets (10): competitive intel 🔬, trends, product,
+              M&A, GCC 🦅 & KSA 🏜️ navigation, ESG 🌱
+   GC 🔏      Legal & Compliance (8): UAE law 🐪, contracts, privacy,
+              tenders 🏆, government relations/PRO 🪪 — binding matters →
+              licensed counsel
    CISO 🏰    Security & AI (3 + bench): UAE cyber compliance 🇦🇪, OT 🛢️,
               AI governance 🧿
    CIO 💾     Information Technology (15): IT Service Manager (ITIL 4),
@@ -199,4 +202,4 @@ Stated plainly, because a blueprint that oversells is itself a gate failure:
 
 ---
 
-*Built on [The Agency](../../README.md) (MIT licensed). This pack: 128 agents across 14 departments + 9 chief seats + independent audit + the gate. Blueprint version 1.0 — update this document when the structure changes; it is the map, and the map must match the territory.*
+*Built on [The Agency](../../README.md) (MIT licensed). This pack: 136 agents + 9 chief seats + independent audit + the gate. Blueprint version 1.1 — update this document when the structure changes; it is the map, and the map must match the territory.*
