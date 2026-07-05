@@ -262,6 +262,10 @@ No division skipped: the four specialist divisions are included whole. All in `a
 | 🥽 [Spatial Computing](../../README.md#-spatial-computing-division) (6) | visionOS, macOS/Metal, XR interface/immersive/cockpit, terminal integration | AR/VR/XR development |
 | 📚 [Academic](../../README.md#-academic-division) (5) | Historian, Psychologist, Anthropologist, Geographer, Narratologist | Deep research perspectives |
 
+## 🧰 Deep Bench — Everything Else (91)
+
+The complete remaining roster, packed by chairman instruction — nothing skipped except the Salesforce Architect. Highlights: the engineering deep bench (Senior Developer, Software Architect, Code Reviewer, SRE, Database Optimizer, Prompt Engineer, MCP Builder…), the **CISO's full security bench** (Security Architect, Cloud Security, AppSec, Penetration Tester, Incident Responder, Threat Detection & Intelligence, SecOps, Compliance Auditor, Blockchain Auditor), the full **testing division** (Evidence Collector, Reality Checker, API/Accessibility/Performance testers…), marketing's AEO/AI-search trio, studio project-management, and the specialized verticals (healthcare, hospitality, real estate, supply chain, Korean & French market navigators, and more). Full list in [`agents.txt`](agents.txt) — delete any line you don't need.
+
 ## 👔 Executive Chiefs & IT (9)
 
 Dedicated chief seats for the org structure — each runs a department of specialists, reviews their output before the gate, and owns the function's numbers. The CFO seat is held by the [Chief Financial Officer](../../specialized/chief-financial-officer.md), already listed under Finance.

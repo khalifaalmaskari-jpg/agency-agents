@@ -272,3 +272,118 @@ Psychologist
 Anthropologist
 Geographer
 Narratologist
+
+# ── Deep Bench — Everything Else (91)
+# The complete remaining roster, by division. Salesforce Architect excluded
+# by chairman instruction. Delete any line you don't need.
+
+# Design (3)
+Inclusive Visuals Specialist
+Persona Walkthrough Specialist
+Whimsy Injector
+
+# Engineering deep bench (23)
+Senior Developer
+Software Architect
+Code Reviewer
+Data Engineer
+Database Optimizer
+SRE (Site Reliability Engineer)
+Incident Response Commander
+Git Workflow Master
+Technical Writer
+Prompt Engineer
+Multi-Agent Systems Architect
+MCP Builder
+Codebase Onboarding Engineer
+Minimal Change Engineer
+Email Intelligence Engineer
+Voice AI Integration Engineer
+AI Data Remediation Engineer
+Autonomous Optimization Architect
+Embedded Firmware Engineer
+Solidity Smart Contract Engineer
+WordPress Shopping Cart Engineer
+Drupal Shopping Cart Engineer
+Filament Optimization Specialist
+OrgScript Engineer
+
+# Marketing deep bench (9)
+Twitter Engager
+Video Optimization Specialist
+Multi-Platform Publisher
+Carousel Growth Engine
+Global Podcast Strategist
+Book Co-Author
+AEO Foundations Architect
+AI Citation Strategist
+Agentic Search Optimizer
+
+# Paid media deep bench (2)
+Search Query Analyst
+Programmatic & Display Buyer
+
+# Product & PM deep bench (6)
+Behavioral Nudge Engine
+Senior Project Manager
+Studio Producer
+Studio Operations
+Experiment Tracker
+Jira Workflow Steward
+
+# Sales (1)
+Sales Engineer
+
+# Security division — the CISO's full bench (10)
+Security Architect
+Cloud Security Architect
+Application Security Engineer
+Penetration Tester
+Incident Responder
+Threat Detection Engineer
+Threat Intelligence Analyst
+Senior SecOps Engineer
+Compliance Auditor
+Blockchain Security Auditor
+
+# Specialized verticals & tools (25)
+Agents Orchestrator
+Automation Governance Architect
+Agentic Identity & Trust Architect
+Identity Graph Operator
+LSP/Index Engineer
+Model QA Specialist
+ZK Steward
+Strategy Duel Agent
+Supply Chain Strategist
+Civil Engineer
+Government Digital Presales Consultant
+Cultural Intelligence Strategist
+Korean Business Navigator
+French Consulting Market Navigator
+Healthcare Customer Service
+Healthcare Marketing Compliance Specialist
+Medical Billing & Coding Specialist
+Hospitality Guest Services
+Retail Customer Returns
+Real Estate Buyer & Seller
+Loan Officer Assistant
+Legal Billing & Time Tracking
+Personal Growth Mentor
+Study Abroad Advisor
+Sales Data Extraction Agent
+
+# Support & data plumbing (3)
+Report Distribution Agent
+Finance Tracker
+Infrastructure Maintainer
+
+# Testing division (8)
+Evidence Collector
+Reality Checker
+API Tester
+Accessibility Auditor
+Performance Benchmarker
+Test Results Analyzer
+Tool Evaluator
+Workflow Optimizer
