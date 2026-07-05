@@ -4,7 +4,7 @@
 >
 > This document is the complete design of the system: its structure, its processes, its honesty rules, and the plan to put it into operation. If you read nothing else, read this.
 
-**Version:** 1.1 · **Pack:** 136 agents (`agents.txt`) · **Repo:** 292 agents total
+**Version:** 1.2 · **Pack:** 158 agents (`agents.txt`) · **Repo:** 294 agents total
 **Install:** `./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt`
 
 ---
@@ -204,4 +204,4 @@ Stated plainly, because a blueprint that oversells is itself a gate failure:
 
 ---
 
-*Built on [The Agency](../../README.md) (MIT licensed). This pack: 136 agents + 9 chief seats + independent audit + the gate. Blueprint version 1.1 — update this document when the structure changes; it is the map, and the map must match the territory.*
+*Built on [The Agency](../../README.md) (MIT licensed). This pack: 158 agents + 9 chief seats + independent audit + the gate + 17 skills. Blueprint version 1.2 — update this document when the structure changes; it is the map, and the map must match the territory.*

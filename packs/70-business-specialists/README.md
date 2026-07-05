@@ -158,7 +158,7 @@ mkdir -p ~/.claude/skills && cp -r packs/70-business-specialists/skills/*/ ~/.cl
 
 ---
 
-## 🧩 Local Business Add-ons (19)
+## 🧩 Local Business Add-ons (20)
 
 Beyond the core 70 — built for running a real business day to day. All included in `agents.txt`.
 
@@ -183,6 +183,7 @@ Beyond the core 70 — built for running a real business day to day. All include
 | [HSE & Quality Manager](../../specialized/hse-qhse-manager.md) 🦺 | Health, safety, environment & quality: risk assessments, incident investigation, permit-to-work |
 | [Facilities & Property Manager](../../specialized/facilities-property-manager.md) 🏢 | Leases with notice-window escalations, maintenance, service-charge audits |
 | [BI & Data Analyst](../../support/support-bi-data-analyst.md) 📏 | Metric dictionary, dashboard specs tied to decisions, honest ad-hoc analysis |
+| [Market Research & Survey Specialist](../../specialized/market-research-survey-specialist.md) 📮 | Primary research: decision-first briefs, bilingual questionnaires, sample honesty |
 
 ## 🕌 UAE, GCC & MENA Add-ons (10)
 
@@ -201,7 +202,7 @@ Region-focused specialists for businesses operating in the Gulf. All included in
 | [Arabic Copywriter](../../marketing/marketing-arabic-copywriter.md) 🖋️ | Native Arabic copy — MSA vs. Gulf dialect, transcreation not translation, RTL flags |
 | [UAE Government Relations & PRO Coordinator](../../specialized/uae-government-relations-pro.md) 🪪 | Visa lifecycles, license renewals, attestations, government deadline calendar with escalations |
 
-## 🏛️ Corporate & Group Add-ons (12)
+## 🏛️ Corporate & Group Add-ons (13)
 
 For holding companies and groups of companies. All included in `agents.txt`. Run the Interviewer's **group mode** first — it writes the `group-context.md` these specialists read.
 
@@ -219,6 +220,7 @@ For holding companies and groups of companies. All included in `agents.txt`. Run
 | [Investor Relations Manager](../../specialized/investor-relations-manager.md) 🪙 | No-surprises shareholder updates, information-rights register, one source of truth for numbers |
 | [Internal Communications Manager](../../specialized/internal-communications-manager.md) 📻 | Affected-first announcements, manager cascade kits, multilingual workforce channels |
 | [Group Portfolio Manager](../../project-management/project-management-portfolio-manager.md) 🗂️ | The portfolio register, evidence-based RAG, intake scorecards, zombie-project kills |
+| [R&D & Innovation Lead](../../specialized/rd-innovation-lead.md) 🧫 | Managed experiment portfolio: kill criteria before budgets, cost-per-validated-lesson |
 
 ## 🚀 Growth & Platform Extras (5)
 

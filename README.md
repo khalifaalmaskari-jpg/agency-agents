@@ -417,6 +417,8 @@ The unique specialists who don't fit in a box.
 | 🏢 [Facilities & Property Manager](specialized/facilities-property-manager.md) | Lease registers, maintenance, service-charge audits | The group's physical estate across entities |
 | 🪙 [Investor Relations Manager](specialized/investor-relations-manager.md) | Shareholder updates, information rights, no-surprises discipline | Keeping family, PE, or listed capital informed and never surprised |
 | 📻 [Internal Communications Manager](specialized/internal-communications-manager.md) | Announcement sequencing, cascade kits, multilingual channels | Making 500 employees across 5 entities hear the same true story |
+| 📮 [Market Research & Survey Specialist](specialized/market-research-survey-specialist.md) | Primary research design, questionnaires, sampling honesty | Asking the market questions it hasn't answered yet |
+| 🧫 [R&D & Innovation Lead](specialized/rd-innovation-lead.md) | Experiment portfolios, kill criteria, innovation accounting | Turning "we should innovate" into managed experiments |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -691,7 +693,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **292 Specialized Agents** across 16 divisions
+- 🎭 **294 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1073,7 +1075,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **292 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **294 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

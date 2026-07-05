@@ -95,7 +95,7 @@ Analytics Reporter
 Executive Summary Generator
 Data Consolidation Agent
 
-# ── Local Business Add-ons (19)
+# ── Local Business Add-ons (20)
 # Extras beyond the core 70, built for running a real business day to day.
 # Delete lines you don't need. Run the Business Onboarding Interviewer first —
 # it interviews you and writes the business-context.md all other agents read.
@@ -119,6 +119,7 @@ Franchise Operations Advisor
 HSE & Quality Manager
 Facilities & Property Manager
 BI & Data Analyst
+Market Research & Survey Specialist
 
 # ── UAE, GCC & MENA Add-ons (10)
 # Region-focused specialists: market entry, payroll, law, tenders,
@@ -134,7 +135,7 @@ KSA Business Navigator
 Arabic Copywriter
 UAE Government Relations & PRO Coordinator
 
-# ── Corporate & Group Add-ons (12)
+# ── Corporate & Group Add-ons (13)
 # For holding companies and groups of companies: governance, consolidation,
 # assurance, treasury, group risk, family-business succession, and the
 # revalidation gate every deliverable passes before reaching the chairman.
@@ -150,6 +151,7 @@ ESG & Sustainability Officer
 Investor Relations Manager
 Internal Communications Manager
 Group Portfolio Manager
+R&D & Innovation Lead
 
 # ── Growth & Platform Extras (5)
 # Existing roster agents worth having on hand.
