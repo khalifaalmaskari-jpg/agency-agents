@@ -141,3 +141,17 @@ Treasury & Cash Manager
 Enterprise Risk Manager
 Family Business & Succession Advisor
 Revalidation Gatekeeper
+
+# ── Executive Chiefs & IT (9)
+# Dedicated chief seats — each translates directives into department plans,
+# runs the first quality pass before the Revalidation Gate, owns its KPIs.
+# (The CFO seat is the Chief Financial Officer, listed under Finance above.)
+Chief Marketing Officer
+Chief Revenue Officer
+Chief Operating Officer
+Chief Human Resources Officer
+Chief Strategy Officer
+General Counsel
+Chief Information Security Officer
+Chief Information Officer
+IT Service Manager

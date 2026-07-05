@@ -205,6 +205,22 @@ For holding companies and groups of companies. All included in `agents.txt`. Run
 | [Family Business & Succession Advisor](../../specialized/family-business-succession-advisor.md) 🌳 | Family charters, next-gen entry rules, succession & bus plans — Gulf family-group reality |
 | [Revalidation Gatekeeper](../../specialized/revalidation-gatekeeper.md) 🚦 | The final gate before the chairman: source audits, hallucination hunts, PASS or RETURN — no rubber stamps |
 
+## 👔 Executive Chiefs & IT (9)
+
+Dedicated chief seats for the org structure — each runs a department of specialists, reviews their output before the gate, and owns the function's numbers. The CFO seat is held by the [Chief Financial Officer](../../specialized/chief-financial-officer.md), already listed under Finance.
+
+| Specialist | What they do for you |
+|---|---|
+| [Chief Marketing Officer](../../specialized/chief-marketing-officer.md) 📢 | Marketing & Branding: budget allocation, brand architecture, channel kill/scale decisions |
+| [Chief Revenue Officer](../../specialized/chief-revenue-officer.md) 💹 | The revenue engine: pipeline discipline, forecast accuracy, discount authority, churn ownership |
+| [Chief Operating Officer](../../specialized/chief-operating-officer.md) 🧰 | Delivery: capacity before commitments, operating cadence, SOP coverage, SLAs as measured |
+| [Chief Human Resources Officer](../../specialized/chief-human-resources-officer.md) 👥 | People: workforce planning, comp band governance, non-family succession |
+| [Chief Strategy Officer](../../specialized/chief-strategy-officer.md) 🛤️ | Strategy cycle, portfolio view on CFO actuals, kill criteria on every initiative, M&A funnel |
+| [General Counsel](../../specialized/general-counsel.md) 🔏 | Legal function coordination and counsel management — never legal advice itself |
+| [Chief Information Security Officer](../../specialized/chief-information-security-officer.md) 🏰 | Security program, honest RAG reporting, 60-minute incident escalation, defensive only |
+| [Chief Information Officer](../../specialized/chief-information-officer.md) 💾 | The IT seat: systems landscape, buy-vs-build, SaaS audits, tested backups |
+| [IT Service Manager](../../engineering/engineering-it-service-manager.md) | The IT department: service desk, incidents, ITIL discipline — reports to the CIO |
+
 ---
 
 ## 🎁 The "bonus sprints" — free equivalents

@@ -393,6 +393,14 @@ The unique specialists who don't fit in a box.
 | ⚠️ [Enterprise Risk Manager](specialized/enterprise-risk-manager.md) | Group risk registers, risk appetite, cross-entity aggregation | Group-wide risk governance above insurance decisions |
 | 🌳 [Family Business & Succession Advisor](specialized/family-business-succession-advisor.md) | Family charters, next-gen entry, succession planning | Gulf family groups: three tables, three different conversations |
 | 🚦 [Revalidation Gatekeeper](specialized/revalidation-gatekeeper.md) | Source audits, hallucination hunts, PASS/RETURN verdicts | The final quality gate before work reaches leadership |
+| 📢 [Chief Marketing Officer](specialized/chief-marketing-officer.md) | Marketing & branding leadership, budget allocation, brand architecture | Running marketing as a portfolio, not a collection of campaigns |
+| 💹 [Chief Revenue Officer](specialized/chief-revenue-officer.md) | Revenue engine leadership, pipeline discipline, forecast accuracy | New business, expansion, and retention as one accountable number |
+| 🧰 [Chief Operating Officer](specialized/chief-operating-officer.md) | Operations leadership, capacity planning, operating cadence | Keeping the promises revenue makes |
+| 👥 [Chief Human Resources Officer](specialized/chief-human-resources-officer.md) | People leadership, workforce planning, comp governance | Headcount follows strategy, not vacancies |
+| 🛤️ [Chief Strategy Officer](specialized/chief-strategy-officer.md) | Strategy cycle, portfolio view, kill criteria, M&A funnel | Strategy as decisions made, not documents written |
+| 🔏 [General Counsel](specialized/general-counsel.md) | Legal function coordination, counsel management, contract governance | Running legal as a process — binding matters go to licensed lawyers |
+| 🏰 [Chief Information Security Officer](specialized/chief-information-security-officer.md) | Security program leadership, honest maturity reporting | Defensive security governance across a group |
+| 💾 [Chief Information Officer](specialized/chief-information-officer.md) | IT leadership: systems landscape, buy-vs-build, SaaS governance | Business technology for a group of companies |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -667,7 +675,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **268 Specialized Agents** across 16 divisions
+- 🎭 **276 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1049,7 +1057,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **268 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **276 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

@@ -119,6 +119,7 @@ numbers — CFO actuals or it doesn't enter the matrix.
 - Log gate outcomes per specialist: whose work passes the 🚦 Revalidation Gatekeeper first-cycle, whose bounces, and what the fix lists have in common — feed it back into briefs
 - Keep a decision journal for the chairman's calls: option chosen, reasoning, and the 12-month retrospective on whether the recommendation was right
 - Record which market-entry evidence types actually predicted outcomes — the pipeline gets smarter about what "enough evidence" means
+- Note every peer-chief coordination failure — the strategy that surprised the CFO, the headcount the CHRO never priced — and move that check earlier in the next cycle
 
 ## 🎯 Your Success Metrics
 
