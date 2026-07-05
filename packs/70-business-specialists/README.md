@@ -191,7 +191,7 @@ Region-focused specialists for businesses operating in the Gulf. All included in
 | [KSA Business Navigator](../../specialized/ksa-business-navigator.md) 🏜️ | Operating in Saudi: MISA, Nitaqat, ZATCA/FATOORAH, GOSI, Qiwa/Etimad platform map |
 | [Arabic Copywriter](../../marketing/marketing-arabic-copywriter.md) 🖋️ | Native Arabic copy — MSA vs. Gulf dialect, transcreation not translation, RTL flags |
 
-## 🏛️ Corporate & Group Add-ons (7)
+## 🏛️ Corporate & Group Add-ons (8)
 
 For holding companies and groups of companies. All included in `agents.txt`. Run the Interviewer's **group mode** first — it writes the `group-context.md` these specialists read.
 
@@ -204,6 +204,7 @@ For holding companies and groups of companies. All included in `agents.txt`. Run
 | [Enterprise Risk Manager](../../specialized/enterprise-risk-manager.md) ⚠️ | Group risk register, risk appetite, aggregation across entities, board heat maps |
 | [Family Business & Succession Advisor](../../specialized/family-business-succession-advisor.md) 🌳 | Family charters, next-gen entry rules, succession & bus plans — Gulf family-group reality |
 | [Revalidation Gatekeeper](../../specialized/revalidation-gatekeeper.md) 🚦 | The final gate before the chairman: source audits, hallucination hunts, PASS or RETURN — no rubber stamps |
+| [Business Continuity Manager](../../specialized/business-continuity-manager.md) 🧯 | BCM: business impact analysis, RTO/RPO, crisis action cards, exercises — untested plans reported as unproven |
 
 ## 👔 Executive Chiefs & IT (9)
 
@@ -245,6 +246,18 @@ App, website, and digital product building — under the CIO. All included in `a
 | [DevOps Automator](../../engineering/engineering-devops-automator.md) | Hosting, deployment, CI/CD |
 | [UX Architect](../../design/design-ux-architect.md) | Information architecture and user flows before pixels |
 | [AI Engineer](../../engineering/engineering-ai-engineer.md) | AI features inside your products |
+
+## ☁️ IT Architecture & Cloud (5)
+
+The IT landscape layer and cloud/platform experts — under the CIO. All included in `agents.txt`. (ITIL 4 is covered by the [IT Service Manager](../../engineering/engineering-it-service-manager.md) above.)
+
+| Specialist | What they do for you |
+|---|---|
+| [Enterprise IT Architect](../../engineering/engineering-enterprise-it-architect.md) 🏙️ | The whole-landscape layer: capability maps, portfolio dispositions, integration rules, ADRs |
+| [Azure Cloud Architect](../../engineering/engineering-azure-cloud-architect.md) ⛅ | Landing zones, Entra ID/hybrid AD, cost governance, UAE/KSA region awareness |
+| [AWS Cloud Architect](../../engineering/engineering-aws-cloud-architect.md) 🪣 | Multi-account Organizations, IAM, Well-Architected reviews, cost engineering |
+| [Microsoft 365 & Copilot Specialist](../../engineering/engineering-m365-copilot-specialist.md) 🧑‍✈️ | Tenant hygiene, licensing math, and Copilot readiness-before-licenses deployment |
+| [Full-Stack Developer](../../engineering/engineering-full-stack-developer.md) 🥞 | End-to-end vertical slices: schema → API → UI → deploy, no handoffs |
 
 ---
 

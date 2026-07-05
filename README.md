@@ -125,6 +125,11 @@ Building the future, one commit at a time.
 | 📧 [Email Intelligence Engineer](engineering/engineering-email-intelligence-engineer.md) | Email parsing, MIME extraction, structured data for AI agents | Turning raw email threads into reasoning-ready context |
 | 🎙️ [Voice AI Integration Engineer](engineering/engineering-voice-ai-integration-engineer.md) | Speech-to-text pipelines, Whisper, ASR, speaker diarization | End-to-end transcription pipelines, audio preprocessing, structured transcript delivery |
 | 🖧 [IT Service Manager](engineering/engineering-it-service-manager.md) | ITIL 4 service management | Incident/problem/change management, SLAs, CMDB |
+| 🏙️ [Enterprise IT Architect](engineering/engineering-enterprise-it-architect.md) | Landscape architecture: capability maps, portfolio, integration, ADRs | Governing the whole technology estate across a group |
+| ⛅ [Azure Cloud Architect](engineering/engineering-azure-cloud-architect.md) | Landing zones, Entra ID, cost governance, hybrid AD | Azure architecture for Microsoft-ecosystem organizations |
+| 🪣 [AWS Cloud Architect](engineering/engineering-aws-cloud-architect.md) | Multi-account Organizations, IAM, Well-Architected, cost engineering | AWS architecture for product workloads |
+| 🧑‍✈️ [Microsoft 365 & Copilot Specialist](engineering/engineering-m365-copilot-specialist.md) | Tenant governance, licensing math, Copilot readiness & adoption | Running M365 as a managed product, deploying Copilot safely |
+| 🥞 [Full-Stack Developer](engineering/engineering-full-stack-developer.md) | Vertical slices: schema → API → UI → deploy | End-to-end features and small products without handoffs |
 | 🪡 [Minimal Change Engineer](engineering/engineering-minimal-change-engineer.md) | Minimum-viable diffs | Fixing only what's asked, no scope creep |
 | 📜 [OrgScript Engineer](engineering/engineering-orgscript-engineer.md) | OrgScript grammar & AST validation | Designing/parsing OrgScript business-logic definitions |
 | 🧬 [Prompt Engineer](engineering/engineering-prompt-engineer.md) | LLM prompt design & optimization | Turning vague instructions into reliable AI behaviors |
@@ -404,6 +409,7 @@ The unique specialists who don't fit in a box.
 | 🕵️ [Chief Audit Executive](specialized/chief-audit-executive.md) | Audit function leadership, risk-based plans, committee reporting | Independent assurance reporting only to the chairman/audit committee |
 | 🪤 [Fraud Examiner](specialized/fraud-examiner.md) | Fraud prevention, detection analytics, investigation support | Catching patterns before they become losses — evidence first, always |
 | 🗝️ [IT Auditor](specialized/it-auditor.md) | ITGC audits: access, change, tested restores, in-system SoD | Independently verifying what the CIO and CISO built |
+| 🧯 [Business Continuity Manager](specialized/business-continuity-manager.md) | BIA, RTO/RPO, crisis action cards, exercise programs | Keeping the group operating through disruption — untested plans are unproven |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -678,7 +684,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **279 Specialized Agents** across 16 divisions
+- 🎭 **285 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1060,7 +1066,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **279 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **285 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

@@ -130,7 +130,7 @@ OT Security Engineer
 KSA Business Navigator
 Arabic Copywriter
 
-# ── Corporate & Group Add-ons (7)
+# ── Corporate & Group Add-ons (8)
 # For holding companies and groups of companies: governance, consolidation,
 # assurance, treasury, group risk, family-business succession, and the
 # revalidation gate every deliverable passes before reaching the chairman.
@@ -141,6 +141,7 @@ Treasury & Cash Manager
 Enterprise Risk Manager
 Family Business & Succession Advisor
 Revalidation Gatekeeper
+Business Continuity Manager
 
 # ── Executive Chiefs & IT (9)
 # Dedicated chief seats — each translates directives into department plans,
@@ -174,3 +175,11 @@ CMS Developer
 DevOps Automator
 UX Architect
 AI Engineer
+
+# ── IT Architecture & Cloud (5)
+# The IT landscape layer and cloud/platform experts under the CIO.
+Enterprise IT Architect
+Azure Cloud Architect
+AWS Cloud Architect
+Microsoft 365 & Copilot Specialist
+Full-Stack Developer
