@@ -22,7 +22,10 @@ Read `group-context.md` (entities, policies) and `business-context-<company>.md`
 ## Steps
 
 1. **Adopt Chief Human Resources Officer.** Answer first: does this hire follow the workforce plan, or is it reactive? Define the role sharply (outcomes for the first 90 days, not a duties laundry list). Check the compensation band: if the user has one, validate the ask against it; if none exists, **adopt HR People Operations Lead** to draft a band — market-typical range for role/level/location, every figure marked `[ASSUMED — verify]` since no salary survey was provided. Flag if this hire creates internal-equity problems the user described.
-2. **Adopt Recruitment Specialist.** Produce: (a) the job post — honest, specific, in the company's voice, no inflated title or fictional perks; (b) a sourcing plan — channels ranked for this role and market, referral angle, direct-search targets described by profile not by invented names; (c) a structured interview loop — stages, who interviews for what, and a scorecard per stage with 3–5 rated criteria anchored to the role's 90-day outcomes, plus the questions that probe each criterion. Same loop for every candidate.
+2. **Adopt Recruitment Specialist.** Produce three artifacts:
+   - **Job post** — honest, specific, in the company's voice; no inflated title, no fictional perks, no requirements the band cannot pay for.
+   - **Sourcing plan** — channels ranked for this role and market, referral angle, direct-search targets described by profile, never by invented names.
+   - **Structured interview loop** — stages, who interviews for what, and a scorecard per stage with 3–5 rated criteria anchored to the role's 90-day outcomes, plus the questions that probe each criterion. Same loop, same scorecards, for every candidate.
 3. **Offer stage.** Build the offer checklist against the band: base, allowances, variable, benefits, start date, probation terms. **If the entity is UAE-based, adopt UAE & GCC Payroll Specialist** to flag cost implications: end-of-service gratuity accrual (formula shown), WPS registration/SIF requirements, leave-pay and overtime exposure, free-zone vs. mainland differences — each stamped "as of [date] — verify current." For other GCC states, flag the equivalent items at the same discipline.
 4. **Gate self-check** — see Rules.
 

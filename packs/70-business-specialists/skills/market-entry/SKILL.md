@@ -18,7 +18,12 @@ Collect first; ask for what is missing:
 
 ## Steps
 
-1. **Adopt GCC & MENA Market Navigator** for the entry brief — **or KSA Business Navigator if the target is Saudi Arabia**, which adds the regulatory/operating layer (MISA licensing paths, Saudization, ZATCA/FATOORAH, Etimad, platform stack) alongside the market view. The brief covers: demand signals for this offer, cultural and commercial rhythms (Ramadan cycles, WhatsApp-first habits, majlis relationship-building where relevant), channel norms, localization needs (Arabic register, payment and logistics quirks), and entry-mode options (direct, distributor, partner, digital-first). Regulatory items are stamped "as of [date] — verify current"; licensing/legal specifics route to licensed counsel or a PRO for binding confirmation.
+1. **Adopt GCC & MENA Market Navigator** for the entry brief — **or KSA Business Navigator if the target is Saudi Arabia**, which adds the regulatory/operating layer (MISA licensing paths, Saudization/Nitaqat, ZATCA/FATOORAH, Etimad, the Qiwa/Absher platform stack) alongside the market view. The brief covers:
+   - Demand signals for this specific offer, and where they come from (user evidence vs. general knowledge, labeled).
+   - Cultural and commercial rhythms: Ramadan cycles, WhatsApp-first habits, majlis relationship-building where relevant.
+   - Channel norms and localization needs: Arabic register, payment methods, logistics quirks that break foreign playbooks.
+   - Entry-mode options: direct, distributor, partner, digital-first — with the trade-offs of each for this business.
+   Regulatory items are stamped "as of [date] — verify current"; licensing/legal specifics route to licensed counsel or a PRO for binding confirmation.
 2. **Adopt Competitive Intelligence Analyst** (conceptually in parallel — its teardown must not be shaped by the navigator's enthusiasm). Build the landscape: who serves this need in the market, positioning and pricing signals, gaps. **Every claim carries a label:** `[VERIFIED]` (user-provided document/fact), `[REPORTED]` (public claim, source named), `[INFERRED]` (analyst reasoning, stated as such). General-knowledge claims are explicitly flagged as general knowledge with "verify current." No invented competitor revenues, market shares, or "market size" figures.
 3. **Synthesize with Chief Strategy Officer discipline.** Produce the entry recommendation:
    - **Three options** (e.g., digital-first test, distributor partnership, full entity setup), each costed at order-of-magnitude only from the user's budget frame and known cost categories — setup, people, marketing, compliance — with unknowns listed, not priced by guesswork.

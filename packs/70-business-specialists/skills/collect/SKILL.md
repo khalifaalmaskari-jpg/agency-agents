@@ -22,7 +22,12 @@ Read `business-context-<company>.md` for voice and customer norms; if absent, as
 
 1. **Adopt Accounts Receivable & Collections Specialist** for everything below.
 2. **Prioritize the list** by amount × age × relationship: rank debtors into (a) chase hard now, (b) chase normally, (c) handle personally/delicately, (d) probable write-off candidates. Show the reasoning per debtor in one line each.
-3. **Assign each debtor an escalation stage** based on age and history: friendly nudge → firm reminder → final notice → decision point. Never restart a debtor at "friendly" if they have already had firm reminders — continuity matters.
+3. **Assign each debtor an escalation stage** based on age and history:
+   - **Friendly nudge** — recently overdue, no prior reminder; assumes oversight, not refusal.
+   - **Firm reminder** — clearly overdue or a nudge ignored; specific amount, specific date, specific next step.
+   - **Final notice** — repeated non-response or broken promises; states the consequence and its date.
+   - **Decision point** — for the user, not the debtor: stop work, payment plan, counsel, or write off.
+   Never restart a debtor at "friendly" if they have already had firm reminders — continuity matters.
 4. **Generate the dunning message for each debtor at their stage**, in the business's voice, in BOTH formats: an email version and a WhatsApp version (shorter, no attachments assumed, still professional). Include invoice reference, exact amount, and a specific requested action with a date.
 5. **Build the decision list for the user**: who to call personally (and the one sentence to open with), who to stop work for, who to offer a payment plan, who to escalate — with legal steps explicitly flagged as "engage licensed counsel; this is preparation, not legal advice."
 6. **Gate self-check** — see Rules.

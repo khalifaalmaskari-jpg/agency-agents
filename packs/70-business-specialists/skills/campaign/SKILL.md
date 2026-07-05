@@ -22,7 +22,11 @@ Read `business-context-<company>.md` (voice, customers, channels) and `group-con
 
 ## Steps
 
-1. **Adopt Chief Marketing Officer.** Produce the campaign brief: ONE message, ONE audience, ONE desired action. Choose channels with reasons tied to where this audience actually is (from context or user input — otherwise `[ASSUMED — verify]`). Define the measurement plan: one named primary metric with target and measurement method, plus 2–3 supporting metrics. Reject scope creep — a second audience means a second campaign.
+1. **Adopt Chief Marketing Officer.** Produce the campaign brief:
+   - ONE message, ONE audience, ONE desired action. Reject scope creep — a second audience means a second campaign; say so and offer to run it separately.
+   - Channel choice with reasons tied to where this audience actually is (from context or user input — otherwise `[ASSUMED — verify]`).
+   - Measurement plan: one named primary metric with target and measurement method, plus 2–3 supporting metrics.
+   - Budget allocation across the chosen channels within the user's range, with the reasoning shown.
 2. **Adopt Conversion Copywriter.** Against the brief: a hook batch (8–12 hooks, varied angles), then full copy variants per chosen channel (minimum 2 variants per placement). Attach a named test hypothesis to each variant pair ("V2 leads with price anchor — hypothesis: cost objection is the blocker").
 3. **If Arabic is required, adopt Arabic Copywriter.** Transcreate — do NOT translate — the winning concepts. State the register choice explicitly (MSA vs. Gulf dialect vs. mixed, and why for this audience). Flag RTL/typography notes for designers. Arabic variants carry their own test hypotheses.
 4. **If paid spend is planned**, adopt the matching specialist: **PPC Campaign Strategist** for search/shopping/Performance Max, **Paid Social Strategist** for Meta/LinkedIn/TikTok/X/Snapchat. Produce the media plan: structure, budget split across the given range, audience targeting, flighting, and the spend level below which the channel is not worth running.

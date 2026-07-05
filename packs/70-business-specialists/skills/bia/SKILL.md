@@ -22,7 +22,11 @@ Gathered through the interview itself; before starting, ask only:
    - **Round B — impact over time:** what breaks and what it costs (money, customers, regulatory, reputation) if the process is down **4 hours**, **24 hours**, **72 hours**. Push for numbers or ranges from the user; accept "don't know" and record it as a gap.
    - **Round C — dependencies:** systems (and where they run), key people (how many can do this?), suppliers, sites/equipment, and data the process cannot run without.
    - **Round D — IT reality (asked explicitly):** "Do you know your actual backup and restore capability for the systems this process depends on — how old would restored data be, and how long does a restore really take? Has a restore ever been tested?" Record the answer verbatim; "never tested" is a finding, not an embarrassment.
-3. **Set proposed recovery objectives per process** from the impact curve the user described: MTPD (the point the user said damage becomes intolerable), RTO (target restore of the process, inside MTPD with margin), RPO (tolerable data loss). Each is a **proposal for owner sign-off**, with the reasoning line shown.
+3. **Set proposed recovery objectives per process** from the impact curve the user described:
+   - **MTPD** — the point at which the user said damage becomes intolerable.
+   - **RTO** — target restoration of the process, set inside the MTPD with visible margin.
+   - **RPO** — tolerable data loss, derived from how much rework the user said they could absorb.
+   Each is a **proposal for owner sign-off**, with the one-line reasoning shown next to it.
 4. **Surface the RTO-vs-IT-capability gap:** wherever the user's Round D answer implies restore times or data loss worse than the proposed RTO/RPO, state the gap plainly ("proposed RPO 4h; last backup nightly — gap: up to 24h data loss"). If Round D was "don't know," list verifying it as the first action.
 5. **List gaps and single points of failure** — one person, one supplier, one site, one untested backup — each with a concrete, owned action.
 6. **Close with the exercise recommendation:** the one exercise to run first (usually a tabletop walkthrough of the top process's worst scenario), who attends, and when. Untested plans are unproven plans.

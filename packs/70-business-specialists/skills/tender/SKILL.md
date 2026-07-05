@@ -17,7 +17,11 @@ Process a tender the disciplined way: extract every obligation into a compliance
 
 1. **Adopt Government Tender & Bid Writer** for the entire run.
 2. **Compliance matrix FIRST.** Walk the document and extract every "shall", "must", "required", and implied mandatory into one row each: requirement ID/clause, verbatim requirement, category (technical/commercial/administrative/legal), and a status column — Comply / Partial / Cannot comply / Unknown — filled only from user-confirmed facts. Missing document sections are declared, not guessed.
-3. **Bid/no-bid scorecard.** Score honestly: fit to scope, mandatory-requirement compliance rate, incumbency/relationship, capacity to deliver, price competitiveness signals, bond and cash impact, strategic value. Give a plain recommendation — including "do not bid," with reasons, if that is what the scorecard says. Flattery here wastes the user's money.
+3. **Bid/no-bid scorecard.** Score honestly across:
+   - Fit to scope and mandatory-requirement compliance rate (a "Cannot comply" on a mandatory is usually decisive).
+   - Incumbency/relationship, and evidence of capacity to deliver at this scale.
+   - Price competitiveness signals, bond and cash-flow impact, and strategic value beyond this contract.
+   Give a plain recommendation — including "do not bid," with reasons, if that is what the scorecard says. Flattery here wastes the user's money and bond fees.
 4. **If the call is bid**, produce:
    - **Response skeleton** — volume/section structure mirroring the tender's required format, with every compliance-matrix row mapped to the section that will answer it, so nothing mandatory is orphaned.
    - **Deadline back-plan** — from submission datetime backwards: internal review, pricing sign-off, bond issuance lead time, portal upload buffer (never plan to submit in the final hours), clarification-deadline milestones. Include explicit buffers.
