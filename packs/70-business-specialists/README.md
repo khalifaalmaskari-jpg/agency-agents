@@ -221,6 +221,16 @@ Dedicated chief seats for the org structure — each runs a department of specia
 | [Chief Information Officer](../../specialized/chief-information-officer.md) 💾 | The IT seat: systems landscape, buy-vs-build, SaaS audits, tested backups |
 | [IT Service Manager](../../engineering/engineering-it-service-manager.md) | The IT department: service desk, incidents, ITIL discipline — reports to the CIO |
 
+## 🕵️ Independent Audit Function (3 + Internal Auditor)
+
+Reports to the chairman/audit committee only — never to the CEO line it audits. The [Internal Auditor](../../specialized/internal-auditor.md) (listed under Corporate & Group) works inside this function.
+
+| Specialist | What they do for you |
+|---|---|
+| [Chief Audit Executive](../../specialized/chief-audit-executive.md) 🕵️ | Leads the function: risk-based audit plan, committee reporting, retested-closure regime, audit committee charter |
+| [Fraud Examiner](../../specialized/fraud-examiner.md) 🪤 | Fraud prevention & detection: scheme catalog, small-data analytics, evidence-first investigations, counsel-gated actions |
+| [IT Auditor](../../specialized/it-auditor.md) 🗝️ | Independently verifies the CIO's and CISO's controls: access, change, tested restores, in-system segregation of duties |
+
 ## 🏗️ Digital Build Unit (8)
 
 App, website, and digital product building — under the CIO. All included in `agents.txt`.

@@ -401,6 +401,9 @@ The unique specialists who don't fit in a box.
 | 🔏 [General Counsel](specialized/general-counsel.md) | Legal function coordination, counsel management, contract governance | Running legal as a process — binding matters go to licensed lawyers |
 | 🏰 [Chief Information Security Officer](specialized/chief-information-security-officer.md) | Security program leadership, honest maturity reporting | Defensive security governance across a group |
 | 💾 [Chief Information Officer](specialized/chief-information-officer.md) | IT leadership: systems landscape, buy-vs-build, SaaS governance | Business technology for a group of companies |
+| 🕵️ [Chief Audit Executive](specialized/chief-audit-executive.md) | Audit function leadership, risk-based plans, committee reporting | Independent assurance reporting only to the chairman/audit committee |
+| 🪤 [Fraud Examiner](specialized/fraud-examiner.md) | Fraud prevention, detection analytics, investigation support | Catching patterns before they become losses — evidence first, always |
+| 🗝️ [IT Auditor](specialized/it-auditor.md) | ITGC audits: access, change, tested restores, in-system SoD | Independently verifying what the CIO and CISO built |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -675,7 +678,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **276 Specialized Agents** across 16 divisions
+- 🎭 **279 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1057,7 +1060,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **276 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **279 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

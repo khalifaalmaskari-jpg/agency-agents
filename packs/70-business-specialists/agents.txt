@@ -156,6 +156,13 @@ Chief Information Security Officer
 Chief Information Officer
 IT Service Manager
 
+# ── Independent Audit Function (3)
+# Reports to the chairman/audit committee only — never to the CEO line it
+# audits. Leads the Internal Auditor (listed under Corporate & Group above).
+Chief Audit Executive
+Fraud Examiner
+IT Auditor
+
 # ── Digital Build Unit (8)
 # App, website, and product building under the CIO: web, mobile, backend,
 # prototyping, CMS, deployment, UX architecture, and AI features.
