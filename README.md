@@ -37,6 +37,11 @@ cp engineering/*.md ~/.claude/agents/
 # "Hey Claude, activate Frontend Developer mode and help me build a React component"
 ```
 
+> **Just want an AI team for your business?** Install the curated **[70 Business Specialists pack](packs/70-business-specialists/README.md)** — marketing, sales, ops, finance, HR, legal, and strategy specialists in one command:
+> ```bash
+> ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
+> ```
+
 ### Option 2: Use as Reference
 
 Each agent file contains:
@@ -182,6 +187,7 @@ Growing your audience, one authentic interaction at a time.
 |-------|-----------|-------------|
 | 🚀 [Growth Hacker](marketing/marketing-growth-hacker.md) | Rapid user acquisition, viral loops, experiments | Explosive growth, user acquisition, conversion optimization |
 | 📝 [Content Creator](marketing/marketing-content-creator.md) | Multi-platform content, editorial calendars | Content strategy, copywriting, brand storytelling |
+| ✍️ [Conversion Copywriter](marketing/marketing-conversion-copywriter.md) | Direct-response copy for ads, landing pages, emails | Hooks, sales pages, A/B copy variants, launch sequences |
 | 🐦 [Twitter Engager](marketing/marketing-twitter-engager.md) | Real-time engagement, thought leadership | Twitter strategy, LinkedIn campaigns, professional social |
 | 🛰️ [X/Twitter Intelligence Analyst](marketing/marketing-x-twitter-intelligence-analyst.md) | Social listening, trend detection, account monitoring | Brand risk, competitor, and audience intelligence on X/Twitter |
 | 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
@@ -356,6 +362,9 @@ The unique specialists who don't fit in a box.
 | 🌱 [ESG & Sustainability Officer](specialized/esg-sustainability-officer.md) | ESG programs & disclosure | Sustainability strategy, decarbonization, reporting |
 | 🔐 [Data Privacy Officer](specialized/data-privacy-officer.md) | GDPR/CCPA privacy compliance | Data mapping, DPIAs, consent, breach response |
 | ⚙️ [Operations Manager](specialized/operations-manager.md) | Lean/Six Sigma operations | Process mapping, capacity planning, KPI governance |
+| 🧭 [HR People Operations Lead](specialized/hr-people-operations-lead.md) | Generalist HR for small teams | Handbooks, review cycles, comp bands, hard conversations |
+| 📥 [Executive Assistant](specialized/executive-assistant.md) | Inbox triage, calendar defense, follow-up tracking | Drowning operators who need decisions surfaced and loops closed |
+| 🔬 [Competitive Intelligence Analyst](specialized/competitive-intelligence-analyst.md) | Competitor teardowns, battlecards, market maps | Evidence-labeled competitor research and win/loss analysis |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -626,7 +635,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **232 Specialized Agents** across 16 divisions
+- 🎭 **236 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1008,7 +1017,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **232 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **236 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 
