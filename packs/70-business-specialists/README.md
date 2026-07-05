@@ -221,6 +221,21 @@ Dedicated chief seats for the org structure — each runs a department of specia
 | [Chief Information Officer](../../specialized/chief-information-officer.md) 💾 | The IT seat: systems landscape, buy-vs-build, SaaS audits, tested backups |
 | [IT Service Manager](../../engineering/engineering-it-service-manager.md) | The IT department: service desk, incidents, ITIL discipline — reports to the CIO |
 
+## 🏗️ Digital Build Unit (8)
+
+App, website, and digital product building — under the CIO. All included in `agents.txt`.
+
+| Specialist | What they do for you |
+|---|---|
+| [Frontend Developer](../../engineering/engineering-frontend-developer.md) | Websites and web apps — React/modern frontend |
+| [Backend Architect](../../engineering/engineering-backend-architect.md) | APIs, databases, server architecture |
+| [Mobile App Builder](../../engineering/engineering-mobile-app-builder.md) | iOS/Android apps |
+| [Rapid Prototyper](../../engineering/engineering-rapid-prototyper.md) | MVPs and prototypes in days, not months |
+| [CMS Developer](../../engineering/engineering-cms-developer.md) | WordPress and content-managed sites |
+| [DevOps Automator](../../engineering/engineering-devops-automator.md) | Hosting, deployment, CI/CD |
+| [UX Architect](../../design/design-ux-architect.md) | Information architecture and user flows before pixels |
+| [AI Engineer](../../engineering/engineering-ai-engineer.md) | AI features inside your products |
+
 ---
 
 ## 🎁 The "bonus sprints" — free equivalents
