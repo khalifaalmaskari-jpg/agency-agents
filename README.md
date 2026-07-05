@@ -175,6 +175,7 @@ Turning pipeline into revenue through craft, not CRM busywork.
 | 🏹 [Proposal Strategist](sales/sales-proposal-strategist.md) | RFP response, win themes, narrative structure | Writing proposals that persuade, not just comply |
 | 📊 [Pipeline Analyst](sales/sales-pipeline-analyst.md) | Forecasting, pipeline health, deal velocity, RevOps | Pipeline reviews, forecast accuracy, revenue operations |
 | 🗺️ [Account Strategist](sales/sales-account-strategist.md) | Land-and-expand, QBRs, stakeholder mapping | Post-sale expansion, account planning, NRR growth |
+| 🌉 [Partnerships & Affiliate Manager](sales/sales-partnerships-affiliate-manager.md) | Referral, affiliate, and channel programs | Commission design, partner recruitment, co-marketing, fraud sweeps |
 | 🏋️ [Sales Coach](sales/sales-coach.md) | Rep development, call coaching, pipeline review facilitation | Making every rep and every deal better through structured coaching |
 | 🎯 [Sales Outreach](specialized/sales-outreach.md) | Cold prospecting, multi-touch cadences, objection handling, proposals | Top-of-funnel B2B outreach — from cold email to booked discovery call |
 | 🧲 [Offer & Lead Gen Strategist](sales/sales-offer-lead-gen-strategist.md) | Offers & lead magnets | Top-of-funnel offer construction and lead gen |
@@ -188,6 +189,11 @@ Growing your audience, one authentic interaction at a time.
 | 🚀 [Growth Hacker](marketing/marketing-growth-hacker.md) | Rapid user acquisition, viral loops, experiments | Explosive growth, user acquisition, conversion optimization |
 | 📝 [Content Creator](marketing/marketing-content-creator.md) | Multi-platform content, editorial calendars | Content strategy, copywriting, brand storytelling |
 | ✍️ [Conversion Copywriter](marketing/marketing-conversion-copywriter.md) | Direct-response copy for ads, landing pages, emails | Hooks, sales pages, A/B copy variants, launch sequences |
+| 💬 [WhatsApp Business Specialist](marketing/marketing-whatsapp-business-specialist.md) | WhatsApp sales/support flows, broadcasts, Business API | WhatsApp-first markets, catalog setup, inquiry-to-order sequences |
+| ⭐ [Reviews & Reputation Manager](marketing/marketing-reviews-reputation-manager.md) | Review responses, ratings recovery, reputation monitoring | Google/Trustpilot reviews, negative-review handling, review generation |
+| 📍 [Local SEO Specialist](marketing/marketing-local-seo-specialist.md) | Google Business Profile, local pack, citations | "Near me" visibility, maps ranking, multi-location businesses |
+| 🤳 [Influencer & UGC Manager](marketing/marketing-influencer-ugc-manager.md) | Creator partnerships, UGC sourcing, usage rights | Nano/micro influencer campaigns, creator vetting, disclosure compliance |
+| 🏬 [E-commerce Store Operator](marketing/marketing-ecommerce-store-operator.md) | Shopify/WooCommerce/Amazon operations, PDP conversion | Listing optimization, abandoned-cart recovery, promo planning |
 | 🐦 [Twitter Engager](marketing/marketing-twitter-engager.md) | Real-time engagement, thought leadership | Twitter strategy, LinkedIn campaigns, professional social |
 | 🛰️ [X/Twitter Intelligence Analyst](marketing/marketing-x-twitter-intelligence-analyst.md) | Social listening, trend detection, account monitoring | Brand risk, competitor, and audience intelligence on X/Twitter |
 | 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
@@ -365,6 +371,9 @@ The unique specialists who don't fit in a box.
 | 🧭 [HR People Operations Lead](specialized/hr-people-operations-lead.md) | Generalist HR for small teams | Handbooks, review cycles, comp bands, hard conversations |
 | 📥 [Executive Assistant](specialized/executive-assistant.md) | Inbox triage, calendar defense, follow-up tracking | Drowning operators who need decisions surfaced and loops closed |
 | 🔬 [Competitive Intelligence Analyst](specialized/competitive-intelligence-analyst.md) | Competitor teardowns, battlecards, market maps | Evidence-labeled competitor research and win/loss analysis |
+| 🎤 [Business Onboarding Interviewer](specialized/business-onboarding-interviewer.md) | Adaptive business intake interviews | Generating the business-context.md brief all other specialists read — run this first |
+| 🛒 [Procurement & Vendor Negotiator](specialized/procurement-vendor-negotiator.md) | Buyer-side negotiation, quote comparison, renewals | Vendor selection, SaaS renewal negotiations, contract red flags |
+| 🦄 [Pitch Deck & Fundraising Strategist](specialized/pitch-deck-fundraising-strategist.md) | Deck narrative, investor targeting, data rooms | Raising angel/VC money, investor updates, diligence prep |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -380,6 +389,7 @@ Accounting, financial analysis, tax strategy, and investment research specialist
 | 📈 [FP&A Analyst](finance/finance-fpa-analyst.md) | Budgeting, rolling forecasts, variance analysis, business reviews | Annual operating plans, monthly business reviews, strategic resource allocation |
 | 🔍 [Investment Researcher](finance/finance-investment-researcher.md) | Due diligence, portfolio analysis, asset valuation, equity research | Investment thesis development, risk assessment, market research |
 | 🏛️ [Tax Strategist](finance/finance-tax-strategist.md) | Tax optimization, multi-jurisdictional compliance, transfer pricing | Entity structuring, ETR analysis, audit defense, strategic tax planning |
+| 🧲 [Accounts Receivable & Collections Specialist](finance/finance-accounts-receivable-collections.md) | Invoicing discipline, aging analysis, dunning sequences | Getting paid on time, chasing overdue invoices without burning relationships |
 
 ### 🎮 Game Development Division
 
@@ -635,7 +645,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **236 Specialized Agents** across 16 divisions
+- 🎭 **246 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1017,7 +1027,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **236 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **246 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

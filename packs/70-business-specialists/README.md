@@ -26,7 +26,7 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 **Any other tool:** each specialist is a plain Markdown system prompt. Copy, paste, done. (`./scripts/install.sh --list tools` shows all supported formats.)
 
-**Make it sound like you:** after installing, tell any specialist about your business once — what you sell, who you sell it to, your voice. Better: keep a short `business-context.md` and paste it at the start of each session, or add it to your Project/CLAUDE.md so every specialist starts pre-briefed.
+**Make it sound like you (do this first):** run the **[Business Onboarding Interviewer](../../specialized/business-onboarding-interviewer.md)**. It asks you short rounds of questions about your business — nothing is assumed, so it works for any business, and you can run it once per business you operate — then writes a `business-context.md` brief. Add that file to your Project instructions or CLAUDE.md and every specialist starts pre-briefed, sounding like your company instead of generic AI.
 
 ---
 
