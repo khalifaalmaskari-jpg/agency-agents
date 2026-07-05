@@ -195,6 +195,7 @@ Growing your audience, one authentic interaction at a time.
 | 🤳 [Influencer & UGC Manager](marketing/marketing-influencer-ugc-manager.md) | Creator partnerships, UGC sourcing, usage rights | Nano/micro influencer campaigns, creator vetting, disclosure compliance |
 | 🏬 [E-commerce Store Operator](marketing/marketing-ecommerce-store-operator.md) | Shopify/WooCommerce/Amazon operations, PDP conversion | Listing optimization, abandoned-cart recovery, promo planning |
 | 🎟️ [Webinar & Events Marketer](marketing/marketing-webinar-events-marketer.md) | Webinars, trade shows, event funnels | Event-driven lead gen, GITEX/LEAP planning, post-event follow-up |
+| 🖋️ [Arabic Copywriter](marketing/marketing-arabic-copywriter.md) | Native Arabic copy, register/dialect strategy, transcreation | Arabic campaigns that were conceived in Arabic, not translated into it |
 | 🐦 [Twitter Engager](marketing/marketing-twitter-engager.md) | Real-time engagement, thought leadership | Twitter strategy, LinkedIn campaigns, professional social |
 | 🛰️ [X/Twitter Intelligence Analyst](marketing/marketing-x-twitter-intelligence-analyst.md) | Social listening, trend detection, account monitoring | Brand risk, competitor, and audience intelligence on X/Twitter |
 | 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
@@ -382,6 +383,11 @@ The unique specialists who don't fit in a box.
 | 🐪 [UAE Business Law Navigator](specialized/uae-business-law-navigator.md) | Mainland vs. free zone, labour law, compliance calendars | UAE legal prep that makes counsel time cheaper — never a lawyer substitute |
 | 🏆 [Government Tender & Bid Writer](specialized/government-tender-bid-writer.md) | Public tenders, compliance matrices, ICV/local content | Bidding on government work in the GCC and beyond |
 | 🧿 [AI Governance Officer (UAE & GCC)](specialized/uae-ai-governance-officer.md) | Responsible AI adoption, PDPL/DIFC awareness, AI risk registers | AI policies and governance for Gulf organizations |
+| 🏜️ [KSA Business Navigator](specialized/ksa-business-navigator.md) | MISA, Nitaqat, ZATCA/FATOORAH, GOSI, Qiwa/Etimad | Operating and expanding in Saudi Arabia |
+| 🏪 [Retail Store Operations Manager](specialized/retail-store-operations-manager.md) | Floor ops, footfall rotas, cash discipline, merchandising | Running physical shops, cafes, salons, showrooms |
+| 🛵 [Logistics & Last-Mile Strategist](specialized/logistics-last-mile-strategist.md) | Courier scorecards, COD reconciliation, delivery promises | Fulfillment and delivery operations, GCC addressing reality |
+| ☂️ [Insurance & Risk Manager](specialized/insurance-risk-manager.md) | Risk registers, coverage gaps, claims readiness | Business insurance decisions without gold-plating premiums |
+| 🎡 [Franchise Operations Advisor](specialized/franchise-operations-advisor.md) | Franchise evaluation and franchising your business | Buying into a franchise, or building one — both sides of the table |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -654,7 +660,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **255 Specialized Agents** across 16 divisions
+- 🎭 **261 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1036,7 +1042,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **255 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **261 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 

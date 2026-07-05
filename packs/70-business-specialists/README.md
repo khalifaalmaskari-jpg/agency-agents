@@ -152,7 +152,7 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 ---
 
-## 🧩 Local Business Add-ons (12)
+## 🧩 Local Business Add-ons (16)
 
 Beyond the core 70 — built for running a real business day to day. All included in `agents.txt`.
 
@@ -170,8 +170,12 @@ Beyond the core 70 — built for running a real business day to day. All include
 | [Procurement & Vendor Negotiator](../../specialized/procurement-vendor-negotiator.md) | Buyer-side: quote comparison, SaaS renewals, contract red flags |
 | [Partnerships & Affiliate Manager](../../sales/sales-partnerships-affiliate-manager.md) | Referral/affiliate programs, commission design, partner recruitment |
 | [Pitch Deck & Fundraising Strategist](../../specialized/pitch-deck-fundraising-strategist.md) | Deck narrative, investor targeting, data rooms |
+| [Retail Store Operations Manager](../../specialized/retail-store-operations-manager.md) 🏪 | Floor operations: rotas, cash discipline, store-health scorecards |
+| [Logistics & Last-Mile Strategist](../../specialized/logistics-last-mile-strategist.md) 🛵 | Courier scorecards, COD reconciliation, delivery-promise design |
+| [Insurance & Risk Manager](../../specialized/insurance-risk-manager.md) ☂️ | Risk registers, coverage gaps, claims readiness — incl. UAE mandatory covers |
+| [Franchise Operations Advisor](../../specialized/franchise-operations-advisor.md) 🎡 | Buying a franchise or franchising your business — both sides, GCC-aware |
 
-## 🕌 UAE, GCC & MENA Add-ons (7)
+## 🕌 UAE, GCC & MENA Add-ons (9)
 
 Region-focused specialists for businesses operating in the Gulf. All included in `agents.txt`.
 
@@ -184,6 +188,8 @@ Region-focused specialists for businesses operating in the Gulf. All included in
 | [AI Governance Officer (UAE & GCC)](../../specialized/uae-ai-governance-officer.md) 🧿 | Responsible AI adoption: policies, risk registers, PDPL/DIFC Reg 10 awareness |
 | [UAE Cybersecurity Compliance Specialist](../../security/security-uae-cybersecurity-compliance.md) 🇦🇪 | The regulator map: Cybersecurity Council, DESC ISR, ADHICS, CBUAE, PDPL gap assessments |
 | [OT Security Engineer](../../security/security-ot-security-engineer.md) 🛢️ | Defending ICS/SCADA & plants: IEC 62443, segmentation, vendor remote access |
+| [KSA Business Navigator](../../specialized/ksa-business-navigator.md) 🏜️ | Operating in Saudi: MISA, Nitaqat, ZATCA/FATOORAH, GOSI, Qiwa/Etimad platform map |
+| [Arabic Copywriter](../../marketing/marketing-arabic-copywriter.md) 🖋️ | Native Arabic copy — MSA vs. Gulf dialect, transcreation not translation, RTL flags |
 
 ---
 
