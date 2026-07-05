@@ -220,6 +220,35 @@ For holding companies and groups of companies. All included in `agents.txt`. Run
 | [Internal Communications Manager](../../specialized/internal-communications-manager.md) 📻 | Affected-first announcements, manager cascade kits, multilingual workforce channels |
 | [Group Portfolio Manager](../../project-management/project-management-portfolio-manager.md) 🗂️ | The portfolio register, evidence-based RAG, intake scorecards, zombie-project kills |
 
+## 🚀 Growth & Platform Extras (5)
+
+Existing roster agents worth having on hand. All included in `agents.txt`.
+
+| Specialist | What they do for you |
+|---|---|
+| [Short-Video Editing Coach](../../marketing/marketing-short-video-editing-coach.md) | Reels/TikTok/Shorts editing craft and retention cuts |
+| [App Store Optimizer](../../marketing/marketing-app-store-optimizer.md) | ASO: store listings, keywords, conversion |
+| [X/Twitter Intelligence Analyst](../../marketing/marketing-x-twitter-intelligence-analyst.md) | Social listening, brand risk, trend detection on X |
+| [Sprint Prioritizer](../../product/product-sprint-prioritizer.md) | RICE/Kano sprint planning and change-request discipline |
+| [Developer Advocate](../../specialized/specialized-developer-advocate.md) | Developer-facing content, docs, and community |
+
+## 🐉 China Market Suite (15)
+
+For Gulf–China trade and China expansion. All included in `agents.txt` — delete the section if not relevant to you.
+
+| Specialist | What they do for you |
+|---|---|
+| [China Market Localization Strategist](../../marketing/marketing-china-market-localization-strategist.md) | Entry strategy and localization for China |
+| [China E-Commerce Operator](../../marketing/marketing-china-ecommerce-operator.md) | Tmall/JD/Taobao store operations |
+| [Cross-Border E-Commerce Specialist](../../marketing/marketing-cross-border-ecommerce.md) | Cross-border flows, customs, marketplaces |
+| [Livestream Commerce Coach](../../marketing/marketing-livestream-commerce-coach.md) | Livestream selling formats and hosts |
+| [Private Domain Operator](../../marketing/marketing-private-domain-operator.md) | WeChat private-traffic funnels and CRM |
+| [Baidu SEO Specialist](../../marketing/marketing-baidu-seo-specialist.md) | Search visibility inside China |
+| [WeChat Official Account Manager](../../marketing/marketing-wechat-official-account.md) | WeChat content and service accounts |
+| [Weibo](../../marketing/marketing-weibo-strategist.md) · [Xiaohongshu](../../marketing/marketing-xiaohongshu-specialist.md) · [Zhihu](../../marketing/marketing-zhihu-strategist.md) · [Douyin](../../marketing/marketing-douyin-strategist.md) · [Kuaishou](../../marketing/marketing-kuaishou-strategist.md) · [Bilibili](../../marketing/marketing-bilibili-content-strategist.md) | Platform strategists for China's social ecosystem |
+| [WeChat Mini Program Developer](../../engineering/engineering-wechat-mini-program-developer.md) | Mini-program builds |
+| [Feishu Integration Developer](../../engineering/engineering-feishu-integration-developer.md) | Feishu/Lark workplace integrations |
+
 ## 👔 Executive Chiefs & IT (9)
 
 Dedicated chief seats for the org structure — each runs a department of specialists, reviews their output before the gate, and owns the function's numbers. The CFO seat is held by the [Chief Financial Officer](../../specialized/chief-financial-officer.md), already listed under Finance.

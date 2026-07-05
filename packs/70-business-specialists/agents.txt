@@ -151,6 +151,33 @@ Investor Relations Manager
 Internal Communications Manager
 Group Portfolio Manager
 
+# ── Growth & Platform Extras (5)
+# Existing roster agents worth having on hand.
+Short-Video Editing Coach
+App Store Optimizer
+X/Twitter Intelligence Analyst
+Sprint Prioritizer
+Developer Advocate
+
+# ── China Market Suite (15)
+# For Gulf–China trade and China market expansion: platforms, commerce,
+# localization, and the developer tooling that goes with them.
+China Market Localization Strategist
+China E-Commerce Operator
+Cross-Border E-Commerce Specialist
+Livestream Commerce Coach
+Private Domain Operator
+Baidu SEO Specialist
+WeChat Official Account Manager
+Weibo Strategist
+Xiaohongshu Specialist
+Zhihu Strategist
+Douyin Strategist
+Kuaishou Strategist
+Bilibili Content Strategist
+WeChat Mini Program Developer
+Feishu Integration Developer
+
 # ── Executive Chiefs & IT (9)
 # Dedicated chief seats — each translates directives into department plans,
 # runs the first quality pass before the Revalidation Gate, owns its KPIs.
