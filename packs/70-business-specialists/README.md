@@ -191,6 +191,19 @@ Region-focused specialists for businesses operating in the Gulf. All included in
 | [KSA Business Navigator](../../specialized/ksa-business-navigator.md) 🏜️ | Operating in Saudi: MISA, Nitaqat, ZATCA/FATOORAH, GOSI, Qiwa/Etimad platform map |
 | [Arabic Copywriter](../../marketing/marketing-arabic-copywriter.md) 🖋️ | Native Arabic copy — MSA vs. Gulf dialect, transcreation not translation, RTL flags |
 
+## 🏛️ Corporate & Group Add-ons (6)
+
+For holding companies and groups of companies. All included in `agents.txt`. Run the Interviewer's **group mode** first — it writes the `group-context.md` these specialists read.
+
+| Specialist | What they do for you |
+|---|---|
+| [Corporate Governance & Board Secretary](../../specialized/corporate-governance-board-secretary.md) 🗳️ | Board packs, resolutions, DoA matrices, subsidiary governance, RPT logging |
+| [Group Financial Controller](../../finance/finance-group-financial-controller.md) 🧮 | Consolidation, intercompany reconciliation, IFRS, UAE Corporate Tax group & transfer pricing flags |
+| [Internal Auditor](../../specialized/internal-auditor.md) 🔦 | Risk-based audit plans, controls testing, findings that actually get closed |
+| [Treasury & Cash Manager](../../finance/finance-treasury-cash-manager.md) 💧 | Group cash visibility, 13-week forecasts, facilities/covenants, guarantees & LCs |
+| [Enterprise Risk Manager](../../specialized/enterprise-risk-manager.md) ⚠️ | Group risk register, risk appetite, aggregation across entities, board heat maps |
+| [Family Business & Succession Advisor](../../specialized/family-business-succession-advisor.md) 🌳 | Family charters, next-gen entry rules, succession & bus plans — Gulf family-group reality |
+
 ---
 
 ## 🎁 The "bonus sprints" — free equivalents

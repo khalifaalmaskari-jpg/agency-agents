@@ -388,6 +388,10 @@ The unique specialists who don't fit in a box.
 | 🛵 [Logistics & Last-Mile Strategist](specialized/logistics-last-mile-strategist.md) | Courier scorecards, COD reconciliation, delivery promises | Fulfillment and delivery operations, GCC addressing reality |
 | ☂️ [Insurance & Risk Manager](specialized/insurance-risk-manager.md) | Risk registers, coverage gaps, claims readiness | Business insurance decisions without gold-plating premiums |
 | 🎡 [Franchise Operations Advisor](specialized/franchise-operations-advisor.md) | Franchise evaluation and franchising your business | Buying into a franchise, or building one — both sides of the table |
+| 🗳️ [Corporate Governance & Board Secretary](specialized/corporate-governance-board-secretary.md) | Board packs, resolutions, DoA matrices, subsidiary governance | Making a group of companies an actual system, not WhatsApp threads |
+| 🔦 [Internal Auditor](specialized/internal-auditor.md) | Risk-based audit plans, controls testing, findings follow-up | The group's independent assurance function |
+| ⚠️ [Enterprise Risk Manager](specialized/enterprise-risk-manager.md) | Group risk registers, risk appetite, cross-entity aggregation | Group-wide risk governance above insurance decisions |
+| 🌳 [Family Business & Succession Advisor](specialized/family-business-succession-advisor.md) | Family charters, next-gen entry, succession planning | Gulf family groups: three tables, three different conversations |
 | 🤝 [M&A Integration Manager](specialized/ma-integration-manager.md) | Post-merger integration | Day 1/100-day plans, synergy tracking, TSA management |
 | 🧠 [Organizational Psychologist](specialized/organizational-psychologist.md) | Team dynamics & culture health | Psychological safety, burnout risk, high-performing teams |
 | ⚔️ [Strategy Duel Agent](specialized/specialized-strategy-duel-agent.md) | Game theory & the 36 stratagems | Turn-based strategy duels, adversarial scenario simulation |
@@ -405,6 +409,8 @@ Accounting, financial analysis, tax strategy, and investment research specialist
 | 🏛️ [Tax Strategist](finance/finance-tax-strategist.md) | Tax optimization, multi-jurisdictional compliance, transfer pricing | Entity structuring, ETR analysis, audit defense, strategic tax planning |
 | 🧲 [Accounts Receivable & Collections Specialist](finance/finance-accounts-receivable-collections.md) | Invoicing discipline, aging analysis, dunning sequences | Getting paid on time, chasing overdue invoices without burning relationships |
 | 🧾 [UAE & GCC Payroll Specialist](finance/finance-uae-gcc-payroll-specialist.md) | WPS, EOSB/gratuity, GPSSA/GOSI, DIFC/ADGM regimes | Payroll runs and end-of-service math for UAE and GCC employers |
+| 🧮 [Group Financial Controller](finance/finance-group-financial-controller.md) | Consolidation, intercompany reconciliation, IFRS, transfer pricing flags | Multi-entity groups: eliminations, group close, audit readiness |
+| 💧 [Treasury & Cash Manager](finance/finance-treasury-cash-manager.md) | Group cash visibility, 13-week forecasts, facilities & covenants | Cash across entities, intercompany funding, guarantees & LCs |
 
 ### 🎮 Game Development Division
 
@@ -660,7 +666,7 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **261 Specialized Agents** across 16 divisions
+- 🎭 **267 Specialized Agents** across 16 divisions
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
@@ -1042,7 +1048,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-What started as a Reddit thread about AI agent specialization has grown into something remarkable — **261 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
+What started as a Reddit thread about AI agent specialization has grown into something remarkable — **267 agents across 16 divisions**, supported by a community of contributors from around the world. Every agent in this repo exists because someone cared enough to write it, test it, and share it.
 
 To everyone who has opened a PR, filed an issue, started a Discussion, or simply tried an agent and told us what worked — thank you. You're the reason The Agency keeps getting better.
 
