@@ -32,6 +32,12 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 **Don't know who to ask?** Talk to the **[Front Desk Router](../../specialized/front-desk-router.md)** 🛎️ — describe any problem in plain words and it names the right specialist(s), the order to use them in, and gives you a paste-ready prompt for each.
 
+**Install the skills (recommended):** the [`skills/`](skills/README.md) directory holds 14 one-command workflows that orchestrate the agents — `/directive` (goal → routed → executed → gated → summary), `/gate`, `/onboard`, `/inbox`, `/weekly`, `/month-end`, `/campaign`, `/collect`, `/hire`, `/tender`, and more:
+
+```bash
+mkdir -p ~/.claude/skills && cp -r packs/70-business-specialists/skills/*/ ~/.claude/skills/
+```
+
 ---
 
 ## 👥 Meet your team — 70 specialists across 11 departments

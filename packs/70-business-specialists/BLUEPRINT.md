@@ -150,7 +150,10 @@ git clone https://github.com/khalifaalmaskari-jpg/agency-agents.git
 cd agency-agents
 ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
 cp packs/70-business-specialists/CLAUDE.md.template /your/workspace/CLAUDE.md
+# The skills layer — 14 one-command workflows (see skills/README.md):
+mkdir -p ~/.claude/skills && cp -r packs/70-business-specialists/skills/*/ ~/.claude/skills/
 ```
+With skills installed, the processes in §4 become commands: **P1 = `/onboard`**, **P2 = `/directive`**, the gate alone = `/gate`, and the standing rhythm runs on `/inbox`, `/weekly`, `/month-end`, `/audit`, `/board-pack` — plus functional skills (`/campaign`, `/collect`, `/hire`, `/tender`, `/bia`, `/market-entry`). Full index: [skills/README.md](skills/README.md).
 
 ### Week 1 — Onboard & first directives
 - Run the 🎤 Interviewer: group mode first, then your 2–3 most active companies
