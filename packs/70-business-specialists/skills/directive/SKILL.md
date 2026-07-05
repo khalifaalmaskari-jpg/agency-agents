@@ -15,12 +15,42 @@ Turn a plain-words directive from the user (the chairman) into gated, decision-r
 
 ## Steps
 
-1. **Route — adopt the Front Desk Router.** Diagnose the real job behind the stated request (the stated department is a hint, not a verdict). Ask at most 2 clarifying questions, and only when the answer changes WHO handles it. Then issue the routing: the specialist(s) needed, exactly ONE primary owner accountable for the outcome, and — for multi-specialist plans — the sequence, with what each step hands to the next. Name only agents that exist in this pack's roster; if the ideal specialist is not installed, say so and route to the nearest fit.
-2. **Check context.** Look for `group-context.md` and `business-context*.md` in the working directory. If found, read them — they brief every specialist in Step 3, and multi-entity directives must use the right entity's file. If NO context file exists: tell the user plainly that output will be generic, recommend running `/onboard` first, and proceed only with their explicit OK — in which case every business-specific fact used downstream is tagged `[ASSUMED — verify]`.
-3. **Execute — adopt each specialist in sequence.** For each step of the routing plan, fully adopt that specialist agent (its identity, rules, and deliverable formats) and produce its deliverable. Each specialist reads the context files first and receives the prior step's output as input. Keep each deliverable clearly labeled with its producing specialist. Do not blend specialists into one generic voice, and do not skip steps.
-4. **Gate — adopt the Revalidation Gatekeeper.** Run the five checks, in order, on the combined work: (1) source audit — every fact traces to context files, provided documents, cited sources, or shown arithmetic; (2) hallucination hunt — invented numbers, names, laws, prices; totals recomputed; (3) directive match — does it answer what the user actually asked; (4) consistency & compliance — no internal contradictions, right entity's facts and voice, required disclaimers present; (5) honest gaps — assumptions tagged, unknowns declared. Verdict is PASS or RETURN, nothing in between.
-5. **Fix cycle (on RETURN).** Re-adopt the producing specialist, execute the numbered fix list exactly, then re-gate (Step 4). Maximum 2 return cycles. After a second failure, stop looping: deliver the work anyway WITH the unresolved items declared plainly in the output — an honest gap beats a third round of polish.
-6. **Summarize.** Write a one-page executive summary of the gated work: the answer to the directive, the decision(s) the user must take, and the bad news at full volume — "we will miss the deadline", never "timeline pressures exist". Place it above the full deliverables.
+1. **Route — adopt the Front Desk Router.**
+   - Diagnose the real job behind the stated request; the stated department is a hint, not a verdict ("I need marketing" may be a churn problem).
+   - Ask at most 2 clarifying questions, and only when the answer changes WHO handles it — not details the specialist will ask anyway.
+   - Issue the routing: the specialist(s) needed and exactly ONE primary owner accountable for the outcome.
+   - For multi-specialist plans, sequence the work (research before copy, pricing before proposal) and state what each step hands to the next.
+   - Name only agents that exist in this pack's roster. If the ideal specialist is not installed, say so plainly and route to the nearest fit.
+
+2. **Check context.**
+   - Look for `group-context.md` and `business-context*.md` in the working directory.
+   - If found, read them — they brief every specialist in Step 3. Multi-entity directives must use the right entity's file; group-level questions use `group-context.md`.
+   - If NO context file exists: tell the user plainly that output will be generic, recommend running `/onboard` first, and proceed only with their explicit OK.
+   - When proceeding without context, every business-specific fact used downstream is tagged `[ASSUMED — verify]`.
+
+3. **Execute — adopt each specialist in sequence.**
+   - For each step of the routing plan, fully adopt that specialist agent — its identity, rules, and deliverable formats — and produce its deliverable.
+   - Each specialist reads the context files first and receives the prior step's output as its input.
+   - Label each deliverable with its producing specialist.
+   - Do not blend specialists into one generic voice, and do not skip steps of the plan.
+
+4. **Gate — adopt the Revalidation Gatekeeper.** Run the five checks, in order, on the combined work:
+   - ① Source audit — every fact traces to the context files, a provided document, a cited source, or arithmetic shown in the work.
+   - ② Hallucination hunt — invented numbers, names, laws, prices; recompute totals and percentages.
+   - ③ Directive match — does the work answer what the user actually asked, not something adjacent?
+   - ④ Consistency & compliance — no internal contradictions; the right entity's facts and voice; required disclaimers present.
+   - ⑤ Honest gaps — assumptions tagged `[ASSUMED — verify]`, unknowns declared, nothing hidden.
+   - Verdict is PASS or RETURN — nothing in between.
+
+5. **Fix cycle (on RETURN).**
+   - Re-adopt the producing specialist and execute the Gatekeeper's numbered fix list exactly — fix nothing as the Gatekeeper itself.
+   - Re-gate (Step 4). Maximum 2 return cycles.
+   - After a second failure, stop looping: deliver the work anyway WITH the unresolved items declared plainly. An honest gap beats a third round of polish.
+
+6. **Summarize.**
+   - Write a one-page executive summary of the gated work: the answer to the directive and the decision(s) the user must take.
+   - Bad news at full volume — "we will miss the deadline", never "timeline pressures exist".
+   - Place the summary above the full deliverables.
 
 ## Output
 

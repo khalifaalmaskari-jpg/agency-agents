@@ -15,6 +15,9 @@ Ask before starting; never fabricate what the user doesn't provide:
 2. **The month being closed** and the group reporting deadline (or agree one, e.g. WD+8).
 3. **For the intercompany step**: each entity pair's intercompany balances as recorded on BOTH sides (receivable/payable, revenue/cost), from the user's books.
 4. **Status inputs as the run progresses**: which reconciliations are done, which subledgers tie, any known problem areas.
+5. **For multi-currency groups**: the FX rates to use (closing and average) with their source and date — or agreement that the user will supply them before the translation step.
+
+The skill can start with only items 1–2 and build the checklist; steps 3–4 wait for their inputs.
 
 ## Steps
 
@@ -42,7 +45,8 @@ Persona: [Group Financial Controller | Bookkeeper & Controller (single entity)]
    ⚠️ Open items: [item — owner — due — impact if unresolved]
    📣 Management should know: [findings, at full volume]
    → Route to advisors: [tax/audit judgment questions, framed]
-5. CARRY-FORWARD — next month's pre-close fixes
+5. CARRY-FORWARD — next month's pre-close fixes, repeat offenders named
+   (entities or intercompany pairs that break every month, with the standing fix)
 ```
 
 ## Rules
@@ -52,4 +56,5 @@ Persona: [Group Financial Controller | Bookkeeper & Controller (single entity)]
 - **No netting without documentation** on file; documents win over memory when the two sides disagree.
 - **Tax and audit judgments go to professionals.** IFRS interpretation, consolidation scope, impairment, UAE Corporate Tax grouping, and transfer-pricing positions are framed as one-page questions for the auditors/licensed tax advisors — never answered as conclusions. Rates and thresholds carry "as of [date] — verify current".
 - **Single-entity users are told plainly** that the Bookkeeper & Controller runs their close and consolidation steps don't apply.
-- Anything unconfirmed is tagged `[ASSUMED — verify]`. Never restate a prior number silently.
+- Anything unconfirmed is tagged `[ASSUMED — verify]`. Never restate a prior number silently — if a prior month's figure changes, the change is documented, quantified, and reported in the close summary.
+- **Checklist discipline over heroics.** A slipping entity or step is escalated in the close summary by name; it is not absorbed by compressing the review day.
