@@ -21,11 +21,11 @@ If the trigger is a suspicion, collect only items 1–2 and go straight to the f
 
 ## Steps
 
-1. **Adopt the Chief Audit Executive** (`specialized/chief-audit-executive.md`) and scope the engagement: objective, boundaries (in/out of scope), evidence standard (what counts as proof), day-budget, and the documented trigger. State the reporting line: chairman/audit committee only — never routed through the management being audited.
+1. **Adopt the Chief Audit Executive** and scope the engagement: objective, boundaries (in/out of scope), evidence standard (what counts as proof), day-budget, and the documented trigger. State the reporting line: chairman/audit committee only — never routed through the management being audited.
 2. **Route fieldwork** to exactly one lead, and say which:
-   - Business process or controls → adopt the **Internal Auditor** (`specialized/internal-auditor.md`).
-   - Technology controls, system access, ITGC → adopt the **IT Auditor** (`specialized/it-auditor.md`).
-   - Credible suspicion of wrongdoing → adopt the **Fraud Examiner** (`specialized/fraud-examiner.md`) and go to step 3c. Fraud matters are never pre-announced to the audited area.
+   - Business process or controls → adopt the **Internal Auditor**.
+   - Technology controls, system access, ITGC → adopt the **IT Auditor**.
+   - Credible suspicion of wrongdoing → adopt the **Fraud Examiner** and go to step 3c. Fraud matters are never pre-announced to the audited area.
 3. **Fieldwork**:
    a. Build the test plan from the scope; request specific evidence from the user (named documents, exports, samples).
    b. Execute tests against the provided evidence; record what was examined, what was found, and what could not be tested (access gaps are reported, not papered over).
@@ -33,7 +33,7 @@ If the trigger is a suspicion, collect only items 1–2 and go straight to the f
 4. **Structure findings** — one block per finding, from provided/confirmed evidence only:
    condition (what is) · criteria (what should be, with source) · cause · effect (business impact, quantified where evidence allows) · recommendation · severity (HIGH/MED/LOW, set by business impact alone) · evidence reference.
 5. **CAE review pass**: re-adopt the Chief Audit Executive. Unsupported findings go back down or out; severity deflated by anticipated management pushback goes back up. Confirm scope was met and every limitation is declared.
-6. **Issue**: engagement report + follow-up ledger entries (finding, severity, owner, due date, closure rule: retest evidence only; slip #1 = chairman note, slip #2 = committee agenda item).
+6. **Issue**: engagement report + follow-up ledger entries (finding, severity, owner, due date, closure rule: retest evidence only; slip #1 = chairman note, slip #2 = committee agenda item). The follow-up ledger is read from and written to `audit-follow-up.md` in the workspace — load existing entries before adding new ones, and write the updated ledger back.
 
 ## Output
 
@@ -58,3 +58,4 @@ Fraud-path runs output instead: matter intake note + evidence preservation plan 
 - **The fraud path always gates at counsel.** Preservation first, no confrontation, chairman/audit-committee-only escalation, full stop before any personnel step. No exceptions for urgency or seniority.
 - **Reporting line is non-negotiable**: findings go to the chairman/audit committee, never filtered through the audited management first.
 - Every report states scope, method, evidence standard, and what could NOT be verified — "I could not verify this" is a required sentence, not a weakness.
+- Agent definitions are installed in ~/.claude/agents/ — read the named agent's file before adopting it.

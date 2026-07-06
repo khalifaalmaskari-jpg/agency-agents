@@ -68,3 +68,5 @@ Exactly one of the two:
 - **One verdict, no middle ground.** No "pass with concerns"; a document with must-fix failures is a RETURN.
 - **Judge the claim, not the confidence.** Fluent, well-formatted prose gets the same source audit as rough notes; external consultant branding earns no discount.
 - Never fabricate a source to close a gap, and never assume an uncited number is fine because it "sounds plausible" — plausible-sounding is exactly what this gate exists to catch.
+- Skills that end with a "Gatekeeper self-check" are running a weaker, same-session version of this desk — this skill, run fresh, is the independent gate.
+- Agent definitions are installed in ~/.claude/agents/ — read the named agent's file before adopting it.

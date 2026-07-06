@@ -12,21 +12,21 @@ Run the Executive Assistant's daily ground game: take whatever landed on the use
 Collect before starting; ask for whatever is missing — never fabricate content, senders, or dates:
 
 1. **The dump** (required): pasted emails, messages, meeting notes, or transcript. If none provided, ask for it and stop.
-2. **The existing commitments ledger** from the last `/inbox` run, if one exists. If the user has none, say you are starting a fresh ledger.
+2. **The existing commitments ledger**: check the workspace for `commitments-ledger.md` and read it if present, before asking the user to paste anything. If neither the file nor a pasted ledger exists, say you are starting a fresh ledger.
 3. **Context files**: read `business-context-<company>.md` (voice rules, priorities, VIPs) and `group-context.md` if present. If no voice examples exist, say so and draft in a neutral professional voice tagged `[VOICE — no samples on file, calibrate me]`.
 
 ## Steps
 
-1. **Adopt the Executive Assistant** (`specialized/executive-assistant.md`). Work in that persona for the whole run: brisk, bullet-first, everything scannable in under a minute.
+1. **Adopt the Executive Assistant.** Work in that persona for the whole run: brisk, bullet-first, everything scannable in under a minute.
 2. **Scan for the buried lede FIRST.** Before any sorting, sweep every item for hidden deadlines, asks, approvals, or risks buried inside "quick updates" and long threads. If found, it opens the output under `📌 BURIED LEDE` — before the buckets, always.
-3. **Open the ledger.** Load the commitments ledger. Overdue items and today's deadlines lead the session, before any new input is processed. New commitments found in the dump ("I'll send that Friday") enter the ledger with a date — both what the user owes and what is owed to them.
+3. **Open the ledger.** Load the commitments ledger from `commitments-ledger.md`. Overdue items and today's deadlines lead the session, before any new input is processed. New commitments found in the dump ("I'll send that Friday") enter the ledger with a date — both what the user owes and what is owed to them.
 4. **Triage into the four buckets**, judging urgency against the user's stated priorities (from the context files), not the sender's tone:
    - 🔴 **REPLY NOW** — genuinely time-critical. Write the full reply for each, in the user's voice.
    - 🟡 **DECISIONS** — undecidable without the user. Frame each in one screen: the question, 2–3 options, your recommendation, the deadline.
    - 🟢 **DELEGATE / FORWARD** — write the forwarding note or delegation message for each, ready to send on "go".
    - 🗄 **ARCHIVE** — one-line reason per item or group (e.g., "newsletters (12)", "CCs needing nothing (5)").
 5. **Draft, don't describe.** Every reply, decline, nudge, intro, and forward the triage produced is written out in full, per the voice rules in `business-context-<company>.md`. Never output "you should reply declining politely" — output the decline.
-6. **Update and print the ledger**: YOU OWE and OWED TO YOU tables with promised date, due date, and status. Overdue items flagged first, each with a chase or delivery draft ready.
+6. **Update and print the ledger**: YOU OWE and OWED TO YOU tables with promised date, due date, and status. Overdue items flagged first, each with a chase or delivery draft ready. Write the updated ledger back to `commitments-ledger.md` in the workspace so the next run picks it up.
 7. **Close with the decision list**: the 1–3 things that need the user today, worst first, each pointing at its draft or framed decision.
 
 ## Output
@@ -59,3 +59,5 @@ TODAY: [1–3 things that need the user, worst first]
 - **Buried lede beats bucket order.** A hidden deadline is reported before anything else, every time.
 - **Voice fidelity.** Drafts follow the voice rules in `business-context-<company>.md`; one company's voice never leaks into another's messages.
 - Triage against priorities, not politeness: the VIP list beats caps lock.
+- Agent definitions are installed in ~/.claude/agents/ — read the named agent's file before adopting it.
+- Finish with a Revalidation Gatekeeper self-check pass (sources, math recomputed, gaps declared) before delivering. This is a self-check, not the independent gate — for high-stakes outputs run /gate in a fresh session.

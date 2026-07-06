@@ -1,10 +1,10 @@
-# 🏢 70 Business Specialists for Claude — Free & Open Source
+# 🏢 The Business Pack for Claude — Free & Open Source
 
-> **An entire AI team for your business. One install. No subscription — because it's free.**
+> **An entire AI organization for your group. One install. No subscription — because it's free.**
 >
-> Your social media manager, copywriter, strategist, sales coach, analyst, HR lead — and 64 more. Each specialist is pre-configured with expert-level instructions: open it, ask your question, get expert output. Set up in under 10 minutes.
+> Your social media manager, copywriter, strategist, sales coach, analyst, HR lead — and 287 more, organized under nine chief seats with an independent audit function and a quality gate. Each specialist is pre-configured with expert-level instructions: open it, ask your question, get expert output. Set up in under 10 minutes.
 
-This pack is a curated selection of 70 business specialists from [The Agency](../../README.md)'s full roster, organized the way a real company is: by department. It covers every business function — marketing, sales, ops, finance, HR, legal, strategy, support — so there's one specialist for every part of your business.
+This pack installs **293 agents** — the complete [Agency](../../README.md) roster minus one exclusion — organized the way a real group of companies is: a chairman's office, nine chiefs, departments, and an on-call technical bench. It grew from a curated core of 70 business specialists (still the heart of the roster below) into the full organization; the folder keeps its original `70-business-specialists` name so install commands never break. Prefer just the original core? Use `agents-core-70.txt` instead of `agents.txt` in the install command.
 
 Commercial products sell this exact promise for $97+. This pack is the open-source equivalent: same job-to-be-done, fully inspectable prompts, community-maintained, MIT licensed.
 
@@ -12,10 +12,10 @@ Commercial products sell this exact promise for $97+. This pack is the open-sour
 
 ## ⚡ Setup in under 10 minutes
 
-**Claude Code / Claude Desktop (as subagents):**
+**Claude Code (as subagents):**
 
 ```bash
-git clone https://github.com/msitarzewski/agency-agents.git
+git clone https://github.com/khalifaalmaskari-jpg/agency-agents.git
 cd agency-agents
 ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
 ```
@@ -32,7 +32,7 @@ That's it. Every specialist is now available as a subagent — mention the one y
 
 **Don't know who to ask?** Talk to the **[Front Desk Router](../../specialized/front-desk-router.md)** 🛎️ — describe any problem in plain words and it names the right specialist(s), the order to use them in, and gives you a paste-ready prompt for each.
 
-**Install the skills (recommended):** the [`skills/`](skills/README.md) directory holds 14 one-command workflows that orchestrate the agents — `/directive` (goal → routed → executed → gated → summary), `/gate`, `/onboard`, `/inbox`, `/weekly`, `/month-end`, `/campaign`, `/collect`, `/hire`, `/tender`, and more:
+**Install the skills (recommended):** the [`skills/`](skills/README.md) directory holds 22 one-command workflows that orchestrate the agents — `/directive` (goal → routed → executed → gated → summary), `/gate`, `/onboard`, `/inbox`, `/weekly`, `/month-end`, `/campaign`, `/collect`, `/hire`, `/tender`, and more:
 
 ```bash
 mkdir -p ~/.claude/skills && cp -r packs/70-business-specialists/skills/*/ ~/.claude/skills/
@@ -340,10 +340,10 @@ Paid bundles throw in training upsells. The open ecosystem already has them:
 
 **How is this different from the paid "70 AI specialists" products?** Same promise — an AI specialist for every business function, pre-configured, set up in minutes. Differences: these prompts are open (you can read and edit every instruction), community-maintained (they improve over time), versioned in git, and installable as real Claude Code subagents rather than copy-paste prompts. What paid products bundle is mostly packaging and video training; the links above cover that ground for free.
 
-**Do I need all 70?** No. Install the pack, then use the 5–10 that match your week. They're subagents — the unused ones cost nothing.
+**Do I need all 293?** No. Install the full pack (unused subagents cost nothing) and let the 🛎️ Front Desk Router bring in whoever each job needs — or install just the original curated core with `--agents-file packs/70-business-specialists/agents-core-70.txt`.
 
 **Will the output "sound like me"?** Out of the box it sounds like an expert. Give any specialist your context once per session (or via a Project/CLAUDE.md) and it sounds like your expert. See setup above.
 
 **Can I customize a specialist?** That's the point. Each one is a Markdown file — edit it, and if your version is better, [contribute it back](../../CONTRIBUTING.md).
 
-**What about the other ~150 agents in this repo?** This pack is the business-generalist starter set. The full roster adds deep engineering, security, GIS, game-dev, and other technical divisions — run `./scripts/install.sh --list agents` to browse everything.
+**What's NOT in the pack?** Exactly one agent: the Salesforce Architect (excluded by request). Everything else in the repo's 294-agent roster — every division, every deep-bench specialist — is included. Run `./scripts/install.sh --list agents` to browse.

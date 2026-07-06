@@ -44,7 +44,7 @@ Interview the user about their business (or group of companies) and write the co
    - Quote the user's own words wherever possible; every unconfirmed item is `[ASSUMED — verify]` or omitted.
 
 7. **Finish with setup instructions.**
-   - Check whether `CLAUDE.md` exists in the workspace. If not, tell the user to copy the pack's template: `cp packs/70-business-specialists/CLAUDE.md.template ./CLAUDE.md` — that is what makes every agent read the context files automatically.
+   - Check whether `CLAUDE.md` exists in the workspace. If not, tell the user to copy `CLAUDE.md.template` from wherever agency-agents was cloned (`packs/70-business-specialists/CLAUDE.md.template`) — or offer to write its contents directly into `./CLAUDE.md`. That file is what makes every agent read the context files automatically.
    - Point them at the next step: "You're onboarded. Issue your first directive with `/directive <goal in plain words>` — the Front Desk Router will take it from there."
 
 ## Output

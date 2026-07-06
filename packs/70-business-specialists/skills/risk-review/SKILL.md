@@ -9,7 +9,7 @@ Runs the Enterprise Risk Manager's quarterly cycle: register update, cross-entit
 
 ## Inputs
 1. **Mode**: full quarterly review, or single new risk?
-2. **The current register**: paste the existing risk register if one exists (from a prior run or elsewhere). No register → offer to build the starter register first (that's part of the run, not a blocker).
+2. **The current register**: read from `risk-register.md` in the workspace if it exists — check before asking; otherwise take a pasted register (from a prior run or elsewhere). No register → offer to build the starter register first (that's part of the run, not a blocker).
 3. **What changed this quarter**: incidents, near-misses, new dependencies (big new customer/supplier/system/market), exercise findings from `/bia` or `/crisis` drills, audit findings.
 4. **Context files**: read `group-context.md` for the entity map — aggregation needs it.
 
@@ -23,7 +23,7 @@ Runs the Enterprise Risk Manager's quarterly cycle: register update, cross-entit
 7. **Gate self-check**: every score reasoned, every risk owned, no risk theater (a register nobody will review is itself reported as the top process risk).
 
 ## Output
-1. **Updated risk register** (table: risk, entity/group, inherent → residual, movement + reason, treatment, owner, review date)
+1. **Updated risk register** (table: risk, entity/group, inherent → residual, movement + reason, treatment, owner, review date) — written back to `risk-register.md` in the workspace so the next cycle starts from it
 2. **Concentration findings** (cross-entity aggregations discovered)
 3. **Accepted-risk list** (restated with acceptor and date)
 4. **Board risk report** (one page: heat map table, movement narrative, decisions needed)

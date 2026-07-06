@@ -37,7 +37,7 @@ cp engineering/*.md ~/.claude/agents/
 # "Hey Claude, activate Frontend Developer mode and help me build a React component"
 ```
 
-> **Just want an AI team for your business?** Install the curated **[70 Business Specialists pack](packs/70-business-specialists/README.md)** — marketing, sales, ops, finance, HR, legal, and strategy specialists in one command:
+> **Just want an AI organization for your business?** Install the **[Business Pack](packs/70-business-specialists/README.md)** — 293 agents under nine chief seats with a quality gate and independent audit, plus 22 workflow skills, in one command (or use `agents-core-70.txt` for just the curated 70-specialist core):
 > ```bash
 > ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
 > ```

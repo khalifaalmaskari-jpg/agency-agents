@@ -282,7 +282,7 @@ Inclusive Visuals Specialist
 Persona Walkthrough Specialist
 Whimsy Injector
 
-# Engineering deep bench (23)
+# Engineering deep bench (24)
 Senior Developer
 Software Architect
 Code Reviewer

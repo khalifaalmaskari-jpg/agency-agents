@@ -20,7 +20,7 @@ cp -r packs/70-business-specialists/skills/*/ /your/workspace/.claude/skills/
 
 Then in any Claude Code session, type `/` to see them, or just describe the job — Claude invokes the matching skill by its trigger conditions.
 
-## The 17 skills
+## The 22 skills
 
 ### Core system — the machine itself
 | Skill | What it runs |
@@ -54,6 +54,27 @@ Then in any Claude Code session, type `/` to see them, or just describe the job 
 | **`/crisis`** | Live crisis activation or drill: first-hour card, situation log, comms sequencing, specialist tracks |
 | **`/legal-prep`** | Prepare-for-your-lawyer pack: jurisdiction triage, facts chronology, documents, questions, counsel brief |
 | **`/risk-review`** | Quarterly ERM cycle: register update, cross-entity concentration sweep, board risk report |
+
+### Departments & resilience
+| Skill | What it delivers |
+|---|---|
+| **`/it-landscape`** | CIO systems landscape review |
+| **`/incident`** | Security incident response runbook |
+| **`/payroll`** | UAE/GCC monthly payroll run |
+| **`/reputation`** | Reviews + WhatsApp response handling |
+| **`/succession`** | Family succession & bus-plan session |
+
+## Workspace files
+
+Skills persist state in canonical files in the workspace — they check for these before asking you to paste, and write updates back:
+
+- `business-context*.md` and `group-context.md` — written by `/onboard`, read by everything
+- `commitments-ledger.md` — `/inbox`
+- `risk-register.md` — `/risk-review`
+- `audit-follow-up.md` — `/audit`
+- `situation-log-<date>.md` — `/crisis` (append-only)
+
+Agent definitions are installed in ~/.claude/agents/ — skills read the named agent's file before adopting it.
 
 ## The rules every skill obeys
 

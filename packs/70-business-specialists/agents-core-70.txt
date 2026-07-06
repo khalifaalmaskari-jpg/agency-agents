@@ -1,0 +1,96 @@
+# The original curated core: 70 business specialists (see README "core 70" tables).
+# Usage: ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents-core-70.txt
+# For the full 293-agent organization use agents.txt instead.
+
+# ── Marketing & Content (12)
+Social Media Strategist
+Content Creator
+Conversion Copywriter
+Email Marketing Strategist
+SEO Specialist
+Growth Hacker
+PR & Communications Manager
+LinkedIn Content Creator
+Instagram Curator
+TikTok Strategist
+Reddit Community Builder
+Podcast Strategist
+
+# ── Paid Advertising (5)
+PPC Campaign Strategist
+Paid Social Strategist
+Ad Creative Strategist
+Paid Media Auditor
+Tracking & Measurement Specialist
+
+# ── Sales (9)
+Sales Coach
+Outbound Strategist
+Deal Strategist
+Discovery Coach
+Pipeline Analyst
+Proposal Strategist
+Account Strategist
+Offer & Lead Gen Strategist
+Sales Outreach
+
+# ── Customer Success & Support (4)
+Customer Service
+Customer Success Manager
+Support Responder
+Language Translator
+
+# ── Operations & Admin (7)
+Operations Manager
+Workflow Architect
+Chief of Staff
+Executive Assistant
+Project Shepherd
+Meeting Notes Specialist
+Document Generator
+
+# ── Finance (7)
+Chief Financial Officer
+Bookkeeper & Controller
+Financial Analyst
+FP&A Analyst
+Tax Strategist
+Pricing Analyst
+Accounts Payable Agent
+
+# ── HR & People (6)
+HR People Operations Lead
+Recruitment Specialist
+HR Onboarding
+Corporate Training Designer
+Organizational Psychologist
+Change Management Consultant
+
+# ── Strategy & Research (7)
+Business Strategist
+Competitive Intelligence Analyst
+Trend Researcher
+Product Manager
+Feedback Synthesizer
+Investment Researcher
+M&A Integration Manager
+
+# ── Legal & Compliance (5)
+Legal Document Review
+Legal Client Intake
+Legal Compliance Checker
+Data Privacy Officer
+Grant Writer
+
+# ── Brand & Design (5)
+Brand Guardian
+UI Designer
+UX Researcher
+Visual Storyteller
+Image Prompt Engineer
+
+# ── Reporting & Analytics (3)
+Analytics Reporter
+Executive Summary Generator
+Data Consolidation Agent
+

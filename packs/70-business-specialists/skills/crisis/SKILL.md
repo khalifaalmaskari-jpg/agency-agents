@@ -15,7 +15,7 @@ Runs the Business Continuity Manager's crisis process: assess against pre-set th
 ## Steps
 1. **Life safety triage first.** Before anything else ask: is anyone hurt or in danger? If yes → evacuation/emergency services guidance takes absolute priority; everything else waits. Adopt the **Business Continuity Manager** for the entire run.
 2. **Declare or not.** Assess against severity levels (single-site / multi-site / group-wide). State plainly whether this warrants crisis activation or is an incident to manage normally — over-declaring burns the team, under-declaring loses the first hour.
-3. **Open the situation log.** Start a timestamped log immediately: what is known [FACT], what is suspected [UNCONFIRMED], decisions made, by whom. Every later step appends to it.
+3. **Open the situation log.** Start a timestamped log immediately, written to a file `situation-log-<date>.md` in the workspace (append-only) — not just printed: what is known [FACT], what is suspected [UNCONFIRMED], decisions made, by whom. Every later step appends to it. This file is evidence for the insurer, the regulator, and the post-incident review.
 4. **Run the first-hour card**: crisis team roles assigned to real names (Leader, Ops, Comms, IT liaison, Log-keeper — ask who's available); pre-set checkpoints; battle rhythm proposed.
 5. **Route the specialist tracks** as the event type demands:
    - Cyber/ransomware → flag the **Chief Information Security Officer** track (containment, forensics preservation, do-not-pay-decisions go to chairman + counsel) and the **Chief Information Officer** for recovery against tested restores.
@@ -34,4 +34,5 @@ Runs the Business Continuity Manager's crisis process: assess against pre-set th
 - Facts and suspicions never mix: the log labels [FACT] vs. [UNCONFIRMED]; external statements contain only facts.
 - Never speculate on cause publicly; never promise timelines without evidence; silence externally is a decision, not a default — the holding statement exists for a reason.
 - Notification clocks (regulator, insurer) are flagged the moment the event type is known — "as of [date] — verify current" — and counsel is engaged before any regulator contact.
+- LIVE mode trades the gate for speed — deliberately. DRILL outputs get the standard Gatekeeper self-check.
 - The skill drafts and structures; the user declares, decides, and sends. Post-event, recommend the blameless review and feed findings to `/bia` updates and the Enterprise Risk Manager's register.

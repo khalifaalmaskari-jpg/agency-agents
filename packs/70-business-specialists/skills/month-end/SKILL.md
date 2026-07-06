@@ -21,7 +21,7 @@ The skill can start with only items 1–2 and build the checklist; steps 3–4 w
 
 ## Steps
 
-1. **Pick the persona.** Multi-entity group → adopt the **Group Financial Controller** (`finance/finance-group-financial-controller.md`). Single company → adopt the **Bookkeeper & Controller** (`finance/finance-bookkeeper-controller.md`) instead, tell the user so, and skip steps 3–4 (no intercompany, no consolidation).
+1. **Pick the persona.** Multi-entity group → adopt the **Group Financial Controller**. Single company → adopt the **Bookkeeper & Controller** instead, tell the user so, and skip steps 3–4 (no intercompany, no consolidation).
 2. **Generate the close checklist**, adapted to the entities and systems the user described — not a generic template. Sequence it on working days: entity/subledger closes → intercompany cutoff → intercompany lockdown → translation & mapping (if multi-currency) → eliminations → review → issue. Each line gets an owner and a deadline. Ask about anything material the user didn't mention (payroll, VAT/Corporate Tax filings, inventory counts) rather than assuming.
 3. **Intercompany reconciliation** (multi-entity): build the worksheet per entity pair from the user-provided balances — reference, description, side A, side B, difference. **Flag every mismatch.** Each difference gets a resolution-log line: explained (e.g., goods in transit, rate per the signed agreement) and actioned, or left OPEN and named. Never net, never plug, never write "immaterial — ignore". A pair certifies only at zero or with documented in-transit items.
 4. **Consolidation workpaper structure** (multi-entity): lay out the tab-by-tab workpaper — entity TBs untouched, mapping, translation (FX rates with source + date), aggregated TB, eliminations one row per entry with source references, NCI, consolidated TB with check cells. Every consolidated figure must trace to an entity trial balance in three steps or fewer.
@@ -58,3 +58,5 @@ Persona: [Group Financial Controller | Bookkeeper & Controller (single entity)]
 - **Single-entity users are told plainly** that the Bookkeeper & Controller runs their close and consolidation steps don't apply.
 - Anything unconfirmed is tagged `[ASSUMED — verify]`. Never restate a prior number silently — if a prior month's figure changes, the change is documented, quantified, and reported in the close summary.
 - **Checklist discipline over heroics.** A slipping entity or step is escalated in the close summary by name; it is not absorbed by compressing the review day.
+- Agent definitions are installed in ~/.claude/agents/ — read the named agent's file before adopting it.
+- Finish with a Revalidation Gatekeeper self-check pass (sources, math recomputed, gaps declared) before delivering. This is a self-check, not the independent gate — for high-stakes outputs run /gate in a fresh session.

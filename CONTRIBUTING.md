@@ -44,7 +44,12 @@ Have an idea for a specialized agent? Great! Here's how to add one:
    - `security/` - Security architecture, AppSec, pentest, threat intel, and incident response
    - `support/` - Operations and support specialists
    - `spatial-computing/` - AR/VR/XR specialists
+   - `sales/` - Sales coaching, outbound, deals, and pipeline specialists
+   - `gis/` - Geospatial analysis and mapping specialists
+   - `academic/` - Research-discipline perspectives (history, psychology, etc.)
    - `specialized/` - Unique specialists that don't fit elsewhere
+
+   Note: agents added to the Business Pack also update `packs/70-business-specialists/agents.txt` and its README in the same PR — that multi-file shape is the expected wiring, not scope creep (`./scripts/check-pack.sh` verifies it).
 
 3. **Create your agent file** following the template below
 4. **Test your agent** in real scenarios

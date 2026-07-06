@@ -1,6 +1,8 @@
 # 🏛️ The Group AI Agency — Master Blueprint
 
-> **One chairman. Nine chiefs. 128 specialists. One gate. Zero tolerated hallucinations.**
+> **One chairman. Nine chiefs. 293 specialists. One gate. Zero tolerated hallucinations.**
+>
+> The org chart below maps the business core; the rest of the 293 — deep bench and technical divisions — are installed and routed on demand by the 🛎️ Front Desk Router. Everyone works for the same holding company, under the same rules.
 >
 > This document is the complete design of the system: its structure, its processes, its honesty rules, and the plan to put it into operation. If you read nothing else, read this.
 
@@ -53,20 +55,21 @@ TIER 3 · NINE CHIEF SEATS
               facilities 🏢
    CHRO 👥    People (6): recruitment, onboarding, training, org
               psychology, change management
-   CSO 🛤️    Strategy & Markets (10): competitive intel 🔬, trends, product,
+   CSO 🛤️    Strategy & Markets (13): competitive intel 🔬, trends, market
+              research 📮, R&D & innovation 🧫, sprint prioritization, product,
               M&A, GCC 🦅 & KSA 🏜️ navigation, ESG 🌱
    GC 🔏      Legal & Compliance (8): UAE law 🐪, contracts, privacy,
               tenders 🏆, government relations/PRO 🪪 — binding matters →
               licensed counsel
    CISO 🏰    Security & AI (3 + bench): UAE cyber compliance 🇦🇪, OT 🛢️,
               AI governance 🧿
-   CIO 💾     Information Technology (15): IT Service Manager (ITIL 4),
+   CIO 💾     Information Technology (14): IT Service Manager (ITIL 4),
               Enterprise IT Architect 🏙️, Azure ⛅, AWS 🪣, M365 & Copilot 🧑‍✈️,
               Full-Stack 🥞 + Digital Build unit (web, mobile, backend,
               prototyping, CMS, DevOps, UX, AI)
 ```
 
-Full per-agent roster: see [README.md](README.md). Interactive chart: `agency-org-chart.html`.
+Full per-agent roster: see [README.md](README.md). Interactive chart: [`agency-org-chart.html`](agency-org-chart.html).
 
 ---
 
@@ -150,10 +153,10 @@ git clone https://github.com/khalifaalmaskari-jpg/agency-agents.git
 cd agency-agents
 ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
 cp packs/70-business-specialists/CLAUDE.md.template /your/workspace/CLAUDE.md
-# The skills layer — 14 one-command workflows (see skills/README.md):
+# The skills layer — 22 one-command workflows (see skills/README.md):
 mkdir -p ~/.claude/skills && cp -r packs/70-business-specialists/skills/*/ ~/.claude/skills/
 ```
-With skills installed, the processes in §4 become commands: **P1 = `/onboard`**, **P2 = `/directive`**, the gate alone = `/gate`, and the standing rhythm runs on `/inbox`, `/weekly`, `/month-end`, `/audit`, `/board-pack` — plus functional skills (`/campaign`, `/collect`, `/hire`, `/tender`, `/bia`, `/market-entry`). Full index: [skills/README.md](skills/README.md).
+With skills installed, the processes in §4 become commands: **P1 = `/onboard`**, **P2 = `/directive`**, the gate alone = `/gate`, and the standing rhythm runs on `/inbox`, `/weekly`, `/month-end`, `/audit`, `/board-pack` — plus functional skills (`/campaign`, `/collect`, `/hire`, `/tender`, `/bia`, `/market-entry`, `/payroll`, `/reputation`, `/it-landscape`) and governance & resilience skills (`/crisis`, `/incident`, `/legal-prep`, `/risk-review`, `/succession`). Full index: [skills/README.md](skills/README.md).
 
 ### Week 1 — Onboard & first directives
 - Run the 🎤 Interviewer: group mode first, then your 2–3 most active companies
@@ -204,4 +207,4 @@ Stated plainly, because a blueprint that oversells is itself a gate failure:
 
 ---
 
-*Built on [The Agency](../../README.md) (MIT licensed). This pack: 293 agents + 9 chief seats + independent audit + the gate + 17 skills — the complete roster, nothing skipped. Blueprint version 1.4 — update this document when the structure changes; it is the map, and the map must match the territory.*
+*Built on [The Agency](../../README.md) (MIT licensed). This pack: 293 agents + 9 chief seats + independent audit + the gate + 22 skills — the complete roster, one team, one holding company. Blueprint version 1.5 — update this document when the structure changes (`./scripts/check-pack.sh` enforces it); it is the map, and the map must match the territory.*
