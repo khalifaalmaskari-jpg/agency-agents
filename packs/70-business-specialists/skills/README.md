@@ -20,7 +20,7 @@ cp -r packs/70-business-specialists/skills/*/ /your/workspace/.claude/skills/
 
 Then in any Claude Code session, type `/` to see them, or just describe the job — Claude invokes the matching skill by its trigger conditions.
 
-## The 22 skills
+## The 23 skills
 
 ### Core system — the machine itself
 | Skill | What it runs |
@@ -62,6 +62,7 @@ Then in any Claude Code session, type `/` to see them, or just describe the job 
 | **`/incident`** | Security incident response runbook |
 | **`/payroll`** | UAE/GCC monthly payroll run |
 | **`/reputation`** | Reviews + WhatsApp response handling |
+| **`/suggestions`** | The company suggestion channel: log improvement proposals, monthly reviewed decision list to the chairman |
 | **`/succession`** | Family succession & bus-plan session |
 
 ## Workspace files
@@ -72,7 +73,7 @@ Skills persist state in canonical files in the workspace — they check for thes
 - `commitments-ledger.md` — `/inbox`
 - `risk-register.md` — `/risk-review`
 - `audit-follow-up.md` — `/audit`
-- `situation-log-<date>.md` — `/crisis` (append-only)
+- `situation-log-<date>.md`, `suggestions-register.md` — `/crisis` (append-only)
 
 Agent definitions are installed in ~/.claude/agents/ — skills read the named agent's file before adopting it.
 

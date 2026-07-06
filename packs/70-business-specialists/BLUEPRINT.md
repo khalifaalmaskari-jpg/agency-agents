@@ -6,7 +6,7 @@
 >
 > This document is the complete design of the system: its structure, its processes, its honesty rules, and the plan to put it into operation. If you read nothing else, read this.
 
-**Version:** 1.4 · **Pack:** 293 agents (`agents.txt` — the full roster minus one exclusion) · **Repo:** 294 agents total
+**Version:** 1.6 · **Pack:** 293 agents (`agents.txt` — the full roster minus one exclusion) · **Repo:** 294 agents total
 **Install:** `./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt`
 
 ---
@@ -130,6 +130,17 @@ The Router sequences several specialists with one primary owner; each step's out
 - **Crisis** (site, system, supplier) → 🧯 BCM first-hour action card; pre-set thresholds decide what "counts"
 - Gate failures twice → to you with gaps declared
 
+### P6 — The suggestion channel (bottom-up, reviewed)
+Any agent or session that notices recurring friction logs a proposal — new
+skill, agent, department, section, or process change — to
+`suggestions-register.md` (problem first, evidence attached). **Nothing reaches
+the chairman raw**: the monthly `/suggestions` review (R&D & Innovation Lead)
+screens for duplication against the installed roster, evidence of recurrence,
+and value vs. effort — the chairman receives only the reviewed decision list
+(adopt / decline / defer, each with a reason). Adopted items leave with an
+owner and follow §7's extension rules. Feeds: the Router's gap report, the
+Gatekeeper's failure patterns, chiefs' recurring friction.
+
 ---
 
 ## 5 · The no-lies constitution
@@ -153,10 +164,10 @@ git clone https://github.com/khalifaalmaskari-jpg/agency-agents.git
 cd agency-agents
 ./scripts/install.sh --tool claude-code --agents-file packs/70-business-specialists/agents.txt
 cp packs/70-business-specialists/CLAUDE.md.template /your/workspace/CLAUDE.md
-# The skills layer — 22 one-command workflows (see skills/README.md):
+# The skills layer — 23 one-command workflows (see skills/README.md):
 mkdir -p ~/.claude/skills && cp -r packs/70-business-specialists/skills/*/ ~/.claude/skills/
 ```
-With skills installed, the processes in §4 become commands: **P1 = `/onboard`**, **P2 = `/directive`**, the gate alone = `/gate`, and the standing rhythm runs on `/inbox`, `/weekly`, `/month-end`, `/audit`, `/board-pack` — plus functional skills (`/campaign`, `/collect`, `/hire`, `/tender`, `/bia`, `/market-entry`, `/payroll`, `/reputation`, `/it-landscape`) and governance & resilience skills (`/crisis`, `/incident`, `/legal-prep`, `/risk-review`, `/succession`). Full index: [skills/README.md](skills/README.md).
+With skills installed, the processes in §4 become commands: **P1 = `/onboard`**, **P2 = `/directive`**, the gate alone = `/gate`, and the standing rhythm runs on `/inbox`, `/weekly`, `/month-end`, `/audit`, `/board-pack` — plus functional skills (`/campaign`, `/collect`, `/hire`, `/tender`, `/bia`, `/market-entry`, `/payroll`, `/reputation`, `/it-landscape`) and governance & resilience skills (`/crisis`, `/incident`, `/legal-prep`, `/risk-review`, `/succession`, `/suggestions`). Full index: [skills/README.md](skills/README.md).
 
 ### Week 1 — Onboard & first directives
 - Run the 🎤 Interviewer: group mode first, then your 2–3 most active companies
@@ -207,4 +218,4 @@ Stated plainly, because a blueprint that oversells is itself a gate failure:
 
 ---
 
-*Built on [The Agency](../../README.md) (MIT licensed). This pack: 293 agents + 9 chief seats + independent audit + the gate + 22 skills — the complete roster, one team, one holding company. Blueprint version 1.5 — update this document when the structure changes (`./scripts/check-pack.sh` enforces it); it is the map, and the map must match the territory.*
+*Built on [The Agency](../../README.md) (MIT licensed). This pack: 293 agents + 9 chief seats + independent audit + the gate + 23 skills — the complete roster, one team, one holding company. Blueprint version 1.6 — update this document when the structure changes (`./scripts/check-pack.sh` enforces it); it is the map, and the map must match the territory.*

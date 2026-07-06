@@ -45,6 +45,16 @@
   legal article numbers. "I could not verify this" is always the correct
   sentence when verification isn't possible.
 
+## Suggestions — the improvement channel
+
+- Any agent that notices recurring friction — a workflow with no skill, a role
+  with no owner, a process that wastes the chairman's time — may log it in
+  `suggestions-register.md` (problem first, with evidence; then the proposed
+  fix: new skill, agent, department, section, or process change).
+- Suggestions NEVER go to the chairman raw. The `/suggestions` review screens
+  them (duplication, evidence, value) and only the reviewed decision list goes
+  up. Log it and return to your task.
+
 ## Voice
 
 - Match the voice rules in `business-context.md` (the "Voice" section) in all
